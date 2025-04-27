@@ -73,7 +73,9 @@
     <div class="container">
         <div class="row border g-0 rounded shadow-sm">
             <div class="col-md-6 order-md-2">
-                <img src="images/contact.jpg" class="img-thumbnail dimension" alt="Contact Lara Bailey">
+                <div class="oval-image-container">
+                 <img src="images/aboutme.jpg"  alt="Contact Lara Bailey">
+                </div>
             </div>
             <div class="col-md-6 order-md-1 p-4">
                 <h3>Contact Me</h3>
@@ -83,14 +85,19 @@
                 </p>
 
                 <p>
-                    <strong>Email:</strong> larashamain@hotmail.co.uk <br>
-                    <strong>Phone:</strong> [Your Phone Number Here] <br>
-                    <strong>Social Media:</strong> You can also connect with me on social media via the links provided
-                    below.
+                    <strong>Email:</strong> lara@eirandwild.co.uk <br>
+                    <strong>WhatsApp:</strong> <a href="https://wa.me/447885899947">Chat on WhatsApp</a><br>
+                    
                 </p>
 
+                <div class="social-media-icons">
+                    <a href="https://www.facebook.com/BabyBodyBeautiful/" target="_blank" rel="noopener"><img src="images/facebook.webp" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/baby.body.beautiful/" target="_blank" rel="noopener"><img src="images/instagram.webp" alt="Instagram"></a>
+                     <a href="https://www.tiktok.com/@babybodybeautiful" target="_blank" rel="noopener"><img src="images/tiktok.png" alt="TikTok"></a>
+                 </div>
+
                 <p>
-                    I aim to respond to all inquiries within 24-48 hours. For urgent matters, please call.
+                    I aim to respond to all inquiries within 24-48 hours. For urgent matters, please use WhatsApp.
                 </p>
 
                 <p>
@@ -104,7 +111,45 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+<style>
+.oval-image-container {
+  width: 300px;  /* Adjust as needed */
+  height: 300px; /* Make it a square */
+  border-radius: 50%; /* Make it a circle */
+  overflow: hidden;  /* Hide the overflowed parts of the image */
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    </body>
+.oval-image-container img {
+  width: 100%; /* Make the image fill the container */
+  height: 100%;
+  object-fit: cover;  /* Maintain aspect ratio and cover the entire container */
+}
+.social-media-icons {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 10px; /* Adjust as needed */
+    }
+
+    .social-media-icons a {
+        display: inline-block;
+        margin-right: 10px; /* Adjust spacing between icons */
+        font-size: 24px; /* Adjust icon size */
+        color: #333; /* Default icon color */
+    }
+
+    .social-media-icons a:hover {
+        color: #007bff; /* Change color on hover (e.g., Bootstrap's primary blue) */
+    }
+
+    /* Style for the social media icons */
+    .social-media-icons img {
+        width: 30px; /* Adjust the size of the icons as needed */
+        height: 30px;
+        border-radius: 50%;
+    }
+</style>
+</body>
 
 </html>
