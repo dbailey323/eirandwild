@@ -26,7 +26,7 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
         linkElement.setAttribute('target', '_blank');
         linkElement.innerHTML = `<small>${formattedDate}</small>`;
         linkElement.style.backgroundColor = color;
-        linkElement.style.color = 'black';
+        linkElement.style.color = '#FFD700';
 
         // Add a span for margin
         const span = document.createElement('span');
