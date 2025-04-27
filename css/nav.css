@@ -11,9 +11,10 @@
     font-size: 12px;
 }
 
-/* Ensure navbar content is centered on smaller screens */
-@media (max-width: 991.98px) { /* Bootstrap's breakpoint for 'lg' */
-  .navbar-collapse {
-    justify-content: center !important;
+/* Center the anchor tags within the nav items on smaller screens */
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item .nav-link {
+    display: block; /* Make each link take full width of the list item */
+    text-align: center; /* Center the text within the link */
   }
 }
