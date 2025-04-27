@@ -37,14 +37,13 @@ body {
 
 .container .row {
     margin-top: 10px;
-    background-color: #FFD700;
+    background-color: #000562;
 }
 
 .container .row .col h3 {
     color: #FFD700;
     font-weight: 500; /* Corrected from 500px */
     font-size: 3em;
-    text-transform: uppercase;
     margin-bottom: 20px;
     display: inline-block;
     letter-spacing: 1px;
