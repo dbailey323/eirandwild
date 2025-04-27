@@ -13,7 +13,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <title>Motherhood Classes - Eir&Wild</title> </head>
+    <title>Womanhood Classes - Eir&Wild</title> </head>
 
 <body>
 
@@ -68,24 +68,63 @@
         </div>
     </nav>
 
+    <!-- Class Information Section -->
     <div class="container">
+
         <div class="row border g-0 rounded shadow-sm">
-            <div class="col-md-6 order-md-2">
-                </div>
-            <div class="col-md-6 order-md-1 p-4">
-                <h3>{Page Title}</h3>  <p>
-                    {Page Content}
-                </p>
-                <p>
-                    {More Page Content}
-                </p>
+            <div class="col-auto">
+                <img src="images/Dance&tone.png" class="img-thumbnail dimension" alt="Dance&Tone Express">
+            </div>
+            <div class="col p-4">
+                <h3 class="card-title">Dance & Tone</h3><br>
+                <h4>Mondays @ 6.30pm</h4>
+                <h4>Mountsorrel Memorial Centre</h4>
+                <div id="classDatessjlv"></div><br>
+                <p class="card-text">Dance & Tone is our fun dance inspired fitness class to bring the sparkle back to your Monday! We combine a variety of dance styles to a variety of music styles, but sticking generally to top 40s hits. Think salsa one minute, to ballet inspired soft leaps the next straight into twerking and dropping it low after that. Leave your inhibitions at the door and come along and have fun with our girl gang. In fact, you won’t even know you are exercising with those endorphins flowing!</p>
             </div>
         </div>
+
+        <div class="row border g-0 rounded shadow-sm">
+            <div class="col-auto">
+                <img src="images/Monday double .png" class="img-thumbnail dimension" alt="Monday Double Image">
+            </div>
+            <div class="col p-4">
+                <h3 class="card-title">Monday Double</h3><br>
+                <h4>Mondays @ 6.30pm and 7.00pm</h4>
+                <h4>Mountsorrel Memorial Centre</h4>
+                <div id="classDatesskni"></div><br>
+                <p class="card-text">A ticket for purchasing your Monday double class each week.</p>
+                <p class="card-text">This ticket gives you a discounted price for taking on the challenge and doing both DANCE&TONE + STRONG&STRETCHED.</p>
+            </div>
+        </div>
+
+        <div class="row border g-0 rounded shadow-sm">
+            <div class="col-auto">
+                <img src="images/STRONG&STRETCHED.png" class="img-thumbnail dimension" alt="Strong Stretched Image">
+            </div>
+            <div class="col p-4">
+                <h3 class="card-title">Strong & Stretched</h3><br>
+                <h4>Mondays @ 7.00pm</h4>
+                <h4>Mountsorrel Memorial Centre</h4>
+                <div id="classDatesszew"></div><br>
+                <p class="card-text">Strong & Stretched is a wonderful combination to finish off your Monday. We start our workout with a gentle warm up followed by full body conditioning and finished up with a full body stretch. Helping build strength without extra weight or impact, making it gentle on joints and bones, plus with the stretch, we are also helping to ease aches and pains ready for the week ahead.</p>
+            </div>
+        </div>
+
     </div>
 
+    <script src="js/womanhood_classes.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
         crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            displayClassDates("sjlv", "2025-04-28", 11, "183000", [2,5], '#000562');
+            displayClassDates("skni", "2025-04-28", 11, "183000", [2,5], '#000562');
+            displayClassDates("szew", "2025-04-28", 11, "190000", [2,5], '#000562');
+        });
+    </script>
 
     </body>
 
