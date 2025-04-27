@@ -10,3 +10,10 @@
 .navbar a {
     font-size: 12px;
 }
+
+/* Ensure navbar content is centered on smaller screens */
+@media (max-width: 991.98px) { /* Bootstrap's breakpoint for 'lg' */
+  .navbar-collapse {
+    justify-content: center !important;
+  }
+}
