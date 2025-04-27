@@ -37,11 +37,11 @@ body {
 
 .container .row {
     margin-top: 10px;
-    background-color: #000562;
+    background-color: #fff;
 }
 
 .container .row .col h3 {
-    color: #FFD700;
+    color: #000;
     font-weight: 500; /* Corrected from 500px */
     font-size: 3em;
     margin-bottom: 20px;
@@ -51,7 +51,7 @@ body {
 }
 
 .container .row .col h4 {
-    color: #fff;
+    color: #000;
     font-weight: 500; /* Corrected from 500px */
     font-size: 1.2em;
     text-transform: uppercase;
@@ -74,7 +74,7 @@ body {
 }
 
 .container .row .col p {
-    color: #fff;
+    color: #000;
     position: relative;
     margin: 10px 0 0;
     padding: 0;
@@ -90,7 +90,7 @@ body {
     font-weight: 400;
     font-size: 14px;
     letter-spacing: 1px;
-    color: #607d8b;
+    color: #FFD700;
     background: transparent;
     border-radius: 15px;
     margin-top: 10px;
