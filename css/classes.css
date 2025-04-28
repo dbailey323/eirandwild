@@ -26,13 +26,13 @@ body {
 }
 
 .banner-container {
-    display: flex; /* Lay out banners horizontally */
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
+    display: block; /* Lay out banners horizontally */
+    overflow-x: initial; /* Enable horizontal scrolling if needed */
     margin-bottom: 20px; /* Space below the banners */
 }
 
 .banner {
-    max-width: 500px; /* Adjust this value for your desired banner width */
+    max-width: 100%; /* Adjust this value for your desired banner width */
     height: auto; /* Maintain aspect ratio */
     margin-right: 10px; /* Spacing between banners */
 }
@@ -122,10 +122,3 @@ body {
     .container .row .col h3 {
         font-size: 5em;
     }
-
-    .banner {
-        max-width: 100%; /* Make banners full width on smaller screens */
-        margin-right: 0;
-        margin-bottom: 10px;
-    }
-}
