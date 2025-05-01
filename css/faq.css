@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-p {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -19,13 +19,6 @@ h3 {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Moon Time';
-}
-
-h5 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
 }
 
 body {
