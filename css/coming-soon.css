@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'Moon Time';
+  src: url('../fonts/moon-time-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: blue; /* Keeping the requested blue background */
+  font-family: 'Montserrat', sans-serif; /* Montserrat for the rest of the body */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  flex-direction: column; /* To stack content and footer */
+  color: #fff; /* Setting a default text color for other potential elements if needed */
+}
+
+.coming-soon-container {
+  flex-grow: 1; /* Allows the content container to take up available space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ensure container takes full width to center content */
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.coming-soon-text {
+  font-family: 'Moon Time', cursive; /* Using 'Moon Time' for the heading, with cursive as a fallback */
+  color: gold; /* Keeping the requested gold text color */
+  font-size: 6em; /* Adjusted size, you can tune this */
+  font-weight: normal; /* Using normal as per @font-face */
+  text-align: center;
+  line-height: 1.2; /* Adjust line height if needed */
+}
+
+/* Basic styling for the social icons from your homepage CSS */
+.social-media-icons {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: auto; /* Push social icons to the bottom */
+}
+
+.social-media-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  font-size: 24px; /* Adjust size as needed */
+}
+
+.social-media-icons img {
+  width: 40px; /* Adjust size as needed */
+}
+
+/* You might want to adjust the color of the social media icons to be visible on the blue background */
+.social-media-icons a img {
+  filter: invert(1); /* Example: invert colors to make black icons white on a dark background */
+  /* Or set specific colors if you have different icon colors */
+  /* color: #fff; */
+}
+
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+  .coming-soon-text {
+    font-size: 4em; /* Adjusted size for smaller screens */
+  }
+
+  .social-media-icons img {
+    width: 30px; /* Adjust size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .coming-soon-text {
+    font-size: 3em; /* Further adjusted size for very small screens */
+  }
+}
