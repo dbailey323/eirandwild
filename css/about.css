@@ -7,69 +7,61 @@
   font-style: normal;
 }
 
-/* Make background fill the screen */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #000562; /* Dark blue background */
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Center content vertically and horizontally */
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  text-align: center;
+h3 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Moon Time';
 }
 
-/* Card styling */
-.container .row {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
+.dimension {
+    width: 500px;
+    height: 100%;
 }
 
-/* Coming Soon title */
-.container .row .col-md-6 h3 {
-  font-family: 'Moon Time', cursive;
-  color: #FFD700; /* Gold */
-  font-weight: 500;
-  font-size: 5em;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-/* Paragraphs and any other text */
-.container .row .col-md-6 p {
-  font-family: 'Montserrat', sans-serif;
-  color: #FFFFFF;
-  font-size: 1.2em;
-  margin: 10px 0 0;
-  padding: 0;
-}
-
-/* Social media icon layout */
-.social-media-icons {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 20px;
-}
-
-.social-media-icons img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
-/* Optional: Disable certain elements visually */
 .disabled {
-  opacity: 0.6;
-  pointer-events: none;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.container {
+    text-align: center;
+}
+
+.container .row {
+    margin-top: 10px;
+    background-color: #000562;
+}
+
+.container .row .col-md-6 h3 {
+    color: #FFD700;
+    font-weight: 500;
+    font-size: 5em;
+    margin-bottom: 20px;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.container .row .col-md-6 h5 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: relative;
+    color: #607d8b;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.container .row .col-md-6 p {
+    color: #FFFFFF;
+    position: relative;
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 16px;
 }
