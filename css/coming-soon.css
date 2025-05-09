@@ -94,3 +94,27 @@ html, body {
   opacity: 0.6;
   pointer-events: none;
 }
+
+@media (max-width: 576px) {
+  .container {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    height: auto;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container .row {
+    height: auto;
+    justify-content: center;
+  }
+
+  .social-media-icons {
+    position: relative;
+    margin-top: 40px;
+    transform: none;
+    left: 0;
+    justify-content: center;
+  }
+}
