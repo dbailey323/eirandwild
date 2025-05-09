@@ -52,11 +52,13 @@ section .imgBx img {
     margin-top: 10px;
 }
 
-    social-media-icons-wrapper {
+.social-media-icons-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 .social-media-icons {
