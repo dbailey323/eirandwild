@@ -18,7 +18,7 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
     if (!skippedWeeks.includes(i + 1) && currentDate >= today) {
         const formattedDate = currentDate.toLocaleDateString("en-GB", { month: "short", day: "numeric" });
         const linkDate = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}`;
-        const link = `https://bookwhen.com/fitnesswithlara#focus=ev-${className}-${linkDate}${timeSuffix}`;
+        const link = `https://bookwhen.com/eirandwild-womanhood#focus=ev-${className}-${linkDate}${timeSuffix}`;
 
         // Create link element
         const linkElement = document.createElement('a');
