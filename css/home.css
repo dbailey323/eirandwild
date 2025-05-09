@@ -59,7 +59,7 @@ section .imgBx img {
     margin-top: 25px;
 }
 
-.social-media-icons a {
+.social-media-icons i {
     display: inline-block;
     margin: 0px 10px 25px;
     font-size: 24px;
