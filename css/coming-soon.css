@@ -7,7 +7,7 @@
   font-style: normal;
 }
 
-/* Make background fill the screen */
+/* Full-screen background setup */
 html, body {
   height: 100%;
   margin: 0;
@@ -17,30 +17,44 @@ html, body {
   color: #FFFFFF;
 }
 
-/* Center content vertically and horizontally */
+/* Main container to center content */
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  width: 100%;
   text-align: center;
 }
 
-/* Card styling */
+/* Flex behavior for row */
 .container .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
+/* Center column content */
+.container .row .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo styling */
 .header-logo {
   max-width: 300px;
   height: auto;
   margin-bottom: 20px;
 }
 
-
-/* Coming Soon title */
+/* "Coming Soon" heading */
 .container .row .col-md-6 h3 {
   font-family: 'Moon Time', cursive;
   color: #FFD700; /* Gold */
@@ -50,7 +64,7 @@ html, body {
   letter-spacing: 1px;
 }
 
-/* Paragraphs and any other text */
+/* Paragraph styling */
 .container .row .col-md-6 p {
   font-family: 'Montserrat', sans-serif;
   color: #FFFFFF;
@@ -59,7 +73,7 @@ html, body {
   padding: 0;
 }
 
-/* Social media icon layout */
+/* Social media icons at the bottom center */
 .social-media-icons {
   position: absolute;
   bottom: 20px;
@@ -75,7 +89,7 @@ html, body {
   object-fit: contain;
 }
 
-/* Optional: Disable certain elements visually */
+/* Disable interaction for visually hidden items */
 .disabled {
   opacity: 0.6;
   pointer-events: none;
