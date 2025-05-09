@@ -52,23 +52,36 @@ section .imgBx img {
     margin-top: 10px;
 }
 
-.social-media-icons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25px;
-}
+    /* Social media icon styles */
+    .social-media-icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
 
-.social-media-icons i {
-    display: inline-block;
-    margin: 0px 10px 25px;
-    font-size: 24px;
-    color: #333;
-}
+    .social-media-icons a {
+      color: #333;
+      text-decoration: none;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
 
-.social-media-icons a:hover {
-    color: #007bff;
-}
+    .social-media-icons a:hover {
+      color: #007bff;
+      transform: scale(1.1);
+    }
+
+    .social-media-icons i {
+      font-size: 1.5rem;
+    }
+
+    .social-icon {
+      height: 24px;
+      transition: transform 0.2s ease;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+    }
 
 @media (max-width: 991px) {
     section {
