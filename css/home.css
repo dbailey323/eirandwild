@@ -52,12 +52,18 @@ section .imgBx img {
     margin-top: 10px;
 }
 
-    /* Social media icon styles */
-    .social-media-icons {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    social-media-icons-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-media-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 
     .social-media-icons a {
       color: #333;
