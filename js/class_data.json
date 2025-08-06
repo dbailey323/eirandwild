@@ -97,5 +97,14 @@
     "skippedWeeks": [4],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
+  },
+  {
+    "className": "szt4",
+    "startDate": "2025-08-27",
+    "numWeeks": 8,
+    "timeSuffix": "103000",
+    "skippedWeeks": [4],
+    "color": "#000562",
+    "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
   }
 ]
