@@ -1,5 +1,10 @@
-function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color) {
+function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl) {
     const classDatesContainer = document.getElementById(`classDates${className}`);
+
+    if (!classDatesContainer) {
+ return; // Exit if the container element doesn't exist
+    }
+
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -18,14 +23,14 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
     if (!skippedWeeks.includes(i + 1) && currentDate >= today) {
         const formattedDate = currentDate.toLocaleDateString("en-GB", { month: "short", day: "numeric" });
         const linkDate = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}`;
-        const link = `https://bookwhen.com/eirandwild-womanhood#focus=ev-${className}-${linkDate}${timeSuffix}`;
+        const link = `${bookingPlatformUrl}#focus=ev-${className}-${linkDate}${timeSuffix}`;
 
         // Create link element
         const linkElement = document.createElement('a');
         linkElement.setAttribute('href', link);
         linkElement.setAttribute('target', '_blank');
-        linkElement.innerHTML = `<small>${formattedDate}</small>`;
-        linkElement.style.backgroundColor = color;
+        linkElement.innerHTML = `${formattedDate}`;
+ linkElement.style.backgroundColor = color;
         linkElement.style.color = '#FFD700';
 
         // Add a span for margin
