@@ -14,7 +14,6 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
     if (!classDatesContainer) {
  return; // Exit if the container element is not found
     }
-    // Get the container element where class dates will be displayed
     const classDatesContainer = document.getElementById(`classDates${className}`);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
