@@ -43,3 +43,14 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
     }
 }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    fetch('/js/class_data.json')
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(classInfo => {
+                displayClassDates(classInfo.className, classInfo.startDate, classInfo.numWeeks, classInfo.timeSuffix, classInfo.skippedWeeks, classInfo.color, classInfo.bookingPlatformUrl);
+            });
+        })
+        .catch(error => console.error('Error fetching class data:', error));
+});
