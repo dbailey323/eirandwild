@@ -88,5 +88,14 @@
     "skippedWeeks": [],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
+  },
+  {
+    "className": "sven",
+    "startDate": "2025-08-27",
+    "numWeeks": 7,
+    "timeSuffix": "103000",
+    "skippedWeeks": [],
+    "color": "#000562",
+    "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
   }
 ]
