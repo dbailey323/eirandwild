@@ -5,10 +5,15 @@
  * @param {number} numWeeks - The total number of weeks in the class series.
  * @param {string} timeSuffix - A suffix for the booking link URL, often representing the class time.
  * @param {number[]} [skippedWeeks=[]] - An optional array of 1-based week numbers to skip.
- * @param {string} color - The background color for the generated booking links.
+ * @param {string} color - The background color for the generated booking links. This parameter seems unused in the current implementation.
  * @param {string} bookingBaseUrl - The base URL for the booking platform.
  */
 function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingBaseUrl) {
+    // Get the container element where class dates will be displayed
+    const classDatesContainer = document.getElementById(`classDates${className}`);
+    if (!classDatesContainer) {
+ return; // Exit if the container element is not found
+    }
     // Get the container element where class dates will be displayed
     const classDatesContainer = document.getElementById(`classDates${className}`);
     const today = new Date();
@@ -37,7 +42,7 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
         const linkElement = document.createElement('a');
         linkElement.setAttribute('href', link);
         linkElement.setAttribute('target', '_blank');
-        linkElement.innerHTML = `<small>${formattedDate}</small>`;
+        linkElement.innerHTML = `${formattedDate}`; // Changed to display just the formatted date
         linkElement.style.backgroundColor = color;
         linkElement.style.color = '#FFD700';
 
@@ -50,5 +55,18 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
         classDatesContainer.appendChild(span);
     }
 }
-    // No return value needed for this function
 }
+
+// Fetch data from the JSON file and display class dates
+fetch('../js/class_data.json')
+    .then(response => response.json())
+    .then(data => {
+        // Loop through each class object in the JSON data
+        data.forEach(classData => {
+            // Check if the bookingPlatformUrl property exists before calling displayClassDates
+            if (classData.bookingPlatformUrl) {
+                displayClassDates(classData.className, classData.startDate, classData.numWeeks, classData.timeSuffix, classData.skippedWeeks, classData.color, classData.bookingPlatformUrl);
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching class data:', error)); // Log any errors during fetching
