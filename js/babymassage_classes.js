@@ -38,3 +38,22 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
     }
 }
 }
+
+fetch('../../js/class_data.json')
+    .then(response => response.json())
+    .then(data => {
+        const babyMassageClassNames = ['ssvf', 's77w', 'sjpj', 's1yy', 'sqi0'];
+        data.classes.forEach(classInfo => {
+            if (babyMassageClassNames.includes(classInfo.className)) {
+                displayClassDates(
+                    classInfo.className,
+                    classInfo.startDate,
+                    classInfo.numWeeks,
+                    classInfo.timeSuffix,
+                    classInfo.skippedWeeks || [],
+                    classInfo.color
+                );
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching class data:', error));
