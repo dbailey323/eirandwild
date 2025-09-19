@@ -139,8 +139,20 @@ body {
 }
 
 @media (max-width: 767px) {
-    .container .row .col h3 {
-        font-size: 5em;
-    }
+  
+  /* This rule will center the image and text block inside the card */
+  .container .row {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  /* This rule will center the text (h3, h4, etc.) inside the text block */
+  .container .row .col.p-4 {
+    text-align: center;
+  }
+  
+  /* This rule makes the main title a more suitable size for mobile screens */
+  .container .row .col h3 {
+    font-size: 2.5em; 
+  }
 }
