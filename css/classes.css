@@ -1,8 +1,8 @@
-/* ====== UPDATED & COMPLETE css/classes.css ====== */
+/* ====== FINAL CORRECTED css/classes.css ====== */
 
 /* --- Page Body --- */
 body {
-    background: #f0f7f7; /* A slightly softer background color */
+    background: #f0f7f7;
 }
 
 /* --- Banner Images at the Top --- */
@@ -10,8 +10,8 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Adds space between banners */
-    padding: 20px 0; /* Adds some space above and below */
+    gap: 15px;
+    padding: 20px 0;
 }
 
 .banner {
@@ -21,7 +21,7 @@ body {
 
 /* --- Main Content Container --- */
 .container {
-    max-width: 960px; /* Constrain the width on larger screens */
+    max-width: 960px;
     text-align: center;
 }
 
@@ -33,7 +33,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     overflow: hidden;
-    text-align: left; /* Align text left within the cards */
+    text-align: left;
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
@@ -42,10 +42,12 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.1);
 }
 
-/* --- Thumbnail Image in the card --- */
+/* --- FIX FOR IMAGE SIZING --- */
 .dimension {
-    width: 200px;
-    height: 200px;
+    /* This sets a maximum size but allows the image to shrink if needed */
+    max-width: 220px; 
+    height: auto; /* This maintains the aspect ratio */
+    width: 100%;  /* This makes sure it fills its container up to the max-width */
     object-fit: cover;
     border-radius: 10px;
     margin: 1rem;
@@ -54,8 +56,8 @@ body {
 /* --- Text Styling --- */
 .container .row h3 {
     font-family: 'Moon Time';
-    color: #000562; /* Dark Blue */
-    font-size: 2.5em; /* Adjusted size */
+    color: #000562;
+    font-size: 2.5em;
     margin-bottom: 1rem;
 }
 
@@ -72,14 +74,13 @@ body {
     margin-top: 0.5rem;
 }
 
-/* --- FIX FOR BOOKING BUTTONS --- */
-/* This selector specifically targets the links created by your JavaScript */
+/* --- Booking Buttons Styling --- */
 [id^="classDates"] a {
     display: inline-block;
     padding: 8px 18px;
     margin: 5px;
     border: none;
-    border-radius: 25px; /* Pill shape */
+    border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
     font-size: 14px;
@@ -103,8 +104,8 @@ body {
     }
 
     .dimension {
-        width: 150px;
-        height: 150px;
+        /* Use a smaller max-width on mobile for better balance */
+        max-width: 180px; 
     }
 
     .container .row h3 {
