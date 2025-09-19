@@ -178,7 +178,9 @@ section .imgBx img {
 @media (max-width: 767px) {
     section {
         flex-direction: column-reverse;
-        padding: 10px 10px 10px;
+        /* This adds more comfortable spacing on mobile */
+        /* 40px on top/bottom, 20px on left/right */
+        padding: 40px 20px;
         display: flex;
         align-items: center;
     }
