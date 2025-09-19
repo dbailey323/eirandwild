@@ -1,114 +1,146 @@
-/* ====== FINAL CORRECTED css/classes.css ====== */
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* --- Page Body --- */
-body {
-    background: #f0f7f7;
+@font-face {
+    font-family: 'Moon Time';
+    src: url('../fonts/moon-time-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-/* --- Banner Images at the Top --- */
+/* Basic Styling */
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6; /* Add line height for readability */
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Moon Time';
+}
+
+body {
+    background: #e5f3f3;
+}
+
+/* Banner Styling */
 .banner-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    padding: 20px 0;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow banners to wrap to the next line */
+    justify-content: center; /* Center banners horizontally */
+    
+    margin-bottom: 20px; /* Space below the banners */
 }
 
 .banner {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Ensure banners don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Spacing between banners */
+    margin-bottom: 10px; /* Add margin bottom for spacing when wrapping */
 }
 
-/* --- Main Content Container --- */
+/* Image Dimensions */
+.dimension {
+    max-width: 150px; /* Adjusted to control image size in class cards */
+    height: auto;
+    border-radius: 10px;
+}
+
 .container {
-    max-width: 960px;
     text-align: center;
 }
 
-/* --- Class Info Cards (the rows) --- */
 .container .row {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* Container and Row Styling */
+    margin: 20px auto;
+    padding: 20px;
     background-color: #fff;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    overflow: hidden;
-    text-align: left;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .container .row:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* --- FIX FOR IMAGE SIZING --- */
-.dimension {
-    /* This sets a maximum size but allows the image to shrink if needed */
-    max-width: 220px; 
-    height: auto; /* This maintains the aspect ratio */
-    width: 100%;  /* This makes sure it fills its container up to the max-width */
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 1rem;
-}
-
-/* --- Text Styling --- */
-.container .row h3 {
-    font-family: 'Moon Time';
-    color: #000562;
-    font-size: 2.5em;
-    margin-bottom: 1rem;
-}
-
-.container .row h4 {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 0.5rem;
-}
-
-.container .row p {
-    color: #555;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-}
-
-/* --- Booking Buttons Styling --- */
-[id^="classDates"] a {
+/* Text Styling */
+.container .row .col h3 {
+    color: #000;
+    font-weight: 500;
+    font-size: 3em;
+    margin-bottom: 20px;
     display: inline-block;
-    padding: 8px 18px;
-    margin: 5px;
-    border: none;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.container .row .col h4 {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.2em;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    margin-top: 0;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.container .row .col h5 {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: relative;
+    color: #fff;
+    font-weight: 300;
+    letter-spacing: 1px;
+    background-color: #7ae1d5;
+    padding: 10px;
+}
+
+.container .row .col p {
+    color: #000;
+    position: relative;
+    margin: 10px 0 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* Link Styling */
+.container .row .col a {
+    display: inline-block;
+    padding: 10px 10px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #FFD700;
+    background: transparent;
+    border-radius: 15px;
+    margin-top: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #7ae1d5;
+    color: #fff;
+    outline: none;
+    border: none;
+    max-width: 150px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-[id^="classDates"] a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* --- Responsive Adjustments --- */
 @media (max-width: 767px) {
-    .container .row {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .container .row .col h3 {
+        font-size: 5em;
     }
 
-    .dimension {
-        /* Use a smaller max-width on mobile for better balance */
-        max-width: 180px; 
-    }
-
-    .container .row h3 {
-        font-size: 2em;
-    }
 }
