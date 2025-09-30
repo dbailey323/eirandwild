@@ -48,12 +48,15 @@ section .imgBx a {
   border-radius: 30px;
 }
 
-section .imgBx img {
-  position: relative;
+section .imgBx img,
+img.responsive-fit {
   max-width: 100%;
-  width: 100%;
-  margin-top: 10px;
+  max-height: 100vh; /* full device height */
+  width: auto;
+  height: auto;
   display: block;
+  margin: 0 auto;
+  object-fit: contain; /* keeps whole image visible */
 }
 
 /* Social icons */
