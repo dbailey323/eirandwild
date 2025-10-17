@@ -3,9 +3,10 @@
  * Fetch Bookwhen events and emit:
  *   - public/events.json  (machine-friendly)
  *   - public/events.html  (ready-to-include markup)
+ *   - public/class_data.json (Eir & Wild frontend-compatible format)
  *
  * Env:
- *   BOOKWHEN_API_KEY=ja7nlqw9bjic942m58pruvbcogu4
+ *   BOOKWHEN_API_KEY=your_api_key_here
  *   BOOKWHEN_PAGE_SIZE=50  (optional)
  */
 
@@ -17,14 +18,14 @@ const PAGE_SIZE = Number(process.env.BOOKWHEN_PAGE_SIZE || 50);
 
 // Safety: don’t run without a key
 if (!API_KEY) {
-  console.error("Missing BOOKWHEN_API_KEY");
+  console.error("❌ Missing BOOKWHEN_API_KEY");
   process.exit(1);
 }
 
-// Helper: Basic Auth header
 const authHeader = "Basic " + Buffer.from(`${API_KEY}:`).toString("base64");
 
-// Helper: follow pagination
+// --- Helpers ---------------------------------------------------
+
 async function fetchAllEvents(url = `${API}?page[size]=${PAGE_SIZE}`) {
   const all = [];
   let next = url;
@@ -36,14 +37,11 @@ async function fetchAllEvents(url = `${API}?page[size]=${PAGE_SIZE}`) {
     }
     const json = await res.json();
     all.push(...(json.data || []));
-
-    // paginate
     next = json?.links?.next || null;
   }
   return all;
 }
 
-// Fetch related: location + tickets (optional but useful)
 async function fetchRelated(href) {
   const res = await fetch(href, { headers: { Authorization: authHeader } });
   if (!res.ok) return null;
@@ -51,7 +49,6 @@ async function fetchRelated(href) {
   return json.data || null;
 }
 
-// Format date/time → Europe/London, short & friendly
 function fmt(dtISO) {
   try {
     return new Intl.DateTimeFormat("en-GB", {
@@ -67,7 +64,6 @@ function fmt(dtISO) {
   }
 }
 
-// Escape HTML for details
 function esc(s = "") {
   return String(s)
     .replaceAll("&", "&amp;")
@@ -81,27 +77,32 @@ function nl2br(s = "") {
 }
 
 function ticketPriceSummary(tickets = []) {
-  // Try to show a friendly "from £X" if available
   const prices = tickets
-    .map(t => t?.attributes?.price) // e.g. "10.00"
+    .map((t) => t?.attributes?.price)
     .filter(Boolean)
     .map(Number)
-    .filter(n => !Number.isNaN(n));
+    .filter((n) => !Number.isNaN(n));
   if (!prices.length) return null;
   const min = Math.min(...prices);
   const max = Math.max(...prices);
-  return min === max ? `£${min.toFixed(2)}` : `£${min.toFixed(2)}–£${max.toFixed(2)}`;
+  return min === max
+    ? `£${min.toFixed(2)}`
+    : `£${min.toFixed(2)}–£${max.toFixed(2)}`;
 }
 
+// --- Main ------------------------------------------------------
+
 async function main() {
+  console.log("⏳ Fetching events from Bookwhen...");
   const rawEvents = await fetchAllEvents();
 
-  // Optionally filter/pivot here (e.g., upcoming only)
   const upcoming = rawEvents
-    .filter(e => !e.attributes?.cancelled_at)
-    .sort((a, b) => new Date(a.attributes.start_at) - new Date(b.attributes.start_at));
+    .filter((e) => !e.attributes?.cancelled_at)
+    .sort(
+      (a, b) =>
+        new Date(a.attributes.start_at) - new Date(b.attributes.start_at)
+    );
 
-  // Enrich each event with location & tickets
   const enriched = [];
   for (const ev of upcoming) {
     const rel = ev.relationships || {};
@@ -134,7 +135,7 @@ async function main() {
       attendee_count: ev.attributes?.attendee_count ?? null,
       waiting_list: !!ev.attributes?.waiting_list,
       location: locationName,
-      tickets: tickets.map(t => ({
+      tickets: tickets.map((t) => ({
         id: t.id,
         name: t.attributes?.name,
         price: t.attributes?.price ?? null,
@@ -146,20 +147,34 @@ async function main() {
     });
   }
 
-  // Emit JSON
+  // --- Write events.json ---
   await fs.mkdir("public", { recursive: true });
-  await fs.writeFile("public/events.json", JSON.stringify({ updatedAt: new Date().toISOString(), events: enriched }, null, 2), "utf8");
+  await fs.writeFile(
+    "public/events.json",
+    JSON.stringify(
+      { updatedAt: new Date().toISOString(), events: enriched },
+      null,
+      2
+    ),
+    "utf8"
+  );
 
-  // Emit a ready-made HTML fragment (cards)
+  // --- Write events.html ---
   const cards = enriched
-    .map(e => {
+    .map((e) => {
       const when = `${fmt(e.start_at)} – ${fmt(e.end_at)}`;
       const tally =
         e.attendee_limit != null && e.attendee_count != null
           ? `${e.attendee_count}/${e.attendee_limit} booked`
           : "";
-      const tags = e.tags.length ? `<div class="bw-tags">${e.tags.map(t => `<span>${esc(t)}</span>`).join("")}</div>` : "";
-      const price = e.price_summary ? `<div class="bw-price">From ${e.price_summary}</div>` : "";
+      const tags = e.tags.length
+        ? `<div class="bw-tags">${e.tags
+            .map((t) => `<span>${esc(t)}</span>`)
+            .join("")}</div>`
+        : "";
+      const price = e.price_summary
+        ? `<div class="bw-price">From ${e.price_summary}</div>`
+        : "";
 
       return `
 <article class="bw-card">
@@ -172,7 +187,11 @@ async function main() {
   </div>
   ${e.details ? `<p class="bw-details">${nl2br(e.details)}</p>` : ""}
   ${tags}
-  ${e.url ? `<a class="bw-link" href="${e.url}" target="_blank" rel="noopener">View on Bookwhen</a>` : ""}
+  ${
+    e.url
+      ? `<a class="bw-link" href="${e.url}" target="_blank" rel="noopener">View on Bookwhen</a>`
+      : ""
+  }
 </article>
 `.trim();
     })
@@ -194,10 +213,39 @@ ${cards}
 `;
   await fs.writeFile("public/events.html", html, "utf8");
 
-  console.log("Wrote public/events.json and public/events.html");
+  // --- Write class_data.json (for your site) ---
+  const classData = enriched.map((e) => {
+    const startDate = e.start_at ? e.start_at.split("T")[0] : null;
+    const timeSuffix = e.start_at
+      ? new Date(e.start_at)
+          .toLocaleTimeString("en-GB", { hour12: false })
+          .replace(/:/g, "")
+      : "000000";
+
+    return {
+      className: e.id.slice(-4), // last 4 chars for IDs like 'sjlv'
+      startDate,
+      numWeeks: 1, // individual event; modify if you group recurring ones
+      timeSuffix,
+      skippedWeeks: [],
+      color: "#000562",
+      bookingPlatformUrl: e.url
+        ? e.url.replace(/\/e\/.*$/, "")
+        : "https://bookwhen.com/eirandwild",
+    };
+  });
+
+  await fs.writeFile(
+    "public/class_data.json",
+    JSON.stringify(classData, null, 2),
+    "utf8"
+  );
+
+  console.log("✅ Wrote public/events.json, events.html, and class_data.json");
 }
 
-main().catch(err => {
-  console.error(err);
+// --- Run ---
+main().catch((err) => {
+  console.error("❌ Error:", err);
   process.exit(1);
 });
