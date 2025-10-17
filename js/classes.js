@@ -45,7 +45,7 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('/public/class_data.json')
+    fetch('/js/class_data.json')
         .then(response => response.json())
         .then(data => {
             data.forEach(classInfo => {
