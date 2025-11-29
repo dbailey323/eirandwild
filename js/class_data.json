@@ -4,7 +4,7 @@
     "startDate": "2025-12-07",
     "numWeeks": 8,
     "timeSuffix": "183000",
-    "skippedWeeks": [],
+    "skippedWeeks": [4,5],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
@@ -13,7 +13,7 @@
     "startDate": "2025-12-01",
     "numWeeks": 8,
     "timeSuffix": "183000",
-    "skippedWeeks": [],
+    "skippedWeeks": [4,5],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
@@ -22,7 +22,7 @@
     "startDate": "2025-12-01",
     "numWeeks": 8,
     "timeSuffix": "190000",
-    "skippedWeeks": [],
+    "skippedWeeks": [4,5],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
