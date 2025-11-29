@@ -1,7 +1,7 @@
 [
   {
     "className": "sjlv",
-    "startDate": "2025-10-27",
+    "startDate": "2025-12-07",
     "numWeeks": 8,
     "timeSuffix": "183000",
     "skippedWeeks": [],
@@ -10,7 +10,7 @@
   },
   {
     "className": "skni",
-    "startDate": "2025-10-27",
+    "startDate": "2025-12-01",
     "numWeeks": 8,
     "timeSuffix": "183000",
     "skippedWeeks": [],
@@ -19,7 +19,7 @@
   },
   {
     "className": "szew",
-    "startDate": "2025-10-27",
+    "startDate": "2025-12-01",
     "numWeeks": 8,
     "timeSuffix": "190000",
     "skippedWeeks": [],
