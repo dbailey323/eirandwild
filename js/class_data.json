@@ -163,7 +163,7 @@
   },
   {
     "className": "sdlml",
-    "startDate": "2026-01-26",
+    "startDate": "2026-01-07",
     "numWeeks": 6,
     "timeSuffix": "183000",
     "skippedWeeks": [],
@@ -172,7 +172,7 @@
   },
   {
     "className": "s2sws",
-    "startDate": "2026-01-26",
+    "startDate": "2026-01-07",
     "numWeeks": 6,
     "timeSuffix": "103000",
     "skippedWeeks": [],
