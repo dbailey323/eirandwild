@@ -18,11 +18,11 @@ p {
 }
 
 h3 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-    font-family: 'Moon Time';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Moon Time';
+  font-size: 5em !important;
 }
 
 body {
