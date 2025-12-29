@@ -19,7 +19,10 @@ h3 {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Moon Time';
-    font-size: 5em;
+}
+
+.col-md-6 h3 {
+    font-size: 3em;
 }
 
 .dimension {
