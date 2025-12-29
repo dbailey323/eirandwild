@@ -2,7 +2,7 @@
   {
     "className": "sjlv",
     "startDate": "2026-01-05",
-    "numWeeks": 11,
+    "numWeeks": 6,
     "timeSuffix": "183000",
     "skippedWeeks": [],
     "color": "#000562",
@@ -11,7 +11,7 @@
   {
     "className": "skni",
     "startDate": "2026-01-05",
-    "numWeeks": 11,
+    "numWeeks": 6,
     "timeSuffix": "183000",
     "skippedWeeks": [],
     "color": "#000562",
@@ -20,7 +20,7 @@
   {
     "className": "szew",
     "startDate": "2026-01-05",
-    "numWeeks": 11,
+    "numWeeks": 6,
     "timeSuffix": "190000",
     "skippedWeeks": [],
     "color": "#000562",
@@ -29,7 +29,7 @@
   {
     "className": "s2fwm",
     "startDate": "2026-01-12",
-    "numWeeks": 11,
+    "numWeeks": 6,
     "timeSuffix": "093000",
     "skippedWeeks": [],
     "color": "#000562",
