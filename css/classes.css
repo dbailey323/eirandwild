@@ -115,6 +115,10 @@ body {
     margin-top: 10px;
 }
 
+.class-info {
+  margin-bottom: 15px;
+}
+
 /* Link Styling */
 .container .row .col a {
     display: inline-block;
