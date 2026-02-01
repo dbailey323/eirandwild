@@ -14,7 +14,8 @@ p {
     font-family: 'Montserrat', sans-serif;
 }
 
-h3 {
+/* Updated: Changed from h3 to h1 to match new HTML structure */
+h1 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -41,7 +42,8 @@ h3 {
     background-color: #000562;
 }
 
-.container .row .col-md-6 h3 {
+/* Updated: Changed from h3 to h1 to match new HTML structure */
+.container .row .col-md-6 h1 {
     color: #FFD700;
     font-weight: 500;
     font-size: 4em;
@@ -50,7 +52,8 @@ h3 {
     letter-spacing: 1px;
 }
 
-.container .row .col-md-6 h5 {
+/* Updated: Changed from h5 to h2 to match new HTML structure */
+.container .row .col-md-6 h2 {
     font-size: 16px;
     margin-bottom: 5px;
     display: relative;

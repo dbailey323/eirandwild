@@ -14,7 +14,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-h3 {
+/* Updated: Changed from h3 to h1 to match new HTML structure */
+h1 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,7 +26,8 @@ h3 {
     text-align: center;
 }
 
-.container h3 {
+/* Updated: Changed from h3 to h1 to match new HTML structure */
+.container h1 {
     color: #607d8b;
     font-weight: 500;
     font-size: 2.5em;
@@ -46,7 +48,8 @@ h3 {
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
 }
 
-.faq-item h5 {
+/* Updated: Changed from h5 to h2 to match new HTML structure */
+.faq-item h2 {
     font-size: 25px;
     text-transform: uppercase;
     margin-bottom: 5px;
