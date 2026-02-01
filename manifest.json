@@ -1,0 +1,43 @@
+{
+  "name": "Eir & Wild - Motherhood Fitness & Wellness",
+  "short_name": "Eir & Wild",
+  "description": "Fitness and wellness services for mothers in Leicester",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#8b7355",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/Light full(16).png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "images/Light full(32).png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "images/Light full(180).png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/Light full(180).png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/Light full(180).png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "fitness", "lifestyle"],
+  "screenshots": [],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
