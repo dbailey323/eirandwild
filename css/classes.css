@@ -17,12 +17,21 @@ p {
     line-height: 1.6; /* Add line height for readability */
 }
 
-h3 {
+/* Updated: Support both h1 (visually hidden) and h2 (class titles) */
+h1 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Moon Time';
   font-size: 5em !important;
+}
+
+h2 {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Moon Time';
+  font-size: 3em !important;
 }
 
 body {
@@ -70,8 +79,9 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Text Styling */
-.container .row .col h3 {
+/* Text Styling - Updated to match new HTML hierarchy */
+/* H2 is now used for class titles (was h3) */
+.container .row .col h2 {
     color: #000;
     font-weight: 500;
     font-size: 3em;
@@ -81,6 +91,19 @@ body {
     margin-top: 20px;
 }
 
+/* H3 is now used for time (was h4) */
+.container .row .col h3 {
+    color: #000;
+    font-weight: 500;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    margin-top: 0;
+    display: block;
+    letter-spacing: 1px;
+}
+
+/* H4 is now used for location (was h4, keeping same style) */
 .container .row .col h4 {
     color: #000;
     font-weight: 500;
@@ -92,18 +115,7 @@ body {
     letter-spacing: 1px;
 }
 
-.container .row .col h5 {
-    font-size: 22px;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    display: relative;
-    color: #fff;
-    font-weight: 300;
-    letter-spacing: 1px;
-    background-color: #7ae1d5;
-    padding: 10px;
-}
-
+/* Remove old h5 styles as they're no longer used in the HTML */
 .container .row .col p {
     color: #000;
     position: relative;
@@ -150,13 +162,13 @@ body {
     align-items: center;
   }
 
-  /* This rule will center the text (h3, h4, etc.) inside the text block */
+  /* This rule will center the text (h2, h3, h4, etc.) inside the text block */
   .container .row .col.p-4 {
     text-align: center;
   }
   
   /* This rule makes the main title a more suitable size for mobile screens */
-  .container .row .col h3 {
+  .container .row .col h2 {
     font-size: 2.5em; 
   }
 }
