@@ -1,8 +1,8 @@
 [
   {
     "className": "sjlv",
-    "startDate": "2026-03-02",
-    "numWeeks": 5,
+    "startDate": "2026-03-23",
+    "numWeeks": 8,
     "timeSuffix": "183000",
     "skippedWeeks": [],
     "color": "#000562",
@@ -10,8 +10,8 @@
   },
   {
     "className": "skni",
-    "startDate": "2026-03-02",
-    "numWeeks": 5,
+    "startDate": "2026-03-23",
+    "numWeeks": 8,
     "timeSuffix": "183000",
     "skippedWeeks": [],
     "color": "#000562",
@@ -19,8 +19,8 @@
   },
   {
     "className": "szew",
-    "startDate": "2026-03-02",
-    "numWeeks": 5,
+    "startDate": "2026-03-23",
+    "numWeeks": 8,
     "timeSuffix": "190000",
     "skippedWeeks": [],
     "color": "#000562",
