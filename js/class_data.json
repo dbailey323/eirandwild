@@ -227,9 +227,9 @@
   {
     "className": "sna8p",
     "startDate": "2026-04-15",
-    "numWeeks": 5,
+    "numWeeks": 6,
     "timeSuffix": "183000",
-    "skippedWeeks": [],
+    "skippedWeeks": [2],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
   },
