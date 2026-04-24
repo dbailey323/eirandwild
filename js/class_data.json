@@ -36,6 +36,15 @@
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
   {
+    "className": "s48qe",
+    "startDate": "2025-06-03",
+    "numWeeks": 5,
+    "timeSuffix": "183000",
+    "skippedWeeks": [],
+    "color": "#000562",
+    "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
+  },
+  {
     "className": "s42n",
     "startDate": "2025-07-23",
     "numWeeks": 4,
