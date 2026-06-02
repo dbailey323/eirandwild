@@ -23,6 +23,14 @@ h1 {
     font-size: 5em !important;
 }
 
+h2 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Moon Time';
+    font-size: 5em !important;
+}
+
 .dimension {
     width: 500px;
     height: 100%;
