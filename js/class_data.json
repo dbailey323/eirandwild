@@ -28,8 +28,8 @@
   },
   {
     "className": "s2fwm",
-    "startDate": "2026-05-23",
-    "numWeeks": 9,
+    "startDate": "2026-06-06",
+    "numWeeks": 5,
     "timeSuffix": "093000",
     "skippedWeeks": [2],
     "color": "#000562",
