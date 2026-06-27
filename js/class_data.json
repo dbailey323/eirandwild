@@ -1,16 +1,16 @@
 [
   {
     "className": "sjlv",
-    "startDate": "2026-05-11",
+    "startDate": "2026-06-29",
     "numWeeks": 9,
     "timeSuffix": "183000",
-    "skippedWeeks": [3],
+    "skippedWeeks": [],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
   {
     "className": "skni",
-    "startDate": "2026-05-11",
+    "startDate": "2026-06-29",
     "numWeeks": 9,
     "timeSuffix": "183000",
     "skippedWeeks": [3],
@@ -19,7 +19,7 @@
   },
   {
     "className": "szew",
-    "startDate": "2026-05-11",
+    "startDate": "2026-06-29",
     "numWeeks": 9,
     "timeSuffix": "190000",
     "skippedWeeks": [3],
