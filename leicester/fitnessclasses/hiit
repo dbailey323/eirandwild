@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5SXDV4CQ');</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join our motherhood fitness classes at Eir&Wild in Leicester. Pre and postnatal classes including Badass Bumps, The Strong Mummy Movement, and Bums & Tums at Mountsorrel Memorial Centre.">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Motherhood Fitness Classes in Leicester | Eir & Wild">
+    <meta property="og:description" content="Pre and postnatal fitness classes for mothers in Leicester. Safe, supportive environment with qualified instructor.">
+    <meta property="og:image" content="https://eirandwild.vercel.app/images/Motherhood info 1.png">
+    <meta property="og:url" content="https://eirandwild.vercel.app/leicester/fitnessclasses/motherhoodclasses.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Motherhood Fitness Classes - Leicester">
+    <meta name="twitter:description" content="Pre and postnatal fitness classes for mothers in Leicester.">
+    <meta name="twitter:image" content="https://eirandwild.vercel.app/images/Motherhood info 1.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/Light full(180).png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/Light full(32).png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/Light full(16).png">
+    <link rel="manifest" href="../../manifest.json">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../css/classes.css">
+    <link rel="stylesheet" href="../../css/nav.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <title>HIIT Fitness Classes Leicester</title>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SXDV4CQ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <div class="banner-container">
+        <img class="banner" src="../../images/Motherhood info 1.png" alt="Motherhood fitness classes information">
+        <img class="banner" src="../../images/Motherhood info 2.png" alt="Pre and postnatal fitness benefits">
+        <img class="banner" src="../../images/Motherhood info 3.png" alt="Mother exercising with support">
+    </div>
+
+    <main class="container">
+        <h1 class="visually-hidden">Motherhood Fitness Classes in Leicester</h1>
+
+        <article class="row border g-0 rounded shadow-sm">
+            <div class="col-auto">
+                <img src="../../images/strong_women_squad_rothley.png" class="img-thumbnail dimension" alt="Strong Women Squad fitness class">
+            </div>
+            <div class="col p-4">
+                <div class="class-info">
+                    <h2 class="card-title">Strong Women Squad</h2>
+                    <h3>Wednesdays @ 6.30pm</h3>
+                    <h4>The Rothley Centre, Rothley</h4>
+                </div>
+                <div class="class-info">
+                    <p><strong>Summer 1 2026</strong></p>
+                    <p><strong>6 WEEKS</strong></p>
+                    <div id="classDatess48qe"></div>
+                </div>
+                <div class="class-info">
+                    <p><strong>Summer 2 2026</strong></p>
+                    <p><strong>4 WEEKS</strong></p>
+                    <div id="classDatessyrvo"></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="row border g-0 rounded shadow-sm">
+            <div class="col-auto">
+                <img src="../../images/Strong Mummy 10_30.png" class="img-thumbnail dimension" alt="The Strong Mummy Movement postnatal fitness class">
+            </div>
+            <div class="col p-4">
+                <div class="class-info">
+                    <h2 class="card-title">The Strong Mummy Movement</h2>
+                    <h3>Wednesdays @ 10.30am</h3>
+                    <h4>Mountsorrel Memorial Centre</h4>
+                </div>
+                <div class="class-info">
+                    <p><strong>Spring 2 2026</strong></p>
+                    <p><strong>6 WEEKS</strong></p>
+                    <div id="classDatess6bbh"></div>
+                </div>
+                <div class="class-info">
+                    <p><strong>Summer 1 2026</strong></p>
+                    <p><strong>6 WEEKS</strong></p>
+                    <div id="classDatesswnt1"></div>
+                </div>
+                <div class="class-info">
+                    <p><strong>Summer 2 2026</strong></p>
+                    <p><strong>4 WEEKS</strong></p>
+                    <div id="classDatesstomg"></div>
+                </div>
+            </div>
+        </article>
+
+        <article class="row border g-0 rounded shadow-sm">
+            <div class="col-auto">
+                <img src="../../images/strong_mums_bums_tums.png" class="img-thumbnail dimension" alt="Strong Mums Bums and Tums fitness class">
+            </div>
+            <div class="col p-4">
+                <div class="class-info">
+                    <h2 class="card-title">Strong Mums, Bums & Tums</h2>
+                    <h3>Fridays @ 9.45am</h3>
+                    <h4>The Rothley Centre, Rothley</h4>
+                </div>
+                <div class="class-info">
+                    <p><strong>Summer 1 2026</strong></p>
+                    <p><strong>6 WEEKS</strong></p>
+                    <div id="classDatesselyf"></div>
+                </div>
+                <div class="class-info">
+                    <p><strong>Summer 2 2026</strong></p>
+                    <p><strong>4 WEEKS</strong></p>
+                    <div id="classDatessapce"></div>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+        window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <!-- Vercel Web Analytics -->
+    <script defer src="/_vercel/insights/script.js"></script>
+    
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/classes.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
