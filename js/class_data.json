@@ -337,7 +337,7 @@
     "startDate": "2026-08-26",
     "numWeeks": 7,
     "timeSuffix": "103000",
-    "skippedWeeks": [],
+    "skippedWeeks": [5],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
   },
