@@ -19,37 +19,28 @@
   },
   {
     "className": "sjlv",
-    "startDate": "2026-06-29",
-    "numWeeks": 9,
+    "startDate": "2026-08-03",
+    "numWeeks": 11,
     "timeSuffix": "183000",
-    "skippedWeeks": [3,4],
+    "skippedWeeks": [],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
   {
     "className": "skni",
-    "startDate": "2026-06-29",
-    "numWeeks": 9,
+    "startDate": "2026-08-03",
+    "numWeeks": 11,
     "timeSuffix": "183000",
-    "skippedWeeks": [3,4],
+    "skippedWeeks": [],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
   {
     "className": "szew",
-    "startDate": "2026-06-29",
-    "numWeeks": 9,
+    "startDate": "2026-08-03",
+    "numWeeks": 11,
     "timeSuffix": "190000",
-    "skippedWeeks": [3,4],
-    "color": "#000562",
-    "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
-  },
-  {
-    "className": "s2fwm",
-    "startDate": "2026-07-04",
-    "numWeeks": 5,
-    "timeSuffix": "093000",
-    "skippedWeeks": [2,3],
+    "skippedWeeks": [],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
