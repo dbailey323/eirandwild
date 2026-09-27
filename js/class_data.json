@@ -4,7 +4,7 @@
     "startDate": "2026-10-03",
     "numWeeks": 9,
     "timeSuffix": "093000",
-    "skippedWeeks": [2,4,6,8],
+    "skippedWeeks": [2,3,4,6,8],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
@@ -13,7 +13,7 @@
     "startDate": "2026-10-10",
     "numWeeks": 9,
     "timeSuffix": "093000",
-    "skippedWeeks": [2,4,6,8],
+    "skippedWeeks": [2,3,4,6,8],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-womanhood"
   },
