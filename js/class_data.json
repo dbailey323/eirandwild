@@ -358,5 +358,32 @@
     "skippedWeeks": [],
     "color": "#000562",
     "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
+  },
+  {
+    "className": "sz1aw",
+    "startDate": "2026-10-28",
+    "numWeeks": 8,
+    "timeSuffix": "183000",
+    "skippedWeeks": [],
+    "color": "#000562",
+    "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
+  },
+  {
+    "className": "smgsv",
+    "startDate": "2026-10-28",
+    "numWeeks": 8,
+    "timeSuffix": "103000",
+    "skippedWeeks": [],
+    "color": "#000562",
+    "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
+  },
+  {
+    "className": "shphg",
+    "startDate": "2026-10-30",
+    "numWeeks": 8,
+    "timeSuffix": "094500",
+    "skippedWeeks": [],
+    "color": "#000562",
+    "bookingPlatformUrl": "https://bookwhen.com/eirandwild-motherhood"
   }
 ]
