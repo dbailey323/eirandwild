@@ -56,6 +56,13 @@ img.responsive-fit {
   margin: 0 auto;
 }
 
+.hover-zoom {
+  transition: transform 0.2s ease-in-out;
+}
+.hover-zoom:hover {
+  transform: scale(0.98);
+}
+
 /* Social icons */
 .social-media-icons-wrapper {
   width: 100%;
