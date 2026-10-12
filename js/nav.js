@@ -17,40 +17,40 @@ const navBar = `
         <div class="collapse navbar-collapse justify-content-center" id="navbarToggler" style="justify-content: center;">
             <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}aboutme.html">About Me</a>
+            <a class="nav-link" href="${prefix}aboutme">About Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}ourstory.html">Our Story</a>
+            <a class="nav-link" href="${prefix}ourstory">Our Story</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}leicester/fitnessclasses/motherhoodclasses.html">Motherhood Classes</a>
+            <a class="nav-link" href="${prefix}leicester/fitnessclasses/motherhoodclasses">Motherhood Classes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}leicester/fitnessclasses/womanhoodclasses.html">Womanhood Classes</a>
+            <a class="nav-link" href="${prefix}leicester/fitnessclasses/womanhoodclasses">Womanhood Classes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}leicester/fitnessclasses/hiit.html">Online HIIT</a>
+            <a class="nav-link" href="${prefix}leicester/fitnessclasses/hiit">Online HIIT</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}leicester/babymassage/babymassage.html">Baby Massage</a>
+            <a class="nav-link" href="${prefix}leicester/babymassage/babymassage">Baby Massage</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}leicester/personaltraining/personaltraining.html">Personal Training</a>
+            <a class="nav-link" href="${prefix}leicester/personaltraining/personaltraining">Personal Training</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}oneoffclasses.html">One Off Classes</a>
+            <a class="nav-link" href="${prefix}oneoffclasses">One Off Classes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}leicester/doula/doula.html">Doula</a>
+            <a class="nav-link" href="${prefix}leicester/doula/doula">Doula</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}reviews.html">Reviews</a>
+            <a class="nav-link" href="${prefix}reviews">Reviews</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="${prefix}contact.html">Contact</a>
+            <a class="nav-link" href="${prefix}contact">Contact</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link" href="${prefix}faq.html">FAQ</a>
+            <a class="nav-link" href="${prefix}faq">FAQ</a>
           </li>
         </ul>
       </div>
