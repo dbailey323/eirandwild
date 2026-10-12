@@ -19,7 +19,7 @@
   },
   {
     "className": "sjlv",
-    "startDate": "2026-08-03",
+    "startDate": "2026-10-12",
     "numWeeks": 11,
     "timeSuffix": "183000",
     "skippedWeeks": [],
@@ -28,7 +28,7 @@
   },
   {
     "className": "skni",
-    "startDate": "2026-08-03",
+    "startDate": "2026-10-12",
     "numWeeks": 11,
     "timeSuffix": "183000",
     "skippedWeeks": [],
@@ -37,7 +37,7 @@
   },
   {
     "className": "szew",
-    "startDate": "2026-08-03",
+    "startDate": "2026-10-12",
     "numWeeks": 11,
     "timeSuffix": "190000",
     "skippedWeeks": [],
