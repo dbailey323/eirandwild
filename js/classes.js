@@ -21,6 +21,12 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
         const currentDate = new Date(start);
         currentDate.setDate(start.getDate() + (i * 7));
         
+        // Check if the week should be skipped or if the date has passed (including today)
+        if (!skippedWeeks.includes(i + 1) && currentDate >= today) {
+            const formattedDate = currentDate.toLocaleDateString("en-GB", { month: "short", day: "numeric" });
+            const linkDate = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}`;
+            const link = `${bookingPlatformUrl}#focus=ev-${className}-${linkDate}${timeSuffix}`;
+            
             // Create link element
             const linkElement = document.createElement('a');
             linkElement.setAttribute('href', link);
@@ -50,7 +56,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     classInfo.className, 
                     classInfo.startDate, 
                     classInfo.numWeeks, 
-                    classInfo.timeSuffix,
+                    classInfo.timeSuffix, 
+                    classInfo.skippedWeeks, 
                     classInfo.color, 
                     classInfo.bookingPlatformUrl
                 );
