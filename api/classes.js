@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const authHeader = "Basic " + Buffer.from(`${API_KEY}:`).toString("base64");
 
     try {
-        const response = await fetch("https://api.bookwhen.com/v2/events?page[size]=50", {
+        const response = await fetch("https://api.bookwhen.com/v2/events?page[size]=100", {
             headers: { Authorization: authHeader }
         });
         
