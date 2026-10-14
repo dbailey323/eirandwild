@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     classInfo.className, 
                     classInfo.startDate, 
                     classInfo.numWeeks, 
-                    classInfo.timeSuffix, 
-                    classInfo.skippedWeeks, 
+                    classInfo.timeSuffix,
                     classInfo.color, 
                     classInfo.bookingPlatformUrl
                 );
