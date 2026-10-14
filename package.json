@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "node js/fetch-bookwhen.js",
     "build": "echo 'Static site build complete'"
   }
 }
