@@ -44,7 +44,6 @@ export default async function handler(req, res) {
                 startDate,
                 numWeeks: 1, 
                 timeSuffix,
-                skippedWeeks: [],
                 color: "#000562",
                 bookingPlatformUrl: bookingUrl
             };
