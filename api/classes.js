@@ -29,13 +29,15 @@ export default async function handler(req, res) {
                     .replace(/:/g, "")
                 : "000000";
 
-            // CORRECTED: Split 'ev-s65gq-20261014103000' and grab the middle identifier ('s65gq')
             const parsedClassName = e.id.split('-')[1] || e.id; 
+            const title = (e.attributes.title || "").toLowerCase();
 
-            // CORRECTED: Fix the booking URL to point to the actual booking page, not the API endpoint
-            const bookingUrl = e.links?.self
-                ? e.links.self.replace("api.bookwhen.com/v2/events", "bookwhen.com/eirandwild/e")
-                : "https://bookwhen.com/eirandwild";
+            // Route to the correct Bookwhen schedule page based on class name
+            const isWomanhood = title.includes("dance") || title.includes("hiit") || title.includes("stretched") || title.includes("double");
+            
+            const bookingUrl = isWomanhood 
+                ? "https://bookwhen.com/eirandwild-womanhood" 
+                : "https://bookwhen.com/eirandwild-motherhood";
 
             return {
                 className: parsedClassName,
