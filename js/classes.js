@@ -23,6 +23,12 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
         
         // Check if the week should be skipped or if the date has passed (including today)
         if (!skippedWeeks.includes(i + 1) && currentDate >= today) {
+            // Remove fallback booking link if present before inserting dynamic dates
+            const fallbackLink = classDatesContainer.querySelector('.fallback-booking-link');
+            if (fallbackLink) {
+                fallbackLink.remove();
+            }
+
             const formattedDate = currentDate.toLocaleDateString("en-GB", { month: "short", day: "numeric" });
             const linkDate = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}`;
             const link = `${bookingPlatformUrl}#focus=ev-${className}-${linkDate}${timeSuffix}`;
@@ -31,6 +37,7 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
             const linkElement = document.createElement('a');
             linkElement.setAttribute('href', link);
             linkElement.setAttribute('target', '_blank');
+            linkElement.setAttribute('rel', 'noopener noreferrer');
             linkElement.innerHTML = `${formattedDate}`;  
             linkElement.style.backgroundColor = color;
             linkElement.style.color = '#FFD700';
