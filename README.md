@@ -12,7 +12,6 @@ Eir & Wild offers a range of fitness and wellness services designed specifically
 - Baby massage
 - Personal training
 - Doula services
-- One-off classes and workshops
 
 Live site: [eirandwild.vercel.app](https://eirandwild.vercel.app)
 
