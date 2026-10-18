@@ -14,64 +14,110 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Updated: Changed from h3 to h1 to match new HTML structure */
-h1 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Moon Time';
+body {
+    background-color: #FFF;
 }
 
 .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 15px 40px;
     text-align: center;
 }
 
-/* Updated: Changed from h3 to h1 to match new HTML structure */
+/* Page Title */
 .container h1 {
-    color: #607d8b;
-    font-weight: 500;
-    font-size: 2.5em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    color: #000562;
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin: 25px auto 25px;
     border-bottom: 4px solid #7ae1d5;
+    padding-bottom: 8px;
     display: inline-block;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
+/* FAQ Card Item */
 .faq-item {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
     background-color: #000562;
-    padding: 20px;
-    border: 1px solid #dee2e6;
-    border-radius: .25rem;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    padding: 24px 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 5, 98, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Updated: Changed from h5 to h2 to match new HTML structure */
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 5, 98, 0.18);
+}
+
+/* Question Headings */
 .faq-item h2 {
-    font-size: 25px;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    display: relative;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    display: block;
     color: #FFD700;
-    font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
+    text-align: left;
 }
 
+/* Answer Paragraphs */
 .faq-item p {
     position: relative;
     margin: 10px 0 0;
     padding: 0;
-    font-size: 18px;
+    font-size: 16px;
+    line-height: 1.75;
     color: #FFF;
-    margin-bottom: 10px;
+    text-align: left;
 }
 
-ul {
-  color: white;
+/* Bulleted Lists for FAQs */
+.faq-item ul {
+    color: #FFF;
+    margin: 14px 0 10px 20px;
+    padding-left: 15px;
+    text-align: left;
 }
 
-li {
-  list-style: none;
+.faq-item li {
+    list-style: disc;
+    margin-bottom: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.faq-item a {
+    color: #7ae1d5;
+    text-decoration: underline;
+}
+
+.faq-item a:hover {
+    color: #FFD700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    .container h1 {
+        font-size: 1.8rem;
+    }
+
+    .faq-item {
+        padding: 18px 20px;
+    }
+
+    .faq-item h2 {
+        font-size: 1.15rem;
+    }
+
+    .faq-item p,
+    .faq-item li {
+        font-size: 15px;
+        line-height: 1.65;
+    }
 }
