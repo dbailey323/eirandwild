@@ -7,33 +7,52 @@
   font-style: normal;
 }
 
-p {
-    margin: 0;
-    padding: 0;
+/* Reset & Defaults */
+* {
     box-sizing: border-box;
+}
+
+body {
+    background-color: #FFF;
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Updated: Changed from h3 to h1 to match new HTML structure */
+p {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.7;
+}
+
+/* Base Headings */
 h1 {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Moon Time';
-    font-size: 5em !important;
+    font-family: 'Moon Time', cursive;
+    font-size: 4em;
+    color: #FFD700;
 }
 
 h2 {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Moon Time';
-    font-size: 5em !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #FFD700;
+    letter-spacing: 0.5px;
 }
 
+/* Responsive Image Dimension */
 .dimension {
-    width: 500px;
-    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 540px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
 }
 
 .disabled {
@@ -42,38 +61,73 @@ h2 {
 }
 
 .container {
-    text-align: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 15px;
 }
 
 .container .row {
-    margin-top: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: #000562;
+    border-radius: 12px;
+    overflow: hidden;
+    align-items: center;
 }
 
-/* Updated: Changed from h3 to h1 to match new HTML structure */
+/* Card Heading 1 */
+.container .row h1,
 .container .row .col-md-6 h1 {
     color: #FFD700;
     font-weight: 500;
     font-size: 4em;
     margin-bottom: 20px;
-    display: inline-block;
+    display: block;
     letter-spacing: 1px;
+    text-align: center;
 }
 
-/* Updated: Changed from h5 to h2 to match new HTML structure */
+/* Card Heading 2 (Section Titles) */
+.container .row h2,
 .container .row .col-md-6 h2 {
-    font-size: 16px;
-    margin-bottom: 5px;
-    display: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 15px;
     color: #FFD700;
-    font-weight: 300;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    display: block;
+    text-align: left;
 }
 
+/* Card Paragraphs */
+.container .row p,
 .container .row .col-md-6 p {
     color: #FFFFFF;
     position: relative;
-    margin: 10px 0 0;
+    margin: 14px 0 0;
     padding: 0;
     font-size: 16px;
+    line-height: 1.75;
+    text-align: left;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 767px) {
+    .container .row h1,
+    .container .row .col-md-6 h1 {
+        font-size: 3em;
+    }
+
+    .container .row h2,
+    .container .row .col-md-6 h2 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .container .row p,
+    .container .row .col-md-6 p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
 }
