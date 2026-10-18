@@ -38,9 +38,6 @@ const navBar = `
             <a class="nav-link" href="${prefix}leicester/personaltraining/personaltraining">Personal Training</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="${prefix}oneoffclasses">One Off Classes</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="${prefix}leicester/doula/doula">Doula</a>
           </li>
           <li class="nav-item">
