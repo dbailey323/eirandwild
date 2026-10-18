@@ -177,7 +177,7 @@ For inquiries about Eir & Wild services:
 - Website: [eirandwild.vercel.app](https://eirandwild.vercel.app)
 - Facebook: [@EirandWildWellness](https://www.facebook.com/EirandWildWellness)
 - Instagram: [@EirandWildWellness](https://www.instagram.com/EirandWildWellness/)
-- TikTok: [@fitnesswithlara](https://www.tiktok.com/@fitnesswithlara)
+- TikTok: [@fitnesswithlara](https://www.tiktok.com/@eirandwildwellness)
 
 ---
 
