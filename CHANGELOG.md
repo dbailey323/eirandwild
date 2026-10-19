@@ -40,11 +40,13 @@ All notable changes to the Eir & Wild website project.
 #### Root Directory Pages
 
 ##### index.html
-- Improved page title: "Eir & Wild - Motherhood Fitness & Wellness Classes in Leicester"
-- Changed `<section>` to semantic `<main>` tag for better accessibility
-- Enhanced image alt text for better accessibility
-- Added `rel="noopener noreferrer"` to all external links for security
-- Removed jQuery dependency (Bootstrap 5 doesn't require it)
+- Deployed Smart Hybrid studio portal layout organizing Lara's custom artwork cards into 3 intuitive categories (Group Fitness & Movement, 1:1 Coaching & Maternal Care, About & Community)
+- Added top Trust & Location bar featuring Mountsorrel & Rothley, Leicestershire location and Google 5.0 Star Rating link
+- Added dynamic Announcement Banner linking directly to upcoming course registrations
+- Added discrete floating WhatsApp quick-chat button in the bottom-right corner
+- Upgraded cards into responsive 2-column and 3-column desktop grids while retaining the full-width single-column feed on mobile
+- Included Schema.org HealthClub structured data and updated Open Graph / Twitter tags
+- Removed jQuery dependency and updated Bootstrap to v5.3.3
 
 ##### aboutme.html
 - Rebuilt UI to match the new brand design system with Moon Time hero typography and gold accents
