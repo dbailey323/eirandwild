@@ -9,7 +9,7 @@ for (let i = 0; i < depth; i++) {
 const navBar = `
 <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand" href="${prefix}index.html"><img src="${prefix}images/homepageheader.png" alt="logo" style="min-width:200px;" height="100"></a>
+        <a class="navbar-brand" href="${prefix || './'}"><img src="${prefix}images/homepageheader.webp" alt="Eir & Wild Logo" width="175" height="100" style="min-width:200px; height:100px; width:auto;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
             aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
