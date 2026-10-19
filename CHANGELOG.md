@@ -86,6 +86,17 @@ All notable changes to the Eir & Wild website project.
 - Wrapped content in semantic `<main>` and `<article>` tags
 - Updated Bootstrap to v5.3.3
 
+##### reviews.html
+- Improved page title: "Client Reviews & Testimonials | Eir & Wild Leicester"
+- Added Google Tag Manager tracking scripts (`GTM-5SXDV4CQ`) in `<head>` and `<body>` (was missing)
+- Added semantic `<main class="container">` container and visually hidden `<h1>` for accessibility and SEO
+- Added Open Graph and Twitter Card social meta tags with `Reviews.webp` preview image
+- Added canonical URL `<link rel="canonical" href="https://www.eirandwild.co.uk/reviews">`
+- Added `<meta name="theme-color">`
+- Added PWA `<link rel="manifest" href="manifest.json">`
+- Removed unused Material Icons stylesheet
+- Moved deferred script tags to the end of the `<body>`
+
 #### Leicester Subdirectory Pages
 
 ##### leicester/fitnessclasses/motherhoodclasses.html
@@ -223,7 +234,7 @@ All notable changes to the Eir & Wild website project.
 3. contact.html
 4. faq.html
 5. ourstory.html
-6. reviews.html (if exists)
+6. reviews.html
 
 ### Leicester Subdirectories (6 files)
 7. leicester/fitnessclasses/motherhoodclasses.html
