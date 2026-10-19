@@ -185,20 +185,9 @@ body {
 
 @media (min-width: 768px) {
   
-  /* Constrain vertical banners on desktop so they fit the viewport */
   .banner-container {
     gap: 24px;
-    margin: 25px auto 35px;
-  }
-
-  .banner {
-    max-width: 360px;
-    max-height: 75vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
   }
 
   /* Horizontally align class card on desktop with left-aligned details */
@@ -233,10 +222,4 @@ body {
     max-width: 220px;
   }
   
-}
-
-@media (min-width: 1400px) {
-  .banner {
-    max-width: 380px;
-  }
 }
