@@ -8,116 +8,263 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 body {
-    background-color: #FFF;
+  background-color: #f7faf9;
+  color: #333333;
 }
 
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px 15px 40px;
-    text-align: center;
+.faq-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 24px 16px 50px;
 }
 
-/* Page Title */
-.container h1 {
-    color: #000562;
-    font-weight: 600;
-    font-size: 2.2rem;
-    margin: 25px auto 25px;
-    border-bottom: 4px solid #7ae1d5;
-    padding-bottom: 8px;
-    display: inline-block;
-    letter-spacing: 0.5px;
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.faq-hero-card {
+  background-color: #000562;
+  border-radius: 16px;
+  padding: 40px 24px 36px;
+  margin-bottom: 35px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0, 5, 98, 0.15);
 }
 
-/* FAQ Card Item */
+.faq-hero-card h1 {
+  font-family: 'Moon Time', cursive;
+  font-size: 4.8rem;
+  color: #FFD700;
+  margin-bottom: 8px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.faq-hero-card .faq-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #7ae1d5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.faq-hero-card .faq-lead {
+  max-width: 780px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   Category Headers
+   ========================================================================== */
+.faq-category-header {
+  margin: 35px 0 16px;
+  text-align: left;
+}
+
+.faq-category-badge {
+  display: inline-block;
+  background-color: #e5f3f3;
+  color: #000562;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.faq-category-header h2 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #000562;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* ==========================================================================
+   FAQ Cards
+   ========================================================================== */
 .faq-item {
-    margin-top: 16px;
-    margin-bottom: 16px;
-    background-color: #000562;
-    padding: 24px 28px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 5, 98, 0.1);
-    text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #000562;
+  border-radius: 14px;
+  padding: 26px 28px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(0, 5, 98, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .faq-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(0, 5, 98, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 5, 98, 0.18);
 }
 
-/* Question Headings */
-.faq-item h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    line-height: 1.4;
-    margin-bottom: 10px;
-    display: block;
-    color: #FFD700;
-    letter-spacing: 0.3px;
-    text-align: left;
+.faq-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #FFD700;
+  margin-bottom: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
 }
 
-/* Answer Paragraphs */
 .faq-item p {
-    position: relative;
-    margin: 10px 0 0;
-    padding: 0;
-    font-size: 16px;
-    line-height: 1.75;
-    color: #FFF;
-    text-align: left;
+  color: #ffffff;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin: 0;
 }
 
-/* Bulleted Lists for FAQs */
 .faq-item ul {
-    color: #FFF;
-    margin: 14px 0 10px 20px;
-    padding-left: 15px;
-    text-align: left;
+  color: #ffffff;
+  margin: 12px 0 0 20px;
+  padding-left: 10px;
 }
 
 .faq-item li {
-    list-style: disc;
-    margin-bottom: 8px;
-    font-size: 16px;
-    line-height: 1.6;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .faq-item a {
-    color: #7ae1d5;
-    text-decoration: underline;
+  color: #7ae1d5;
+  text-decoration: underline;
 }
 
 .faq-item a:hover {
-    color: #FFD700;
+  color: #ffffff;
 }
 
-/* Responsive adjustments */
-@media (max-width: 767px) {
-    .container h1 {
-        font-size: 1.8rem;
-    }
+/* ==========================================================================
+   Still Have Questions? CTA Card
+   ========================================================================== */
+.faq-cta-card {
+  background-color: #000562;
+  border-radius: 16px;
+  padding: 45px 24px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0, 5, 98, 0.15);
+  margin-top: 40px;
+}
 
-    .faq-item {
-        padding: 18px 20px;
-    }
+.faq-cta-card h2 {
+  font-family: 'Moon Time', cursive;
+  font-size: 3.5rem;
+  color: #FFD700;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
 
-    .faq-item h2 {
-        font-size: 1.15rem;
-    }
+.faq-cta-card p {
+  color: #ffffff;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin: 0 auto 28px;
+  line-height: 1.7;
+}
 
-    .faq-item p,
-    .faq-item li {
-        font-size: 15px;
-        line-height: 1.65;
-    }
+.faq-cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.faq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.faq-btn-whatsapp {
+  background-color: #25D366;
+  color: #ffffff;
+}
+
+.faq-btn-whatsapp:hover {
+  background-color: #20ba59;
+  color: #ffffff;
+}
+
+.faq-btn-email {
+  background-color: #7ae1d5;
+  color: #000562;
+}
+
+.faq-btn-email:hover {
+  background-color: #64cdbf;
+  color: #000562;
+}
+
+.faq-btn-outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #7ae1d5;
+}
+
+.faq-btn-outline:hover {
+  background-color: #7ae1d5;
+  color: #000562;
+}
+
+@media (max-width: 767.98px) {
+  .faq-hero-card {
+    padding: 30px 16px 26px;
+  }
+
+  .faq-hero-card h1 {
+    font-size: 3.4rem;
+  }
+
+  .faq-hero-card .faq-subtitle {
+    font-size: 1.05rem;
+  }
+
+  .faq-category-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .faq-item {
+    padding: 20px 18px;
+  }
+
+  .faq-cta-card h2 {
+    font-size: 2.8rem;
+  }
+
+  .faq-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .faq-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
