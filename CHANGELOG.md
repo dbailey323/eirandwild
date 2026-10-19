@@ -47,43 +47,32 @@ All notable changes to the Eir & Wild website project.
 - Removed jQuery dependency (Bootstrap 5 doesn't require it)
 
 ##### aboutme.html
-- Improved page title: "About Lara Bailey - Eir & Wild Fitness Coach"
-- Changed `<h3>` to `<h1>` for proper heading hierarchy
-- Changed section headings from `<h3>` to `<h2>`
-- Wrapped content in semantic `<main>` and `<article>` tags
-- Enhanced image alt text with more descriptive content
-- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+- Rebuilt UI to match the new brand design system with Moon Time hero typography and gold accents
+- Structured content into an accessible 2-column experience grid (Fitness Career, Pre/Postnatal, Supporting Motherhood, Empathy & Inclusivity)
+- Framed high-resolution portrait (`Me wings.webp`) in an elevated portrait card
+- Added interactive bottom CTA card with direct WhatsApp, Email, and class exploring buttons
+- Added Font Awesome 6.5.1 for action icons
+- Updated Bootstrap to v5.3.3
 
 ##### contact.html
-- Improved page title: "Contact Eir & Wild | Pre & Postnatal Fitness & Doula Leicester"
-- Changed `<h3>` to `<h1>` for proper heading hierarchy
-- Wrapped content in semantic `<main>` tag
-- Added semantic `<address>` tag for contact information
-- Made email address clickable with `mailto:` link
-- Fixed Font Awesome version to 6.5.1 with proper integrity hash
-- Added proper `aria-label` attributes to social media links
-- Added `rel="noopener noreferrer"` to external links
-- Migrated profile image to modern `.webp` format (`aboutme.webp`)
-- Added explicit `width="300"` and `height="300"` attributes to prevent Cumulative Layout Shift (CLS)
-- Added `fetchpriority="high"` on profile image
-- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
-- Added `<meta name="theme-color">`
-- Removed unused Material Icons stylesheet
-- Updated Bootstrap to v5.3.3
+- Rebuilt UI into a modern, 2-column contact portal
+- Left column: Lara's portrait in an accent-bordered avatar, warm welcome note, and interactive social media channels
+- Right column: Clean contact cards for WhatsApp direct chat, direct email, and Mountsorrel/Rothley venue locations
+- Added bottom FAQ quick-reference cross-link card
+- Added Font Awesome 6.5.1 and updated Bootstrap to v5.3.3
 
 ##### faq.html
-- Improved page title: "FAQ - Pregnancy & Postnatal Fitness Questions | Eir & Wild"
-- Changed `<h3>` to `<h1>` for main heading
-- Changed `<h5>` question headings to `<h2>` for proper hierarchy
-- Removed "Q:" and "A:" prefixes (heading structure makes this clear)
-- Wrapped each FAQ in semantic `<article>` tags
-- Wrapped entire content in semantic `<main>` tag
-- Updated Bootstrap to v5.3.3
+- Rebuilt UI from a plain vertical list into an organized, categorized FAQ knowledge base
+- Added brand Hero card with Moon Time typography and supportive lead paragraph
+- Grouped 12 questions into 3 distinct logical categories (Pregnancy & Prenatal, Postnatal Recovery & Little Ones, Baby Massage & Doula Support)
+- Added interactive "Still Have Questions?" CTA card with direct WhatsApp and Email contact buttons
+- Preserved Schema.org FAQPage structured data and updated Bootstrap to v5.3.3
 
 ##### ourstory.html
-- Improved page title: "Our Story - How Eir & Wild Was Born"
-- Changed `<h3>` to `<h1>` for proper heading hierarchy
-- Wrapped content in semantic `<main>` and `<article>` tags
+- Rebuilt UI into an elevated storytelling layout matching the brand aesthetic
+- Added brand Hero card featuring the white emblem logo and the core tagline: "Awaken your power. Nurture your journey."
+- Structured values into a 2-column grid covering the Norse Goddess origins of Eir, the untamed spirit of Wild, and our Zero Body Judgment ethos
+- Added interactive bottom CTA card with direct WhatsApp, Email, and class exploration buttons
 - Updated Bootstrap to v5.3.3
 
 ##### reviews.html
