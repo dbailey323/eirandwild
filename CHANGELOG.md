@@ -100,89 +100,89 @@ All notable changes to the Eir & Wild website project.
 #### Leicester Subdirectory Pages
 
 ##### leicester/fitnessclasses/motherhoodclasses.html
-- Improved page title: "Motherhood Fitness Classes Leicester | Badass Bumps & More"
-- Added proper heading hierarchy: H1 (visually hidden) > H2 > H3 > H4
-- Changed class titles from `<h3>` to `<h2>`
-- Changed time/location from `<h4>` to `<h3>` and `<h4>`
-- Wrapped content in semantic `<main>` and `<article>` tags
-- Enhanced image alt text with descriptive class information
+- Rebuilt entire page from static image graphics into fully responsive, SEO-crawlable semantic HTML
+- Added dedicated scoped stylesheet `css/motherhood.css` with responsive layout and brand palette
+- Added rich Hero card featuring Moon Time typography and high-resolution featured photograph (`Motherhood.webp`)
+- Transcribed all 4 motherhood class offerings (The Strong Mummy Movement, Strong Women Squad, Strong Mums Bums & Tums, Mummy Me Time) into a responsive 2x2 grid
+- Created 3 informational cards for course details (When to join, What classes are like, Venues & Free parking)
+- Added dedicated Mummy Me Time schedule card (`Mummy me time.webp` thumbnail) alongside Strong Mummy Movement, Strong Women Squad, and Bums & Tums
+- Integrated live Bookwhen schedule cards with accessible fallback booking links
+- Added direct interactive WhatsApp enquiry and Email consultation action buttons
+- Enhanced SEO heading hierarchy (H1 > H2 > H3 > H4) and crawlable keywords for Leicester pre/postnatal fitness
+- Added Font Awesome 6.5.1 for crisp action and icon accents
 - Added canonical URL `<link rel="canonical" href="https://www.eirandwild.co.uk/leicester/fitnessclasses/motherhoodclasses">`
 - Added `<meta name="theme-color" content="#8b7355">`
 - Updated Open Graph and Twitter tags to point to canonical production URLs and `.webp` assets
-- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+- Added Vercel Speed Insights and Web Analytics
 
 ##### leicester/fitnessclasses/womanhoodclasses.html
-- Improved page title: "Womanhood Fitness Classes Leicester | Dance, HIIT & Strength"
-- Added proper heading hierarchy: H1 (visually hidden) > H2 > H3 > H4
-- Changed class titles from `<h3>` to `<h2>`
-- Changed time/location from `<h4>` to `<h3>` and `<h4>`
-- Wrapped content in semantic `<main>` and `<article>` tags
-- Enhanced image alt text with descriptive class information
-- Converted and migrated all class and banner images to modern `.webp` format (`Womanhood info 1.webp`, `Dance&tone.webp`, `Monday double .webp`, `STRONG&STRETCHED.webp`, `strong_women_squad_rothley.webp`)
-- Added explicit `width` and `height` attributes to prevent Cumulative Layout Shift (CLS)
-- Added `fetchpriority="high"` to hero banner and `loading="lazy"` to class card thumbnails
-- Added accessible fallback booking links (`.fallback-booking-link`) inside all class date containers for reliable offline/API fallback
-- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
-- Added `<meta name="theme-color">`
-- Removed unused Material Icons stylesheet
-- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+- Rebuilt entire page from static image graphics into fully responsive, SEO-crawlable semantic HTML
+- Added dedicated scoped stylesheet `css/womanhood.css` with responsive layout and brand palette
+- Added rich Hero card featuring Moon Time typography and high-resolution featured photograph (`Womanhood.webp`)
+- Transcribed all 3 womanhood class offerings (Dance & Tone, Strong & Stretched, Monday Double bundle) into a responsive 3-column card grid
+- Preserved and enhanced live Bookwhen schedule cards for Dance & Tone, Monday Double, Strong & Stretched, and Strong Women Squad
+- Added direct interactive WhatsApp enquiry and Email consultation action buttons
+- Enhanced SEO heading hierarchy (H1 > H2 > H3 > H4) and crawlable keywords for Leicester women's fitness
+- Added Font Awesome 6.5.1 for crisp action and icon accents
+- Added canonical URL `<link rel="canonical" href="https://www.eirandwild.co.uk/leicester/fitnessclasses/womanhoodclasses">`
+- Added `<meta name="theme-color" content="#8b7355">`
+- Updated Open Graph and Twitter tags to point to canonical production URLs and `.webp` assets
+- Added Vercel Speed Insights and Web Analytics
 
 ##### leicester/fitnessclasses/hiit.html
-- Improved page title: "Online HIIT Fitness Classes Leicester | Cardio & Strength"
-- Fixed copy-pasted motherhood metadata to accurate online HIIT descriptions and titles
-- Fixed copy-pasted `alt` attributes on HIIT Cardio and Strength images
-- Fixed hidden `<h1>` to "Online HIIT Fitness Classes in Leicester"
-- Converted and migrated images to modern `.webp` format (`Online hiit info.webp`, `HIIT cardio.webp`, `HIIT strength.webp`)
-- Added explicit `width` and `height` attributes to prevent Cumulative Layout Shift (CLS)
-- Added `fetchpriority="high"` to hero banner and `loading="lazy"` to class card thumbnails
-- Added accessible fallback booking links (`.fallback-booking-link`) inside all class date containers (`#classDatess2fwm`, `#classDatessnu8o`)
-- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
-- Added `<meta name="theme-color">`
-- Removed unused Material Icons stylesheet
-- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+- Rebuilt entire page from static image graphics into fully responsive, SEO-crawlable semantic HTML
+- Added dedicated scoped stylesheet `css/hiit.css` with responsive layout and brand palette
+- Added rich Hero card featuring Moon Time typography and high-resolution featured photograph (`Online hiit.webp`)
+- Transcribed all online HIIT offerings (HIIT Cardio, HIIT Strength, and household screen guidelines) into a responsive 3-column card grid
+- Integrated live Bookwhen Zoom schedule cards with accessible fallback booking links
+- Added direct interactive WhatsApp enquiry and Email consultation action buttons
+- Enhanced SEO heading hierarchy (H1 > H2 > H3 > H4) and crawlable keywords for online HIIT fitness
+- Added Font Awesome 6.5.1 for crisp action and icon accents
+- Added canonical URL `<link rel="canonical" href="https://www.eirandwild.co.uk/leicester/fitnessclasses/hiit">`
+- Added `<meta name="theme-color" content="#8b7355">`
+- Updated Open Graph and Twitter tags to point to canonical production URLs and `.webp` assets
+- Added Vercel Speed Insights and Web Analytics
 
 ##### leicester/babymassage/babymassage.html
-- Improved page title: "Baby Massage Classes Mountsorrel & Leicester | Eir & Wild"
-- Added proper heading hierarchy: H1 (visually hidden) > H2 > H3 > H4
-- Changed class title from `<h3>` to `<h2>`
-- Changed time/location from `<h4>` to `<h3>` and `<h4>`
-- Wrapped content in semantic `<main class="container">` and `<article>` tags
-- Enhanced image alt text with descriptive information
-- Converted and migrated images to modern `.webp` format (`Baby massage info 1.webp`, `Baby massage info 2.webp`, `baby_massage.webp`)
-- Added explicit `width` and `height` attributes to prevent Cumulative Layout Shift (CLS)
-- Added `fetchpriority="high"` to primary hero banner and `loading="lazy"` to secondary banner and thumbnail
-- Added accessible fallback booking links (`.fallback-booking-link`) inside `#classDatessf19l` and `#classDatess6a88`
-- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Rebuilt entire page from static image graphics into fully responsive, SEO-crawlable semantic HTML
+- Added dedicated scoped stylesheet `css/babymassage.css` with responsive layout and brand palette
+- Added rich Hero card featuring Moon Time typography and high-resolution featured imagery (`Baby Massage.webp`)
+- Transcribed all 4 core baby massage benefits (Bonding, Natural Pain Relief, Brain Stimulation, Relaxation & Sleep) into an accessible responsive 2x2 grid
+- Created 3 informational cards for course details (When to join, What to bring, Venue & Free parking)
+- Enhanced live Bookwhen schedule integration card with dual-term fallback booking links
+- Added direct interactive WhatsApp enquiry and Email consultation action buttons
+- Enhanced SEO heading hierarchy (H1 > H2 > H3 > H4) and crawlable keywords for Leicester baby massage
+- Added Font Awesome 6.5.1 for crisp action and icon accents
+- Added canonical URL `<link rel="canonical">` and production Open Graph / Twitter tags
 - Added `<meta name="theme-color">`
-- Removed unused Material Icons stylesheet
-- Added Vercel Speed Insights and Web Analytics (was missing)
-- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+- Added Vercel Speed Insights and Web Analytics
 
 ##### leicester/personaltraining/personaltraining.html
-- Improved page title: "Personal Training Leicester | One-on-One Fitness Coaching"
-- Wrapped content in semantic `<main class="container">` tag
-- Enhanced image alt text with descriptive information
-- Migrated banner images to modern `.webp` format (`PT 1.webp`, `PT 2.webp`)
-- Added explicit `width="1080"` and `height="1920"` attributes to eliminate Cumulative Layout Shift (CLS)
-- Added `fetchpriority="high"` to primary banner and `loading="lazy"` to secondary banner
-- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Rebuilt entire page from static image graphics into fully responsive, SEO-crawlable semantic HTML
+- Added dedicated scoped stylesheet `css/pt.css` with responsive layout and brand palette
+- Added rich Hero card featuring Moon Time typography and a 3-photo showcase gallery
+- Transcribed all 8 core PT membership benefits into a responsive 2-column checklist
+- Created side-by-side interactive pricing cards for 45-minute (£95/mo) and 60-minute (£110/mo) memberships
+- Added direct interactive WhatsApp enquiry and Email consultation buttons
+- Enhanced SEO heading hierarchy (H1 > H2 > H3) and crawlable keywords for Leicester personal training
+- Added Font Awesome 6.5.1 for crisp action and feature icons
+- Added canonical URL `<link rel="canonical">` and production Open Graph / Twitter tags
 - Added `<meta name="theme-color">`
-- Removed unused Material Icons stylesheet
-- Added Vercel Speed Insights and Web Analytics (was missing)
-- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+- Added Vercel Speed Insights and Web Analytics
 
 ##### leicester/doula/doula.html
-- Improved page title: "Doula Services Leicester | Birth & Postnatal Support"
-- Wrapped content in semantic `<main class="container">` tag
-- Converted and migrated banner image to modern `.webp` format (`Doula services.webp`)
-- Added explicit `width="1080"` and `height="1920"` attributes to eliminate Cumulative Layout Shift (CLS)
-- Added `fetchpriority="high"` to primary banner
-- Enhanced image alt text with descriptive information
-- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Rebuilt entire page from static image graphics into fully responsive, SEO-crawlable semantic HTML
+- Added dedicated scoped stylesheet `css/doula.css` with responsive layout and brand palette
+- Added rich Hero card featuring Moon Time typography and featured doula support imagery (`Doula.webp`)
+- Transcribed postnatal doula support inclusions into an accessible 4-point care checklist (birth debriefing, newborn care, light household help, feeding support)
+- Created transparent pricing card displaying £30/hour rate with direct WhatsApp enquiry CTA
+- Added compassionate, dedicated card for birth doula status transparency
+- Added interactive direct enquiry card with WhatsApp, Email, and Contact page CTAs
+- Corrected typographical error from original image graphic ("extremely limite" -> "extremely limited")
+- Added Font Awesome 6.5.1 for action and checkmark icons
+- Added canonical URL `<link rel="canonical">` and production Open Graph / Twitter tags
 - Added `<meta name="theme-color">`
-- Removed unused Material Icons stylesheet
-- Added Vercel Speed Insights and Web Analytics (was missing)
-- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+- Added Vercel Speed Insights and Web Analytics
 
 ### Removed
 
