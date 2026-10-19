@@ -13,9 +13,9 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Constrain Homepage Feed for Clean Proportions on All Screens */
+/* Responsive Container for Homepage Feed and Grid */
 main .container {
-  max-width: 600px;
+  max-width: 1140px;
   padding: 24px 15px 10px;
   margin: 0 auto;
 }
