@@ -64,7 +64,7 @@ body {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 960px;
     margin: 0 auto;
     text-align: center;
 }
@@ -89,64 +89,64 @@ body {
 .container .row .col h2 {
     color: #000;
     font-weight: 500;
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 2.4em;
+    margin-bottom: 12px;
     display: block;
     letter-spacing: 1px;
-    margin-top: 20px;
+    margin-top: 0;
+    line-height: 1.2;
 }
 
 /* H3 is now used for time (was h4) */
 .container .row .col h3 {
     color: #000;
-    font-weight: 500;
-    font-size: 1.2em;
+    font-weight: 600;
+    font-size: 1.15em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     margin-top: 0;
     display: block;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 /* H4 is now used for location (was h4, keeping same style) */
 .container .row .col h4 {
-    color: #000;
+    color: #444;
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.05em;
     text-transform: uppercase;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     margin-top: 0;
     display: block;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
-/* Remove old h5 styles as they're no longer used in the HTML */
+/* Card paragraphs */
 .container .row .col p {
-    color: #000;
+    color: #333;
     position: relative;
-    margin: 10px 0 0;
+    margin: 8px 0;
     padding: 0;
-    font-size: 16px;
-    font-weight: 200;
-    margin-bottom: 10px;
-    margin-top: 10px;
+    font-size: 15px;
+    line-height: 1.6;
 }
 
 .class-info {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 /* Link Styling */
 .container .row .col a {
     display: inline-block;
-    padding: 10px 16px;
+    padding: 8px 16px;
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.5px;
     background: #7ae1d5;
     color: #000;
-    border-radius: 15px;
-    margin-top: 10px;
+    border-radius: 12px;
+    margin-right: 8px;
+    margin-top: 6px;
     margin-bottom: 6px;
     text-decoration: none;
     text-transform: uppercase;
@@ -163,63 +163,97 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
-@media (max-width: 767px) {
-  
-  /* This rule will center the image and text block inside the card */
+/* Mobile Screens (< 768px): Vertical Stack */
+@media (max-width: 767.98px) {
   .container .row {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 16px;
   }
 
-  /* This rule will center the text (h2, h3, h4, etc.) inside the text block */
-  .container .row .col.p-4 {
+  .container .row .col-auto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+
+  .container .row .col-auto .dimension {
+    max-width: 160px;
+    height: auto;
+  }
+
+  .container .row .col {
+    width: 100%;
     text-align: center;
+    padding: 10px 0 !important;
   }
   
-  /* This rule makes the main title a more suitable size for mobile screens */
   .container .row .col h2 {
-    font-size: 2.5em; 
+    font-size: 2.2em; 
+    text-align: center;
+  }
+
+  .container .row .col h3,
+  .container .row .col h4,
+  .container .row .col p {
+    text-align: center;
   }
 }
 
+/* Desktop Screens (>= 768px): Fixed Horizontal Side-by-Side */
 @media (min-width: 768px) {
-  
   .banner-container {
     gap: 24px;
     margin-bottom: 30px;
   }
 
-  /* Horizontally align class card on desktop with left-aligned details */
   .container .row {
-    align-items: center;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
     text-align: left;
+    padding: 24px 28px;
   }
 
-  .container .row .col.p-4 {
+  .container .row .col-auto {
+    flex: 0 0 220px !important;
+    width: 220px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .row .col-auto .dimension {
+    width: 100%;
+    max-width: 190px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .container .row .col {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
     text-align: left;
-    padding-left: 2rem !important;
+    padding-left: 28px !important;
   }
 
   .container .row .col h2 {
     text-align: left;
     margin-top: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
   .container .row .col h3,
   .container .row .col h4 {
     text-align: left;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .container .row .col p {
     text-align: left;
   }
-
-  /* We'll make the class thumbnail image a bit larger on desktop */
-  .dimension {
-    max-width: 220px;
-  }
-  
 }
