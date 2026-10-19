@@ -107,6 +107,20 @@ All notable changes to the Eir & Wild website project.
 - Removed unused Material Icons stylesheet
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
+##### leicester/fitnessclasses/hiit.html
+- Improved page title: "Online HIIT Fitness Classes Leicester | Cardio & Strength"
+- Fixed copy-pasted motherhood metadata to accurate online HIIT descriptions and titles
+- Fixed copy-pasted `alt` attributes on HIIT Cardio and Strength images
+- Fixed hidden `<h1>` to "Online HIIT Fitness Classes in Leicester"
+- Converted and migrated images to modern `.webp` format (`Online hiit info.webp`, `HIIT cardio.webp`, `HIIT strength.webp`)
+- Added explicit `width` and `height` attributes to prevent Cumulative Layout Shift (CLS)
+- Added `fetchpriority="high"` to hero banner and `loading="lazy"` to class card thumbnails
+- Added accessible fallback booking links (`.fallback-booking-link`) inside all class date containers (`#classDatess2fwm`, `#classDatessnu8o`)
+- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Added `<meta name="theme-color">`
+- Removed unused Material Icons stylesheet
+- Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
+
 ##### leicester/babymassage/babymassage.html
 - Improved page title: "Baby Massage Classes Leicester | Mountsorrel Memorial Centre"
 - Added proper heading hierarchy: H1 (visually hidden) > H2 > H3 > H4
@@ -193,19 +207,20 @@ All notable changes to the Eir & Wild website project.
 5. ourstory.html
 6. reviews.html (if exists)
 
-### Leicester Subdirectories (5 files)
+### Leicester Subdirectories (6 files)
 7. leicester/fitnessclasses/motherhoodclasses.html
 8. leicester/fitnessclasses/womanhoodclasses.html
-9. leicester/babymassage/babymassage.html
-10. leicester/personaltraining/personaltraining.html
-11. leicester/doula/doula.html
+9. leicester/fitnessclasses/hiit.html
+10. leicester/babymassage/babymassage.html
+11. leicester/personaltraining/personaltraining.html
+12. leicester/doula/doula.html
 
 ### New Files (3 files)
-12. README.md
-13. manifest.json
-14. CHANGELOG.md
+13. README.md
+14. manifest.json
+15. CHANGELOG.md
 
-**Total Pages Improved**: 11 HTML pages
+**Total Pages Improved**: 12 HTML pages
 **Total Files Added**: 3 new documentation files
 **Total Commits**: 7 commits
 
