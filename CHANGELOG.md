@@ -133,8 +133,14 @@ All notable changes to the Eir & Wild website project.
 
 ##### leicester/personaltraining/personaltraining.html
 - Improved page title: "Personal Training Leicester | One-on-One Fitness Coaching"
-- Wrapped content in semantic `<main>` tag
+- Wrapped content in semantic `<main class="container">` tag
 - Enhanced image alt text with descriptive information
+- Migrated banner images to modern `.webp` format (`PT 1.webp`, `PT 2.webp`)
+- Added explicit `width="1080"` and `height="1920"` attributes to eliminate Cumulative Layout Shift (CLS)
+- Added `fetchpriority="high"` to primary banner and `loading="lazy"` to secondary banner
+- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Added `<meta name="theme-color">`
+- Removed unused Material Icons stylesheet
 - Added Vercel Speed Insights and Web Analytics (was missing)
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
