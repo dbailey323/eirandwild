@@ -4,61 +4,66 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Gemini -->
+<!-- Updated with clean URLs and complete page list -->
 
 <url>
-  <loc>https://www.eirandwild.co.uk/index.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/aboutme.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/aboutme</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/ourstory.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/ourstory</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/leicester/fitnessclasses/motherhoodclasses.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/leicester/fitnessclasses/motherhoodclasses</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/leicester/fitnessclasses/womanhoodclasses.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/leicester/fitnessclasses/womanhoodclasses</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/leicester/babymassage/babymassage.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/leicester/fitnessclasses/hiit</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/leicester/personaltraining/personaltraining.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/leicester/babymassage/babymassage</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/leicester/doula/doula.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/leicester/personaltraining/personaltraining</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/reviews.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/leicester/doula/doula</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/contact.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/reviews</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.eirandwild.co.uk/faq.html</loc>
-  <lastmod>2024-07-23T14:00:00+00:00</lastmod>
+  <loc>https://www.eirandwild.co.uk/contact</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://www.eirandwild.co.uk/faq</loc>
+  <lastmod>2026-10-19T00:00:00+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
