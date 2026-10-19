@@ -43,15 +43,17 @@ body {
     display: flex; /* Use flexbox for layout */
     flex-wrap: wrap; /* Allow banners to wrap to the next line */
     justify-content: center; /* Center banners horizontally */
-    
-    margin-bottom: 20px; /* Space below the banners */
+    align-items: flex-start;
+    gap: 15px;
+    margin: 15px auto 25px;
+    padding: 0 15px;
 }
 
 .banner {
-    max-width: 100%; /* Ensure banners don't exceed container width */
+    max-width: 100%; /* Ensure banners don't exceed container width on mobile */
     height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Spacing between banners */
-    margin-bottom: 10px; /* Add margin bottom for spacing when wrapping */
+    border-radius: 10px;
+    display: block;
 }
 
 /* Image Dimensions */
@@ -62,6 +64,8 @@ body {
 }
 
 .container {
+    max-width: 1000px;
+    margin: 0 auto;
     text-align: center;
 }
 
@@ -70,13 +74,14 @@ body {
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
 .container .row:hover {
-    transform: translateY(-5px);
-    transition: transform 0.2s ease-in-out;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
 /* Text Styling - Updated to match new HTML hierarchy */
@@ -134,24 +139,28 @@ body {
 /* Link Styling */
 .container .row .col a {
     display: inline-block;
-    padding: 10px 10px;
-    font-weight: 400;
+    padding: 10px 16px;
+    font-weight: 600;
     font-size: 14px;
-    letter-spacing: 1px;
-    color: #FFD700;
-    background: transparent;
+    letter-spacing: 0.5px;
+    background: #7ae1d5;
+    color: #000;
     border-radius: 15px;
     margin-top: 10px;
+    margin-bottom: 6px;
     text-decoration: none;
     text-transform: uppercase;
     cursor: pointer;
-    background: #7ae1d5;
-    color: #fff;
-    outline: none;
     border: none;
-    max-width: 150px;
-    text-decoration: none;
-    text-transform: uppercase;
+    transition: transform 0.15s ease, background-color 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.container .row .col a:hover {
+    background: #5dcbc0;
+    color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 767px) {
@@ -160,6 +169,7 @@ body {
   .container .row {
     flex-direction: column;
     align-items: center;
+    text-align: center;
   }
 
   /* This rule will center the text (h2, h3, h4, etc.) inside the text block */
@@ -175,9 +185,47 @@ body {
 
 @media (min-width: 768px) {
   
-  /* This vertically centers the image with the text block beside it */
+  /* Constrain vertical banners on desktop so they fit the viewport */
+  .banner-container {
+    gap: 24px;
+    margin: 25px auto 35px;
+  }
+
+  .banner {
+    max-width: 360px;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Horizontally align class card on desktop with left-aligned details */
   .container .row {
     align-items: center;
+    text-align: left;
+  }
+
+  .container .row .col.p-4 {
+    text-align: left;
+    padding-left: 2rem !important;
+  }
+
+  .container .row .col h2 {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  .container .row .col h3,
+  .container .row .col h4 {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .container .row .col p {
+    text-align: left;
   }
 
   /* We'll make the class thumbnail image a bit larger on desktop */
@@ -185,4 +233,10 @@ body {
     max-width: 220px;
   }
   
+}
+
+@media (min-width: 1400px) {
+  .banner {
+    max-width: 380px;
+  }
 }
