@@ -106,6 +106,9 @@ All notable changes to the Eir & Wild website project.
 - Changed time/location from `<h4>` to `<h3>` and `<h4>`
 - Wrapped content in semantic `<main>` and `<article>` tags
 - Enhanced image alt text with descriptive class information
+- Added canonical URL `<link rel="canonical" href="https://www.eirandwild.co.uk/leicester/fitnessclasses/motherhoodclasses">`
+- Added `<meta name="theme-color" content="#8b7355">`
+- Updated Open Graph and Twitter tags to point to canonical production URLs and `.webp` assets
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
 ##### leicester/fitnessclasses/womanhoodclasses.html
@@ -139,12 +142,19 @@ All notable changes to the Eir & Wild website project.
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
 ##### leicester/babymassage/babymassage.html
-- Improved page title: "Baby Massage Classes Leicester | Mountsorrel Memorial Centre"
+- Improved page title: "Baby Massage Classes Mountsorrel & Leicester | Eir & Wild"
 - Added proper heading hierarchy: H1 (visually hidden) > H2 > H3 > H4
 - Changed class title from `<h3>` to `<h2>`
 - Changed time/location from `<h4>` to `<h3>` and `<h4>`
-- Wrapped content in semantic `<main>` and `<article>` tags
+- Wrapped content in semantic `<main class="container">` and `<article>` tags
 - Enhanced image alt text with descriptive information
+- Converted and migrated images to modern `.webp` format (`Baby massage info 1.webp`, `Baby massage info 2.webp`, `baby_massage.webp`)
+- Added explicit `width` and `height` attributes to prevent Cumulative Layout Shift (CLS)
+- Added `fetchpriority="high"` to primary hero banner and `loading="lazy"` to secondary banner and thumbnail
+- Added accessible fallback booking links (`.fallback-booking-link`) inside `#classDatessf19l` and `#classDatess6a88`
+- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Added `<meta name="theme-color">`
+- Removed unused Material Icons stylesheet
 - Added Vercel Speed Insights and Web Analytics (was missing)
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
@@ -228,28 +238,30 @@ All notable changes to the Eir & Wild website project.
 
 ## Complete List of Updated Files
 
-### Root Directory (6 files)
+### Root Directory (7 files)
 1. index.html
 2. aboutme.html
 3. contact.html
 4. faq.html
 5. ourstory.html
 6. reviews.html
+7. 404.html
 
 ### Leicester Subdirectories (6 files)
-7. leicester/fitnessclasses/motherhoodclasses.html
-8. leicester/fitnessclasses/womanhoodclasses.html
-9. leicester/fitnessclasses/hiit.html
-10. leicester/babymassage/babymassage.html
-11. leicester/personaltraining/personaltraining.html
-12. leicester/doula/doula.html
+8. leicester/fitnessclasses/motherhoodclasses.html
+9. leicester/fitnessclasses/womanhoodclasses.html
+10. leicester/fitnessclasses/hiit.html
+11. leicester/babymassage/babymassage.html
+12. leicester/personaltraining/personaltraining.html
+13. leicester/doula/doula.html
 
-### New Files (3 files)
-13. README.md
-14. manifest.json
-15. CHANGELOG.md
+### New Files (4 files)
+14. 404.html
+15. README.md
+16. manifest.json
+17. CHANGELOG.md
 
-**Total Pages Improved**: 12 HTML pages
+**Total Pages Improved**: 13 HTML pages (12 site pages + 404.html)
 **Total Files Added**: 3 new documentation files
 **Total Commits**: 7 commits
 
