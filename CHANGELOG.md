@@ -212,10 +212,10 @@ All notable changes to the Eir & Wild website project.
 
 ### Desktop Responsiveness Improvements
 
-- **Banner Scaling (`css/classes.css`)**: Constrained vertical 9:16 infographic banners on desktop (`min-width: 768px`) with `max-width: 360px` and `max-height: 75vh`, preventing colossal 1920px image heights and allowing multi-banner pages to display in elegant side-by-side flex layouts.
+- **Infographic Banners (`css/classes.css`)**: Preserved full natural scaling (`max-width: 100%; height: auto;`) across all banner containers without artificial desktop height/width limits, ensuring all embedded text, timetables, and infographic copy remain large, sharp, and easy to read on both desktop and mobile.
 - **Class Cards Desktop Alignment (`css/classes.css`)**: Left-aligned class card text, titles, locations, and booking buttons next to thumbnails on screens >= 768px, with `max-width: 1000px` card container constraints and enhanced button hover feedback.
 - **Navbar Layout & Micro-interactions (`css/nav.css`)**: Added polished background styling (`#ffffff` with subtle border and shadow), responsive link padding across desktop resolutions, smooth hover transitions with gold accent, and a styled dropdown container for the mobile collapse menu.
-- **Homepage Ultra-Wide Constraint (`css/home.css`)**: Capped the homepage Linktree feed to `max-width: 600px` so cards maintain clean, sharp proportions on wide and ultra-wide desktop monitors, and purged over 150 lines of obsolete `<section>` countdown rules.
+- **Homepage Responsive Grid (`index.html` & `css/home.css`)**: Upgraded homepage navigation cards into an engaging 2-column responsive grid on desktop and tablet screens while preserving the full-width single-column feed on mobile. Removed the 600px limitation so images fill the screen naturally with generous, balanced proportions instead of collapsing into a narrow central strip. Purged over 150 lines of obsolete `<section>` countdown rules.
 
 ### Performance
 
