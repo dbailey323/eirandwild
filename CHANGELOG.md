@@ -98,6 +98,13 @@ All notable changes to the Eir & Wild website project.
 - Changed time/location from `<h4>` to `<h3>` and `<h4>`
 - Wrapped content in semantic `<main>` and `<article>` tags
 - Enhanced image alt text with descriptive class information
+- Converted and migrated all class and banner images to modern `.webp` format (`Womanhood info 1.webp`, `Dance&tone.webp`, `Monday double .webp`, `STRONG&STRETCHED.webp`, `strong_women_squad_rothley.webp`)
+- Added explicit `width` and `height` attributes to prevent Cumulative Layout Shift (CLS)
+- Added `fetchpriority="high"` to hero banner and `loading="lazy"` to class card thumbnails
+- Added accessible fallback booking links (`.fallback-booking-link`) inside all class date containers for reliable offline/API fallback
+- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Added `<meta name="theme-color">`
+- Removed unused Material Icons stylesheet
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
 ##### leicester/babymassage/babymassage.html
