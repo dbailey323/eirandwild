@@ -55,7 +55,7 @@ All notable changes to the Eir & Wild website project.
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
 ##### contact.html
-- Improved page title: "Contact Eir & Wild - Get In Touch"
+- Improved page title: "Contact Eir & Wild | Pre & Postnatal Fitness & Doula Leicester"
 - Changed `<h3>` to `<h1>` for proper heading hierarchy
 - Wrapped content in semantic `<main>` tag
 - Added semantic `<address>` tag for contact information
@@ -63,6 +63,12 @@ All notable changes to the Eir & Wild website project.
 - Fixed Font Awesome version to 6.5.1 with proper integrity hash
 - Added proper `aria-label` attributes to social media links
 - Added `rel="noopener noreferrer"` to external links
+- Migrated profile image to modern `.webp` format (`aboutme.webp`)
+- Added explicit `width="300"` and `height="300"` attributes to prevent Cumulative Layout Shift (CLS)
+- Added `fetchpriority="high"` on profile image
+- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Added `<meta name="theme-color">`
+- Removed unused Material Icons stylesheet
 - Updated Bootstrap to v5.3.3
 
 ##### faq.html
@@ -146,8 +152,14 @@ All notable changes to the Eir & Wild website project.
 
 ##### leicester/doula/doula.html
 - Improved page title: "Doula Services Leicester | Birth & Postnatal Support"
-- Wrapped content in semantic `<main>` tag
+- Wrapped content in semantic `<main class="container">` tag
+- Converted and migrated banner image to modern `.webp` format (`Doula services.webp`)
+- Added explicit `width="1080"` and `height="1920"` attributes to eliminate Cumulative Layout Shift (CLS)
+- Added `fetchpriority="high"` to primary banner
 - Enhanced image alt text with descriptive information
+- Added canonical URL `<link rel="canonical">` and updated Open Graph / Twitter tags to canonical production URLs
+- Added `<meta name="theme-color">`
+- Removed unused Material Icons stylesheet
 - Added Vercel Speed Insights and Web Analytics (was missing)
 - Updated Bootstrap to v5.3.3 (from v5.0.0-beta2)
 
