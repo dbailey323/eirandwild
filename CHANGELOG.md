@@ -210,6 +210,13 @@ All notable changes to the Eir & Wild website project.
 - Added `rel="noopener noreferrer"` to all external links
 - Updated all dependencies to latest stable versions (Bootstrap 5.3.3)
 
+### Desktop Responsiveness Improvements
+
+- **Banner Scaling (`css/classes.css`)**: Constrained vertical 9:16 infographic banners on desktop (`min-width: 768px`) with `max-width: 360px` and `max-height: 75vh`, preventing colossal 1920px image heights and allowing multi-banner pages to display in elegant side-by-side flex layouts.
+- **Class Cards Desktop Alignment (`css/classes.css`)**: Left-aligned class card text, titles, locations, and booking buttons next to thumbnails on screens >= 768px, with `max-width: 1000px` card container constraints and enhanced button hover feedback.
+- **Navbar Layout & Micro-interactions (`css/nav.css`)**: Added polished background styling (`#ffffff` with subtle border and shadow), responsive link padding across desktop resolutions, smooth hover transitions with gold accent, and a styled dropdown container for the mobile collapse menu.
+- **Homepage Ultra-Wide Constraint (`css/home.css`)**: Capped the homepage Linktree feed to `max-width: 600px` so cards maintain clean, sharp proportions on wide and ultra-wide desktop monitors, and purged over 150 lines of obsolete `<section>` countdown rules.
+
 ### Performance
 
 - Removed duplicate CSS loading
