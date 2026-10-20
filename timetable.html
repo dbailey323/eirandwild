@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Eir & Wild class timetable: upcoming pre and postnatal fitness, womanhood, online HIIT and baby massage classes in Mountsorrel & Rothley, near Leicester. Book online.">
+    <meta name="description" content="Eir & Wild weekly class timetable: pre and postnatal fitness, womanhood, online HIIT and baby massage classes in Mountsorrel & Rothley, near Leicester.">
     <meta name="theme-color" content="#8b7355">
     <link rel="canonical" href="https://www.eirandwild.co.uk/timetable">
 
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Class Timetable | Eir & Wild Leicester">
-    <meta property="og:description" content="Upcoming fitness and baby massage classes in Mountsorrel & Rothley, near Leicester. Book your space online.">
+    <meta property="og:description" content="Our weekly fitness and baby massage class schedule in Mountsorrel & Rothley, near Leicester.">
     <meta property="og:image" content="https://www.eirandwild.co.uk/images/header.webp">
     <meta property="og:url" content="https://www.eirandwild.co.uk/timetable">
     <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Class Timetable | Eir & Wild Leicester">
-    <meta name="twitter:description" content="Upcoming fitness and baby massage classes in Mountsorrel & Rothley. Book online.">
+    <meta name="twitter:description" content="Our weekly fitness and baby massage class schedule in Mountsorrel & Rothley.">
     <meta name="twitter:image" content="https://www.eirandwild.co.uk/images/header.webp">
 
     <link rel="apple-touch-icon" sizes="180x180" href="images/Light full(180).png">
@@ -45,17 +45,15 @@
         <!-- Hero Section -->
         <article class="tt-hero-card">
             <h1>Timetable</h1>
-            <p class="tt-subtitle">Upcoming Classes</p>
+            <p class="tt-subtitle">Our Weekly Schedule</p>
             <p class="tt-lead">
-                Every class for the next six weeks, updated live from our booking system.
-                Tap <strong>Book</strong> to reserve your space. Little ones are welcome at all Motherhood classes.
+                Find the class that fits your week. Tap any class to see upcoming dates and book your space.
+                Little ones are welcome at all Motherhood classes.
             </p>
         </article>
 
-        <div class="tt-filters" id="ttFilters" role="group" aria-label="Filter classes by type" hidden></div>
-
         <p class="tt-status" id="ttLoading" role="status">
-            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Loading classes&hellip;
+            <i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Loading schedule&hellip;
         </p>
 
         <div class="tt-status-card" id="ttEmpty" hidden>
@@ -66,14 +64,16 @@
 
         <div class="tt-status-card" id="ttError" hidden>
             <h2>We couldn't load the timetable</h2>
-            <p>You can still see every class and book directly on our booking pages:</p>
+            <p>You can still see every class, with dates and booking, on our class pages:</p>
             <div class="tt-btn-row">
-                <a href="https://bookwhen.com/eirandwild-motherhood" target="_blank" rel="noopener noreferrer" class="tt-btn">Motherhood classes</a>
-                <a href="https://bookwhen.com/eirandwild-womanhood" target="_blank" rel="noopener noreferrer" class="tt-btn">Womanhood classes</a>
+                <a href="leicester/fitnessclasses/motherhoodclasses" class="tt-btn">Motherhood</a>
+                <a href="leicester/fitnessclasses/womanhoodclasses" class="tt-btn">Womanhood</a>
+                <a href="leicester/fitnessclasses/hiit" class="tt-btn">Online HIIT</a>
+                <a href="leicester/babymassage/babymassage" class="tt-btn">Baby Massage</a>
             </div>
         </div>
 
-        <div id="ttDays"></div>
+        <div class="tt-week" id="ttWeek"></div>
 
         <!-- Venues -->
         <article class="tt-venues-card">

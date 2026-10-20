@@ -6,6 +6,12 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
     if (!classDatesContainer) {  
         return; // Exit if the container element doesn't exist
     }
+
+    // Courses (e.g. baby massage) only show the first upcoming date, since booking it books the whole course
+    const firstOnly = classDatesContainer.dataset.firstOnly === 'true';
+    if (firstOnly && classDatesContainer.querySelector('a:not(.fallback-booking-link)')) {
+        return;
+    }
     
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -51,6 +57,10 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
             // Append elements to the container
             classDatesContainer.appendChild(linkElement);
             classDatesContainer.appendChild(span);
+
+            if (firstOnly) {
+                return;
+            }
         }
     }
 }

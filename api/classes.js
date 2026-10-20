@@ -60,8 +60,6 @@ export default async function handler(req, res) {
 
             const locationId = e.relationships?.location?.data?.id;
             const location = locationId ? locations[locationId] : null;
-            const limit = e.attributes.attendee_limit;
-            const count = e.attributes.attendee_count;
 
             return {
                 className: parsedClassName,
@@ -75,7 +73,6 @@ export default async function handler(req, res) {
                 endAt: e.attributes.end_at || null,
                 category,
                 venue: location?.address_text || "",
-                isFull: Number.isFinite(limit) && Number.isFinite(count) && limit > 0 && count >= limit,
                 color: "#000562",
                 bookingPlatformUrl: bookingUrl
             };
