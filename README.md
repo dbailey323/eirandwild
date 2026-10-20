@@ -71,8 +71,7 @@ eirandwild/
 │
 ├── js/                          # Client-side JavaScript
 │   ├── nav.js                   # Dynamic multi-level navbar injector
-│   ├── classes.js               # Fetches /api/classes & renders Bookwhen booking buttons
-│   └── class_data.json          # Static backup class schedule data
+│   └── classes.js               # Fetches /api/classes & renders Bookwhen booking buttons
 │
 ├── images/                      # Optimized image assets (.webp preferred)
 └── fonts/                       # Custom typography ('Moon Time' TTF)
