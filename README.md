@@ -87,7 +87,7 @@ eirandwild/
 - **Font Awesome 6.5.1**: Scalable vector icons for actions, contact methods, and checkmarks.
 - **WebP Optimization**: All photography and thumbnails compressed and sized with explicit `width`, `height`, `fetchpriority="high"`, and `loading="lazy"`.
 - **Bookwhen API**: Vercel Serverless Function (`/api/classes.js`) fetching real-time schedule dates with client-side rendering and static fallback CTAs.
-- **Analytics & Speed**: Google Tag Manager (`GTM-5SXDV4CQ`), Vercel Speed Insights, and Vercel Web Analytics.
+- **Analytics & Speed**: Vercel Speed Insights and Vercel Web Analytics (both cookieless).
 - **SEO & PWA**: Clean URLs, Open Graph, Twitter Cards, Schema.org (`LocalBusiness`, `FAQPage`), and `manifest.json`.
 
 ---
