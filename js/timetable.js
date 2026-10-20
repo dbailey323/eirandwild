@@ -2,8 +2,11 @@
 // Builds a weekly schedule from /api/classes (live Bookwhen data). Each class
 // links to its class page, where people see upcoming dates and book.
 
-// Look this far ahead to find every regular class, even if one is skipped in a given week
-const WEEKS_TO_SCAN = 4;
+// Regular classes are found in the next few weeks (so one skipped week doesn't hide them).
+// Classes not on in that time, such as a baby massage course between blocks, are looked
+// for further ahead and shown with their next start date.
+const REGULAR_WEEKS = 4;
+const LOOKAHEAD_WEEKS = 12;
 const TZ = 'Europe/London';
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
@@ -36,7 +39,8 @@ function isAlternateWeeks(dates) {
 // Collapse dated sessions into one entry per class, day and start time
 function buildWeek(classes) {
     const now = new Date();
-    const cutoff = new Date(now.getTime() + WEEKS_TO_SCAN * 7 * 24 * 60 * 60 * 1000);
+    const regularCutoff = new Date(now.getTime() + REGULAR_WEEKS * 7 * DAY_MS);
+    const cutoff = new Date(now.getTime() + LOOKAHEAD_WEEKS * 7 * DAY_MS);
     const slots = new Map();
 
     classes
@@ -49,7 +53,11 @@ function buildWeek(classes) {
             slots.get(key).dates.push(start);
         });
 
-    slots.forEach((slot) => { slot.alternate = isAlternateWeeks(slot.dates); });
+    slots.forEach((slot) => {
+        const soonDates = slot.dates.filter((date) => date <= regularCutoff);
+        slot.startsLater = soonDates.length === 0;
+        slot.alternate = isAlternateWeeks(soonDates);
+    });
 
     const week = new Map(DAYS.map((day) => [day, []]));
     slots.forEach((c) => week.get(weekdayName(new Date(c.startAt))).push(c));
@@ -76,7 +84,10 @@ function renderClass(cls) {
     const venue = cls.venue || (cls.category === 'Online HIIT' ? 'Live on Zoom' : '');
     if (venue) link.appendChild(el('span', 'tt-venue', venue));
 
-    if (cls.alternate) {
+    if (cls.startsLater) {
+        const label = cls.category === 'Baby Massage' ? 'Next course starts' : 'Next on';
+        link.appendChild(el('span', 'tt-alternate', `${label} ${shortDate(start)}`));
+    } else if (cls.alternate) {
         link.appendChild(el('span', 'tt-alternate', `Alternate weeks · next on ${shortDate(start)}`));
     }
 
