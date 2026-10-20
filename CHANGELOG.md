@@ -2,6 +2,11 @@
 
 All notable changes to the Eir & Wild website project.
 
+## October 2026
+
+### Removed
+- **Google Tag Manager** (`GTM-5SXDV4CQ`) from all pages: the container had no tags, so it only added a request. Analytics is covered by cookieless Vercel Web Analytics and Speed Insights, so no cookie consent banner is needed.
+
 ## [Unreleased] - February 2026 Website Improvements
 
 ### Added
@@ -297,7 +302,6 @@ git reset --hard b5531a4f4a76546ddd78773e9fe8603e870e89d8
 - [ ] Verify meta descriptions are appropriate length
 
 ### Analytics & Performance
-- [ ] Check Google Tag Manager is firing correctly (all pages)
 - [ ] Verify Vercel Analytics working (all pages)
 - [ ] Verify Vercel Speed Insights working (all pages)
 - [ ] Test page load speeds
