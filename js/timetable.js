@@ -17,12 +17,20 @@ const CATEGORIES = {
 const weekdayName = (date) => date.toLocaleDateString('en-GB', { timeZone: TZ, weekday: 'long' });
 const timeLabel = (date) => date.toLocaleTimeString('en-GB', { timeZone: TZ, hour: 'numeric', minute: '2-digit' });
 const sortTime = (date) => date.toLocaleTimeString('en-GB', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
+const shortDate = (date) => date.toLocaleDateString('en-GB', { timeZone: TZ, day: 'numeric', month: 'short' });
+const DAY_MS = 24 * 60 * 60 * 1000;
 
 function el(tag, className, text) {
     const node = document.createElement(tag);
     if (className) node.className = className;
     if (text) node.textContent = text;
     return node;
+}
+
+// Every gap between sessions is two weeks, e.g. classes that alternate on Saturdays
+function isAlternateWeeks(dates) {
+    if (dates.length < 2) return false;
+    return dates.slice(1).every((date, i) => Math.round((date - dates[i]) / DAY_MS) === 14);
 }
 
 // Collapse dated sessions into one entry per class, day and start time
@@ -37,8 +45,11 @@ function buildWeek(classes) {
         .forEach((c) => {
             const start = new Date(c.startAt);
             const key = `${weekdayName(start)}|${sortTime(start)}|${c.title}`;
-            if (!slots.has(key)) slots.set(key, c);
+            if (!slots.has(key)) slots.set(key, { ...c, dates: [] });
+            slots.get(key).dates.push(start);
         });
+
+    slots.forEach((slot) => { slot.alternate = isAlternateWeeks(slot.dates); });
 
     const week = new Map(DAYS.map((day) => [day, []]));
     slots.forEach((c) => week.get(weekdayName(new Date(c.startAt))).push(c));
@@ -62,8 +73,12 @@ function renderClass(cls) {
     link.appendChild(el('span', 'tt-title', cls.title));
     link.appendChild(el('span', `tt-tag ${category.tag}`, cls.category));
 
-    const venue = cls.category === 'Online HIIT' ? 'Live on Zoom' : cls.venue;
+    const venue = cls.venue || (cls.category === 'Online HIIT' ? 'Live on Zoom' : '');
     if (venue) link.appendChild(el('span', 'tt-venue', venue));
+
+    if (cls.alternate) {
+        link.appendChild(el('span', 'tt-alternate', `Alternate weeks · next on ${shortDate(start)}`));
+    }
 
     link.appendChild(el('span', 'tt-more', 'Details & booking →'));
     item.appendChild(link);
