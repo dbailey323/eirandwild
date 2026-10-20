@@ -1,6 +1,6 @@
 // js/classes.js
 
-function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl) {
+function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId) {
     const classDatesContainer = document.getElementById(`classDates${className}`);
     
     if (!classDatesContainer) {  
@@ -31,7 +31,9 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
 
             const formattedDate = currentDate.toLocaleDateString("en-GB", { month: "short", day: "numeric" });
             const linkDate = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}`;
-            const link = `${bookingPlatformUrl}#focus=ev-${className}-${linkDate}${timeSuffix}`;
+            // Prefer the exact Bookwhen event ID so the link is unaffected by server timezone
+            const focusId = eventId || `ev-${className}-${linkDate}${timeSuffix}`;
+            const link = `${bookingPlatformUrl}#focus=${focusId}`;
             
             // Create link element
             const linkElement = document.createElement('a');
@@ -66,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     classInfo.timeSuffix, 
                     classInfo.skippedWeeks, 
                     classInfo.color, 
-                    classInfo.bookingPlatformUrl
+                    classInfo.bookingPlatformUrl,
+                    classInfo.eventId
                 );
             });
         })
