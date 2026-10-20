@@ -311,6 +311,17 @@ body {
   margin-top: 10px;
 }
 
+.home-footer-links {
+  color: #888888;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.home-footer-links a {
+  color: #000562;
+  font-weight: 600;
+}
+
 /* ==========================================================================
    Floating WhatsApp Button
    ========================================================================== */

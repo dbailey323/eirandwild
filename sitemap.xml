@@ -67,4 +67,14 @@
   <priority>0.80</priority>
 </url>
 
+<url>
+  <loc>https://www.eirandwild.co.uk/timetable</loc>
+  <lastmod>2026-10-20T00:00:00+00:00</lastmod>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://www.eirandwild.co.uk/privacy</loc>
+  <lastmod>2026-10-20T00:00:00+00:00</lastmod>
+  <priority>0.30</priority>
+</url>
 </urlset>

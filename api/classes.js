@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     const authHeader = "Basic " + Buffer.from(`${API_KEY}:`).toString("base64");
 
     try {
-        const response = await fetch("https://api.bookwhen.com/v2/events?page[size]=100", {
+        const response = await fetch("https://api.bookwhen.com/v2/events?page[size]=100&include=location", {
             headers: { Authorization: authHeader }
         });
         
@@ -16,6 +16,12 @@ export default async function handler(req, res) {
         
         const json = await response.json();
         const rawEvents = json.data || [];
+
+        // Venue details are sent separately in "included" when include=location is requested
+        const locations = {};
+        (json.included || [])
+            .filter((item) => item.type === "location")
+            .forEach((item) => { locations[item.id] = item.attributes || {}; });
 
         const upcoming = rawEvents
             .filter((e) => !e.attributes?.cancelled_at)
@@ -39,6 +45,16 @@ export default async function handler(req, res) {
                 ? "https://bookwhen.com/eirandwild-womanhood" 
                 : "https://bookwhen.com/eirandwild-motherhood";
 
+            // Used by the timetable page to label and filter classes
+            let category = isWomanhood ? "Womanhood" : "Motherhood";
+            if (title.includes("hiit")) category = "Online HIIT";
+            if (title.includes("massage")) category = "Baby Massage";
+
+            const locationId = e.relationships?.location?.data?.id;
+            const location = locationId ? locations[locationId] : null;
+            const limit = e.attributes.attendee_limit;
+            const count = e.attributes.attendee_count;
+
             return {
                 className: parsedClassName,
                 startDate,
@@ -46,11 +62,19 @@ export default async function handler(req, res) {
                 timeSuffix,
                 skippedWeeks: [],
                 eventId: e.id,
+                title: e.attributes.title || "",
+                startAt: e.attributes.start_at || null,
+                endAt: e.attributes.end_at || null,
+                category,
+                venue: location?.address_text || "",
+                isFull: Number.isFinite(limit) && Number.isFinite(count) && limit > 0 && count >= limit,
                 color: "#000562",
                 bookingPlatformUrl: bookingUrl
             };
         });
 
+        // Cache at Vercel's edge for 5 minutes so busy pages don't hit Bookwhen on every visit
+        res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");
         res.status(200).json(classData);
     } catch (error) {
         console.error(error);

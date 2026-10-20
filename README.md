@@ -31,6 +31,8 @@ eirandwild/
 ├── contact.html                 # Contact channels, WhatsApp, email & venues
 ├── faq.html                     # Categorized FAQ knowledge base (with Schema.org)
 ├── reviews.html                 # Google Reviews widget & testimonials
+├── timetable.html               # Live class timetable (next 6 weeks, from /api/classes)
+├── privacy.html                 # Privacy policy
 ├── 404.html                     # Custom branded 404 error page
 ├── manifest.json                # PWA manifest
 ├── robots.txt                   # Web crawler directives
@@ -71,7 +73,8 @@ eirandwild/
 │
 ├── js/                          # Client-side JavaScript
 │   ├── nav.js                   # Dynamic multi-level navbar injector
-│   └── classes.js               # Fetches /api/classes & renders Bookwhen booking buttons
+│   ├── classes.js               # Fetches /api/classes & renders Bookwhen booking buttons
+│   └── timetable.js             # Builds the timetable page from /api/classes
 │
 ├── images/                      # Optimized image assets (.webp preferred)
 └── fonts/                       # Custom typography ('Moon Time' TTF)
