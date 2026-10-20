@@ -163,9 +163,6 @@ body {
     gap: 22px;
   }
 
-  .home-card-grid.three-col {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
 .home-card {
@@ -190,6 +187,37 @@ body {
 .home-card:focus-visible {
   outline: 3px solid #FFD700;
   outline-offset: 3px;
+}
+
+/* Full-width card below a grid (FAQ) */
+.home-card-full {
+  margin-top: 18px;
+}
+
+/* On wider screens the full-width card becomes a banner the same height as
+   the cards above it, with text sized to match */
+@media (min-width: 768px) {
+  .home-card-full {
+    margin-top: 22px;
+  }
+
+  .home-card-wide {
+    aspect-ratio: 7 / 2;
+  }
+
+  .home-card-wide .home-card-title {
+    font-size: 5.3cqw;
+  }
+
+  .home-card-wide .home-card-desc {
+    margin-top: 0.75cqw;
+    font-size: max(1.35cqw, 0.7rem);
+  }
+
+  .home-card-wide .home-card-heart {
+    width: 3.4cqw;
+    margin-top: 1.5cqw;
+  }
 }
 
 /* Photo cut-out sits on the right, full card height */
