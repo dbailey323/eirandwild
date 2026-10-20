@@ -5,6 +5,7 @@
   src: url('../fonts/moon-time-regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -167,8 +168,12 @@ body {
   }
 }
 
-.home-card-link {
+.home-card {
+  position: relative;
   display: block;
+  aspect-ratio: 7 / 4;
+  container-type: inline-size;
+  background-color: #000562;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
@@ -176,15 +181,74 @@ body {
   text-decoration: none;
 }
 
-.home-card-link:hover {
+.home-card:hover,
+.home-card:focus-visible {
   transform: translateY(-4px) scale(1.015);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
 }
 
-.home-card-link img {
-  width: 100%;
-  height: auto;
-  display: block;
+.home-card:focus-visible {
+  outline: 3px solid #FFD700;
+  outline-offset: 3px;
+}
+
+/* Photo cut-out sits on the right, full card height */
+.home-card-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: auto;
+}
+
+/* Title, description and heart centred in the left half */
+.home-card-text {
+  position: absolute;
+  inset: 0 52% 0 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2cqw;
+  text-align: center;
+}
+
+.home-card-title {
+  font-family: 'Moon Time', cursive;
+  font-size: 11cqw;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.home-card-desc {
+  margin-top: 1.5cqw;
+  font-size: max(2.8cqw, 0.7rem);
+  font-weight: 500;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.home-card-heart {
+  width: 7cqw;
+  margin-top: 3cqw;
+  fill: none;
+  stroke: #FFD700;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+/* Fallback in case Bootstrap's CSS fails to load */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 /* ==========================================================================
