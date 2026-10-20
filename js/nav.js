@@ -23,6 +23,9 @@ const navBar = `
             <a class="nav-link" href="${prefix}ourstory">Our Story</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="${prefix}timetable">Timetable</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="${prefix}leicester/fitnessclasses/motherhoodclasses">Motherhood Classes</a>
           </li>
           <li class="nav-item">

@@ -272,6 +272,18 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
+.contact-privacy-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #888888;
+}
+
+.contact-privacy-note a {
+  color: #000562;
+  font-weight: 600;
+}
+
 @media (max-width: 767.98px) {
   .contact-hero-card {
     padding: 30px 16px 26px;

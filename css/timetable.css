@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: 'Moon Time';
+  src: url('../fonts/moon-time-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: #f7faf9;
+  color: #333333;
+}
+
+.tt-container {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 24px 16px 50px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.tt-hero-card {
+  background-color: #000562;
+  border-radius: 16px;
+  padding: 40px 24px 36px;
+  margin-bottom: 26px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0, 5, 98, 0.15);
+}
+
+.tt-hero-card h1 {
+  font-family: 'Moon Time', cursive;
+  font-size: 4.8rem;
+  color: #FFD700;
+  margin-bottom: 8px;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.tt-subtitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #7ae1d5;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+
+.tt-lead {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================================
+   Filters & Status Messages
+   ========================================================================== */
+.tt-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.tt-filter {
+  padding: 8px 18px;
+  border: 2px solid #000562;
+  border-radius: 30px;
+  background-color: #ffffff;
+  color: #000562;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.tt-filter:hover,
+.tt-filter[aria-pressed="true"] {
+  background-color: #000562;
+  color: #FFD700;
+}
+
+.tt-status {
+  text-align: center;
+  color: #666666;
+  padding: 30px 0;
+}
+
+.tt-status-card {
+  background-color: #ffffff;
+  border: 2px solid #000562;
+  border-radius: 16px;
+  padding: 30px 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tt-status-card h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #000562;
+  margin-bottom: 10px;
+}
+
+.tt-status-card p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.tt-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  text-decoration: none;
+  background-color: #7ae1d5;
+  color: #000562;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tt-btn:hover {
+  transform: translateY(-2px);
+  background-color: #64cdbf;
+  color: #000562;
+}
+
+/* ==========================================================================
+   Day Groups & Class Rows
+   ========================================================================== */
+.tt-day {
+  margin-bottom: 28px;
+}
+
+.tt-day-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000562;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #e0e8e6;
+}
+
+.tt-class-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.tt-class {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  background-color: #ffffff;
+  border: 1px solid #e0e8e6;
+  border-left: 5px solid #000562;
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.tt-time {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000562;
+}
+
+.tt-time-end {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #888888;
+}
+
+.tt-title {
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: #333333;
+  margin-bottom: 6px;
+}
+
+.tt-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  font-size: 0.85rem;
+  color: #666666;
+}
+
+.tt-tag {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background-color: #eef0fb;
+  color: #000562;
+}
+
+.tt-tag-womanhood {
+  background-color: #fbe9f2;
+  color: #8a1d55;
+}
+
+.tt-tag-hiit {
+  background-color: #e3f7f4;
+  color: #0d6157;
+}
+
+.tt-tag-babymassage {
+  background-color: #fdf5d8;
+  color: #6b5300;
+}
+
+.tt-book {
+  padding: 10px 24px;
+  border-radius: 30px;
+  background-color: #000562;
+  color: #FFD700;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tt-book:hover {
+  transform: translateY(-2px);
+  color: #FFD700;
+  box-shadow: 0 6px 14px rgba(0, 5, 98, 0.25);
+}
+
+.tt-book-full {
+  background-color: #ffffff;
+  border: 2px solid #000562;
+  color: #000562;
+}
+
+.tt-book-full:hover {
+  color: #000562;
+}
+
+/* ==========================================================================
+   Venues Card
+   ========================================================================== */
+.tt-venues-card {
+  background-color: #000562;
+  border-radius: 16px;
+  padding: 34px 24px;
+  margin-top: 36px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.tt-venues-card h2 {
+  font-family: 'Moon Time', cursive;
+  font-size: 3rem;
+  color: #FFD700;
+  margin-bottom: 14px;
+  line-height: 1.15;
+}
+
+.tt-venues-card ul {
+  list-style: none;
+  margin-bottom: 18px;
+  line-height: 1.9;
+}
+
+.tt-venues-card a {
+  color: #7ae1d5;
+  font-weight: 600;
+}
+
+@media (max-width: 767.98px) {
+  .tt-hero-card {
+    padding: 30px 16px 26px;
+  }
+
+  .tt-hero-card h1 {
+    font-size: 3.4rem;
+  }
+
+  .tt-class {
+    grid-template-columns: 1fr auto;
+    gap: 10px 14px;
+  }
+
+  .tt-time {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .tt-time-end {
+    display: inline;
+  }
+}
