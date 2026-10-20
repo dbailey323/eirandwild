@@ -8,18 +8,26 @@ export default async function handler(req, res) {
     const authHeader = "Basic " + Buffer.from(`${API_KEY}:`).toString("base64");
 
     try {
-        const response = await fetch("https://api.bookwhen.com/v2/events?page[size]=100&include=location", {
-            headers: { Authorization: authHeader }
-        });
-        
-        if (!response.ok) throw new Error(`Bookwhen API error: ${response.statusText}`);
-        
-        const json = await response.json();
-        const rawEvents = json.data || [];
+        // Bookwhen returns events in pages; follow "next" links (capped) so later sessions aren't dropped
+        const rawEvents = [];
+        const included = [];
+        let url = "https://api.bookwhen.com/v2/events?page[size]=100&include=location";
+        for (let page = 0; url && page < 10; page++) {
+            const response = await fetch(url, {
+                headers: { Authorization: authHeader }
+            });
+
+            if (!response.ok) throw new Error(`Bookwhen API error: ${response.statusText}`);
+
+            const json = await response.json();
+            rawEvents.push(...(json.data || []));
+            included.push(...(json.included || []));
+            url = json.links?.next || null;
+        }
 
         // Venue details are sent separately in "included" when include=location is requested
         const locations = {};
-        (json.included || [])
+        included
             .filter((item) => item.type === "location")
             .forEach((item) => { locations[item.id] = item.attributes || {}; });
 
