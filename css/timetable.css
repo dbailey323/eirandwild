@@ -228,6 +228,16 @@ body {
   padding: 3px 8px;
 }
 
+.tt-spaces {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #a3123f;
+}
+
+.tt-spaces-full {
+  color: #666666;
+}
+
 .tt-more {
   margin-top: 4px;
   font-size: 0.8rem;

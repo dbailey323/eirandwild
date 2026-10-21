@@ -1,6 +1,9 @@
 // js/classes.js
 
-function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId) {
+// Show how many spaces are left once a session gets down to this many
+const LOW_SPACES = 5;
+
+function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId, spacesLeft = null) {
     const classDatesContainer = document.getElementById(`classDates${className}`);
     
     if (!classDatesContainer) {  
@@ -49,6 +52,17 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
             linkElement.innerHTML = `${formattedDate}`;  
             linkElement.style.backgroundColor = color;
             linkElement.style.color = '#FFD700';
+
+            // Bookwhen offers a waiting list on full sessions, so the link stays
+            if (spacesLeft === 0) {
+                linkElement.textContent = `${formattedDate} · Full`;
+                linkElement.style.backgroundColor = '#8a8fa8';
+                linkElement.style.color = '#ffffff';
+                linkElement.setAttribute('aria-label', `${formattedDate}: fully booked, join the waiting list`);
+            } else if (spacesLeft !== null && spacesLeft <= LOW_SPACES) {
+                linkElement.textContent = `${formattedDate} · ${spacesLeft} left`;
+                linkElement.setAttribute('aria-label', `${formattedDate}: ${spacesLeft} ${spacesLeft === 1 ? 'space' : 'spaces'} left`);
+            }
             
             // Add a span for margin
             const span = document.createElement('span');
@@ -79,7 +93,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     classInfo.skippedWeeks, 
                     classInfo.color, 
                     classInfo.bookingPlatformUrl,
-                    classInfo.eventId
+                    classInfo.eventId,
+                    classInfo.spacesLeft ?? null
                 );
             });
         })

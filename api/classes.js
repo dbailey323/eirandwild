@@ -61,6 +61,13 @@ export default async function handler(req, res) {
             const locationId = e.relationships?.location?.data?.id;
             const location = locationId ? locations[locationId] : null;
 
+            // Spaces left, or null when the event has no attendee limit
+            const limit = e.attributes.attendee_limit;
+            const count = e.attributes.attendee_count;
+            const spacesLeft = Number.isFinite(limit) && limit > 0 && Number.isFinite(count)
+                ? Math.max(limit - count, 0)
+                : null;
+
             return {
                 className: parsedClassName,
                 startDate,
@@ -73,13 +80,15 @@ export default async function handler(req, res) {
                 endAt: e.attributes.end_at || null,
                 category,
                 venue: location?.address_text || "",
+                spacesLeft,
                 color: "#000562",
                 bookingPlatformUrl: bookingUrl
             };
         });
 
-        // Cache at Vercel's edge for 5 minutes so busy pages don't hit Bookwhen on every visit
-        res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");
+        // Cache at Vercel's edge for a minute so busy pages don't hit Bookwhen on every visit,
+        // while keeping spaces-left counts close to live
+        res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=300");
         res.status(200).json(classData);
     } catch (error) {
         console.error(error);

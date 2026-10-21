@@ -8,6 +8,7 @@
 const REGULAR_WEEKS = 4;
 const LOOKAHEAD_WEEKS = 12;
 const TZ = 'Europe/London';
+const LOW_SPACES = 5;
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const CATEGORIES = {
@@ -89,6 +90,13 @@ function renderClass(cls) {
         link.appendChild(el('span', 'tt-alternate', `${label} ${shortDate(start)}`));
     } else if (cls.alternate) {
         link.appendChild(el('span', 'tt-alternate', `Alternate weeks · next on ${shortDate(start)}`));
+    }
+
+    // Spaces for the next session (the class's first upcoming date)
+    if (cls.spacesLeft === 0) {
+        link.appendChild(el('span', 'tt-spaces tt-spaces-full', `Full on ${shortDate(start)}: join the waitlist`));
+    } else if (cls.spacesLeft !== null && cls.spacesLeft !== undefined && cls.spacesLeft <= LOW_SPACES) {
+        link.appendChild(el('span', 'tt-spaces', `Only ${cls.spacesLeft} ${cls.spacesLeft === 1 ? 'space' : 'spaces'} left on ${shortDate(start)}`));
     }
 
     link.appendChild(el('span', 'tt-more', 'Details & booking →'));
