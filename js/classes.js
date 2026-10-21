@@ -1,7 +1,7 @@
 // js/classes.js
 
 // Show how many spaces are left once a session gets down to this many
-const LOW_SPACES = 5;
+const LOW_SPACES = 3;
 
 function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId, spacesLeft = null) {
     const classDatesContainer = document.getElementById(`classDates${className}`);
