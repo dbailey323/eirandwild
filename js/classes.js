@@ -53,24 +53,42 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
             linkElement.style.backgroundColor = color;
             linkElement.style.color = '#FFD700';
 
-            // Bookwhen offers a waiting list on full sessions, so the link stays
+            // Spaces note shown in small text under the date button
+            let note = null;
             if (spacesLeft === 0) {
-                linkElement.textContent = `${formattedDate} · Full`;
+                // Bookwhen offers a waiting list on full sessions, so the link stays
                 linkElement.style.backgroundColor = '#8a8fa8';
                 linkElement.style.color = '#ffffff';
                 linkElement.setAttribute('aria-label', `${formattedDate}: fully booked, join the waiting list`);
+                note = { text: 'Fully booked', color: '#666666' };
             } else if (spacesLeft !== null && spacesLeft <= LOW_SPACES) {
-                linkElement.textContent = `${formattedDate} · ${spacesLeft} left`;
-                linkElement.setAttribute('aria-label', `${formattedDate}: ${spacesLeft} ${spacesLeft === 1 ? 'space' : 'spaces'} left`);
+                const spaces = `${spacesLeft} ${spacesLeft === 1 ? 'space' : 'spaces'} left`;
+                linkElement.setAttribute('aria-label', `${formattedDate}: ${spaces}`);
+                note = { text: spaces, color: '#c8102e' };
             }
-            
-            // Add a span for margin
-            const span = document.createElement('span');
-            span.style.marginRight = '10px';
-            
-            // Append elements to the container
-            classDatesContainer.appendChild(linkElement);
-            classDatesContainer.appendChild(span);
+
+            // Wrap the button and its note so the note sits directly beneath it
+            const slot = document.createElement('span');
+            slot.style.display = 'inline-flex';
+            slot.style.flexDirection = 'column';
+            slot.style.alignItems = 'center';
+            slot.style.verticalAlign = 'top';
+            slot.style.marginRight = '10px';
+            linkElement.style.marginRight = '0';
+            slot.appendChild(linkElement);
+
+            if (note) {
+                const noteElement = document.createElement('span');
+                noteElement.textContent = note.text;
+                noteElement.setAttribute('aria-hidden', 'true');
+                noteElement.style.color = note.color;
+                noteElement.style.fontSize = '12px';
+                noteElement.style.fontWeight = '700';
+                noteElement.style.marginTop = '4px';
+                slot.appendChild(noteElement);
+            }
+
+            classDatesContainer.appendChild(slot);
 
             if (firstOnly) {
                 return;
