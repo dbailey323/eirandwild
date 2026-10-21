@@ -8,7 +8,7 @@
 const REGULAR_WEEKS = 4;
 const LOOKAHEAD_WEEKS = 12;
 const TZ = 'Europe/London';
-const LOW_SPACES = 5;
+const LOW_SPACES = 3;
 const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const CATEGORIES = {
