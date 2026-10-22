@@ -94,7 +94,7 @@ function renderClass(cls) {
 
     // Spaces for the next session (the class's first upcoming date)
     if (cls.spacesLeft === 0) {
-        link.appendChild(el('span', 'tt-spaces tt-spaces-full', `Full on ${shortDate(start)}: join the waitlist`));
+        link.appendChild(el('span', 'tt-spaces tt-spaces-full', `Full on ${shortDate(start)}: join the waiting list`));
     } else if (cls.spacesLeft !== null && cls.spacesLeft !== undefined && cls.spacesLeft <= LOW_SPACES) {
         link.appendChild(el('span', 'tt-spaces', `Only ${cls.spacesLeft} ${cls.spacesLeft === 1 ? 'space' : 'spaces'} left on ${shortDate(start)}`));
     }
