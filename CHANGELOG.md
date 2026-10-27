@@ -2,6 +2,19 @@
 
 All notable changes to the Eir & Wild website project.
 
+## October 2026: site redesign
+
+### Changed
+- **New design on every page**, keeping the same URLs, page titles and descriptions: sticky navy header with dropdown menus, shared footer, one stylesheet (`css/site.css`) and inline SVG icons. Bootstrap and Font Awesome are no longer used.
+- **Homepage** rebuilt around Lara: hero with her photo, "find your class" paths, a live "coming up" list from Bookwhen, why Eir & Wild, meet Lara, venues and FAQs.
+- **Class pages** show each class's day, time, venue, dates and spaces left live from Bookwhen, with a Bookwhen link as a fallback.
+- **Classes are matched to Bookwhen by name** (`js/class-config.js`), so a new course or term appears automatically even when Bookwhen gives it a new reference.
+- **Logo** redrawn as a crisp SVG; cut-out photos now have transparent backgrounds.
+- FAQ page now has a page title, and its structured data matches the visible answers.
+
+### Removed
+- Per-page stylesheets, `js/nav.js`, `js/classes.js`, `js/timetable.js`, and class poster images that had days and times baked in.
+
 ## October 2026
 
 ### Removed
