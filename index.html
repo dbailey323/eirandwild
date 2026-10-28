@@ -1,260 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Eir & Wild - Pre and postnatal fitness classes, personal training, baby massage courses, and doula care in Mountsorrel, Rothley, and Leicestershire.">
-  <meta name="theme-color" content="#8b7355">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Eir &amp; Wild | Pre &amp; Postnatal Fitness, Baby Massage &amp; Doula Leicester</title>
+  <meta name="description" content="Eir &amp; Wild - Pre and postnatal fitness classes, personal training, baby massage courses, and doula care in Mountsorrel, Rothley, and Leicestershire.">
+  <meta name="theme-color" content="#000562">
+  <meta name="color-scheme" content="light">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Eir &amp; Wild">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="canonical" href="https://www.eirandwild.co.uk/">
-
-  <!-- Open Graph / Social Media Meta Tags -->
-  <meta property="og:title" content="Eir & Wild | Pre & Postnatal Fitness, Baby Massage & Doula Leicester">
-  <meta property="og:description" content="Nurturing pre and postnatal fitness, baby massage, and wellness in Mountsorrel and Rothley, Leicestershire.">
-  <meta property="og:image" content="https://www.eirandwild.co.uk/images/header.webp">
-  <meta property="og:url" content="https://www.eirandwild.co.uk/">
   <meta property="og:type" content="website">
-
-  <!-- Twitter Card Meta Tags -->
+  <meta property="og:site_name" content="Eir &amp; Wild Wellness">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Eir &amp; Wild | Pre &amp; Postnatal Fitness, Baby Massage &amp; Doula Leicester">
+  <meta property="og:description" content="Nurturing pre and postnatal fitness, baby massage, and wellness in Mountsorrel and Rothley, Leicestershire.">
+  <meta property="og:url" content="https://www.eirandwild.co.uk/">
+  <meta property="og:image" content="https://www.eirandwild.co.uk/images/header.webp">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Eir & Wild - Motherhood Fitness & Wellness Leicester">
+  <meta name="twitter:title" content="Eir &amp; Wild - Motherhood Fitness &amp; Wellness Leicester">
   <meta name="twitter:description" content="Pre and postnatal fitness classes, personal training, baby massage, and doula services in Leicester.">
   <meta name="twitter:image" content="https://www.eirandwild.co.uk/images/header.webp">
 
-  <!-- Favicons & Manifest -->
-  <link rel="apple-touch-icon" sizes="180x180" href="images/Light full(180).png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/Light full(32).png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/Light full(16).png">
-  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="/images/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/icon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/brand/icon-180.png">
+  <link rel="manifest" href="/manifest.json">
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/home.css">
-  
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Schema.org Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HealthClub",
-    "name": "Eir & Wild",
-    "image": "https://www.eirandwild.co.uk/images/header.webp",
-    "description": "Pre and postnatal fitness classes, personal training, baby massage courses, and doula care in Mountsorrel and Rothley, Leicestershire.",
-    "url": "https://www.eirandwild.co.uk/",
-    "telephone": "+447885899947",
-    "email": "hello@eirandwild.co.uk",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Mountsorrel",
-      "addressRegion": "Leicestershire",
-      "addressCountry": "GB"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 52.7297,
-      "longitude": -1.1492
-    },
-    "priceRange": "££"
-  }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="preload" href="/fonts/moon-time-regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/css/site.css">
+  <script type="speculationrules">
+  {"prefetch": [{"where": {"and": [{"href_matches": "/*"}, {"not": {"href_matches": "/api/*"}}]}, "eagerness": "moderate"}]}
   </script>
-
-  <title>Eir & Wild | Pre & Postnatal Fitness, Baby Massage & Doula Leicester</title>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthClub",
+  "name": "Eir & Wild Wellness",
+  "alternateName": "Eir & Wild",
+  "description": "Pre and postnatal fitness classes, womanhood classes, online HIIT, personal training, baby massage courses and postnatal doula care in Mountsorrel and Rothley, Leicestershire.",
+  "url": "https://www.eirandwild.co.uk/",
+  "image": "https://www.eirandwild.co.uk/images/header.webp",
+  "logo": "https://www.eirandwild.co.uk/images/Light%20full(180).png",
+  "telephone": "+447885899947",
+  "email": "hello@eirandwild.co.uk",
+  "founder": {
+    "@type": "Person",
+    "name": "Lara Bailey"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mountsorrel",
+    "addressRegion": "Leicestershire",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 52.7297,
+    "longitude": -1.1492
+  },
+  "areaServed": [
+    "Mountsorrel",
+    "Rothley",
+    "Leicester",
+    "Leicestershire"
+  ],
+  "priceRange": "££",
+  "sameAs": [
+    "https://www.facebook.com/EirandWildWellness",
+    "https://www.instagram.com/eirandwildwellness/",
+    "https://www.tiktok.com/@eirandwildwellness"
+  ]
+}
+  </script>
+  <style>.story-mark{width:100%;color:rgba(255,255,255,.9)}</style>
 </head>
 
 <body>
-  <main class="home-container">
-    <h1 class="visually-hidden">Eir &amp; Wild: Pre &amp; Postnatal Fitness, Baby Massage and Doula Support in Mountsorrel &amp; Rothley, Leicestershire</h1>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Eir &amp; Wild Wellness, home">
+      <svg class="brand-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 490" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round">
+  <path d="M15 15A189 189 0 1 1 15 385A190 190 0 0 0 15 15Z"/>
+  <path d="M845 15A189 189 0 1 0 845 385A190 190 0 0 1 845 15Z"/>
+  <circle cx="430" cy="200" r="185"/>
+  <path d="M175 40H685L430 475Z"/>
+  <path d="M290 95H570L430 365Z"/>
+</svg>
 
-    <!-- Top Trust & Location Bar -->
-    <header class="home-top-bar">
-      <div class="home-location-badge">
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Mountsorrel &amp; Rothley, Leicestershire</span>
-      </div>
-      <a href="reviews" class="home-rating-badge">
-        <span class="home-stars">★★★★★</span>
-        <span>5.0 on Google (Client Reviews)</span>
-      </a>
-    </header>
-
-    <!-- Main Header Card -->
-    <div class="home-hero-header">
-      <img src="images/header.webp" alt="Eir & Wild - Motherhood Fitness and Wellness Services in Leicester" width="1050" height="600" fetchpriority="high">
-    </div>
-
-    <!-- Live Announcement Banner -->
-    <a href="timetable" class="home-announcement">
-      <i class="fas fa-wand-magic-sparkles home-announcement-icon"></i>
-      <span>Winter Term Classes Now Booking — Reserve Your Space &rarr;</span>
+      <span class="brand-text"><span class="brand-name">Eir &amp; Wild</span><span class="brand-sub">WELLNESS</span></span>
     </a>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="/timetable">Timetable</a></li>
+        <li class="nav-group">
+          <button class="nav-group-label" type="button" aria-expanded="false">Classes <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul>
+            <li><a href="/leicester/fitnessclasses/motherhoodclasses">Motherhood Classes</a></li>
+            <li><a href="/leicester/fitnessclasses/womanhoodclasses">Womanhood Classes</a></li>
+            <li><a href="/leicester/fitnessclasses/hiit">Online HIIT</a></li>
+            <li><a href="/leicester/babymassage/babymassage">Baby Massage</a></li>
+          </ul>
+        </li>
+        <li><a href="/leicester/personaltraining/personaltraining">Personal Training</a></li>
+        <li><a href="/leicester/doula/doula">Doula</a></li>
+        <li class="nav-group">
+          <button class="nav-group-label" type="button" aria-expanded="false">About <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+          <ul>
+            <li><a href="/aboutme">About Lara</a></li>
+            <li><a href="/ourstory">Our Story</a></li>
+            <li><a href="/reviews">Reviews</a></li>
+            <li><a href="/faq">FAQs</a></li>
+          </ul>
+        </li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a class="nav-cta" href="/timetable">Book a class</a></li>
+      </ul>
+    </nav>
+    <a class="header-book" href="/timetable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Book</span></a>
+  </div>
+</header>
 
-    <!-- Category 1: Group Fitness Classes -->
-    <section class="home-section">
-      <div class="home-section-header">
-        <h2 class="home-section-title">
-          <span>🌸</span> Fitness &amp; Movement
-        </h2>
-        <p class="home-section-subtitle">Pre &amp; postnatal movement, high-energy dance, and online workouts (little ones welcome!)</p>
+<main id="main">
+<section class="hero">
+  <svg class="hero-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 490" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round">
+  <path d="M15 15A189 189 0 1 1 15 385A190 190 0 0 0 15 15Z"/>
+  <path d="M845 15A189 189 0 1 0 845 385A190 190 0 0 1 845 15Z"/>
+  <circle cx="430" cy="200" r="185"/>
+  <path d="M175 40H685L430 475Z"/>
+  <path d="M290 95H570L430 365Z"/>
+</svg>
+
+  <div class="container hero-inner">
+    <div>
+      <a class="hero-pill" href="/reviews"><span class="stars" aria-hidden="true">★★★★★</span> 5.0 on Google · Mountsorrel &amp; Rothley</a>
+      <span class="eyebrow">Welcome to Eir &amp; Wild</span>
+      <h1>Pre &amp; postnatal fitness, baby massage and doula support in Mountsorrel &amp; Rothley</h1>
+      <p class="lead">Small, friendly classes for every stage of womanhood and motherhood, led by Lara: a qualified pre and postnatal specialist, baby massage instructor, trained doula and mum who's been there.</p>
+      <ul class="hero-points">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Little ones welcome</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Small groups</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg> Zero body judgement</li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-gold" href="/timetable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> See the timetable</a>
+        <a class="btn btn-light" href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20visiting%20your%20website%20and%20had%20a%20question%21" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 9.8 9.8c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h0c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4z"/></svg> Chat with Lara</a>
       </div>
+    </div>
+    <div class="hero-photo">
+      <img src="/images/lara-portrait.webp" srcset="/images/lara-portrait-480.webp 480w, /images/lara-portrait.webp 900w" sizes="(max-width: 560px) 78vw, 400px" alt="Lara Bailey, founder of Eir &amp; Wild, smiling with her rainbow hair" width="900" height="1200" fetchpriority="high">
+      <div class="hero-photo-badge"><strong>Hi, I'm Lara!</strong>Founder, fitness coach &amp; maternal specialist</div>
+    </div>
+  </div>
+</section>
 
-      <div class="home-card-grid">
-        <a href="leicester/fitnessclasses/motherhoodclasses" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Motherhood Classes</span>
-            <span class="home-card-desc">Pre &amp; postnatal fitness</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-motherhood.webp" alt="" class="home-card-photo" width="570" height="600" loading="lazy">
-        </a>
-        <a href="leicester/fitnessclasses/womanhoodclasses" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Womanhood Classes</span>
-            <span class="home-card-desc">Dance, strength &amp; stretch</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-womanhood.webp" alt="" class="home-card-photo" width="551" height="600" loading="lazy">
-        </a>
-        <a href="leicester/fitnessclasses/hiit" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Online HIIT</span>
-            <span class="home-card-desc">Live 30-min Zoom workouts</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-hiit.webp" alt="" class="home-card-photo" width="585" height="600" loading="lazy">
-        </a>
-        <a href="leicester/personaltraining/personaltraining" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Personal Training</span>
-            <span class="home-card-desc">1:1 coaching tailored to you</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-pt.webp" alt="" class="home-card-photo" width="441" height="600" loading="lazy">
-        </a>
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <ul class="marquee-group"><li>Little ones welcome</li><li>Zero body judgement</li><li>Small, friendly groups</li><li>Pre &amp; postnatal specialist</li><li>Mountsorrel &amp; Rothley</li><li>Awaken your power</li><li>Nurture your journey</li></ul>
+    <ul class="marquee-group"><li>Little ones welcome</li><li>Zero body judgement</li><li>Small, friendly groups</li><li>Pre &amp; postnatal specialist</li><li>Mountsorrel &amp; Rothley</li><li>Awaken your power</li><li>Nurture your journey</li></ul>
+  </div>
+</div>
+
+<section class="section" id="find">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Find your class</span>
+      <h2>Support for every stage of your journey</h2>
+      <p class="lead">Whether you're expecting, newly postnatal, looking for some time for you, or wanting to bond with your baby, there's a space for you here.</p>
+    </div>
+    <div class="grid grid-3 snap-row">
+      <a class="path-card" href="/leicester/fitnessclasses/motherhoodclasses">
+        <div class="path-card-art"><span class="tag tag-light tag-motherhood">Motherhood</span><img src="/images/card-motherhood.webp" alt="" width="500" height="600" loading="lazy"></div>
+        <div class="path-card-body">
+          <h3>Motherhood Classes</h3>
+          <p>Pregnancy and postnatal fitness to rebuild strength, core and pelvic floor, with your little one by your side.</p>
+          <span class="more">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="path-card" href="/leicester/fitnessclasses/womanhoodclasses">
+        <div class="path-card-art"><span class="tag tag-light tag-womanhood">Womanhood</span><img src="/images/card-womanhood.webp" alt="" width="500" height="600" loading="lazy"></div>
+        <div class="path-card-body">
+          <h3>Womanhood Classes</h3>
+          <p>Dance &amp; Tone, Strong &amp; Stretched and Strong Women Squad. Fun, strength and stretch for every woman.</p>
+          <span class="more">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="path-card" href="/leicester/fitnessclasses/hiit">
+        <div class="path-card-art"><span class="tag tag-light tag-hiit">From home</span><img src="/images/card-hiit.webp" alt="" width="500" height="600" loading="lazy"></div>
+        <div class="path-card-body">
+          <h3>Online HIIT</h3>
+          <p>Live 30-minute cardio and strength workouts on Zoom. One booking covers your whole screen.</p>
+          <span class="more">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="path-card" href="/leicester/babymassage/babymassage">
+        <div class="path-card-art"><span class="tag tag-light tag-babymassage">4-week course</span><img src="/images/card-babymassage.webp" alt="" width="500" height="600" loading="lazy"></div>
+        <div class="path-card-body">
+          <h3>Baby Massage</h3>
+          <p>Bonding, natural colic and teething relief, plus a guided Mummy Relaxation every week.</p>
+          <span class="more">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="path-card" href="/leicester/personaltraining/personaltraining">
+        <div class="path-card-art"><span class="tag tag-light tag-motherhood">1:1</span><img src="/images/card-pt.webp" alt="" width="500" height="600" loading="lazy"></div>
+        <div class="path-card-body">
+          <h3>Personal Training</h3>
+          <p>A reserved weekly 1:1 session tailored to your body and goals, from £95 a month.</p>
+          <span class="more">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+      <a class="path-card" href="/leicester/doula/doula">
+        <div class="path-card-art"><span class="tag tag-light tag-babymassage">Fourth trimester</span><img src="/images/card-doula.webp" alt="" width="500" height="600" loading="lazy"></div>
+        <div class="path-card-body">
+          <h3>Postnatal Doula</h3>
+          <p>Hands-on newborn care, feeding support and a listening ear in your own home, at £30 an hour.</p>
+          <span class="more">Find out more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </a>
+    </div>
+    <p class="swipe-hint" aria-hidden="true">Swipe to see more <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container" style="max-width:860px">
+    <div class="section-head">
+      <span class="eyebrow">Coming up</span>
+      <h2>The next classes</h2>
+      <p class="lead">Live from our booking system. Tap a class for details and to book your space.</p>
+    </div>
+    <p class="status-note" data-loading role="status">Loading classes…</p>
+    <ul class="upcoming-list" id="upcoming"></ul>
+    <p class="status-note" id="upcomingEmpty" hidden>New dates are on their way. Message Lara on WhatsApp to hear first when the next block opens.</p>
+    <p class="status-note" id="upcomingError" hidden>We couldn't load the latest classes just now. See the <a href="/timetable">timetable</a> or the class pages for dates and booking.</p>
+    <p style="text-align:center;margin-top:28px"><a class="btn btn-navy" href="/timetable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg> Full weekly timetable</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Why Eir &amp; Wild?</span>
+      <h2>A space that's truly for you</h2>
+    </div>
+    <div class="bento">
+      <div class="bento-tile feature">
+        <img src="/images/card-motherhood.webp" alt="" width="567" height="600" loading="lazy">
+        <h3>Little ones welcome</h3>
+        <p>Pre-crawlers relax on a mat right next to you; movers join in a pushchair or carrier. Feeding and soothing is completely normal here.</p>
       </div>
-    </section>
-
-    <!-- Category 2: Support & Maternal Care -->
-    <section class="home-section">
-      <div class="home-section-header">
-        <h2 class="home-section-title">
-          <span>🤍</span> Support &amp; Nurturing Care
-        </h2>
-        <p class="home-section-subtitle">Dedicated fourth-trimester doula support and infant bonding</p>
+      <div class="bento-tile teal">
+        <span class="icon-badge teal" style="background:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></span>
+        <h3>Small groups</h3>
+        <p>So every exercise can be adapted for injuries, pelvic floor recovery or pausing to feed.</p>
       </div>
-
-      <div class="home-card-grid">
-        <a href="leicester/babymassage/babymassage" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Baby Massage</span>
-            <span class="home-card-desc">4-week bonding courses</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-babymassage.webp" alt="" class="home-card-photo" width="506" height="600" loading="lazy">
-        </a>
-        <a href="leicester/doula/doula" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Doula Support</span>
-            <span class="home-card-desc">Fourth-trimester postnatal care</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-doula.webp" alt="" class="home-card-photo" width="642" height="600" loading="lazy">
-        </a>
+      <div class="bento-tile rose">
+        <span class="icon-badge rose" style="background:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+        <h3>Zero body judgement</h3>
+        <p>Never any talk of size, weight loss or body shape.</p>
       </div>
-    </section>
-
-    <!-- Category 3: About & Community -->
-    <section class="home-section">
-      <div class="home-section-header">
-        <h2 class="home-section-title">
-          <span>✨</span> About Eir &amp; Wild
-        </h2>
-        <p class="home-section-subtitle">Meet Lara, explore our ethos, read client feedback, or get in touch</p>
+      <div class="bento-tile wide gold">
+        <span class="bento-stat">15+ years</span>
+        <h3 style="margin-top:8px">Specialist &amp; qualified</h3>
+        <p>Pre and postnatal fitness specialist, personal trainer, baby massage instructor and trained doula.</p>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="home-card-grid">
-        <a href="aboutme" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">About Me</span>
-            <span class="home-card-desc">Meet Lara Bailey</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-aboutme.webp" alt="" class="home-card-photo" width="517" height="600" loading="lazy">
-        </a>
-        <a href="ourstory" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Our Story</span>
-            <span class="home-card-desc">The meaning behind Eir &amp; Wild</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-ourstory.webp" alt="" class="home-card-photo" width="485" height="600" loading="lazy">
-        </a>
-        <a href="reviews" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Reviews</span>
-            <span class="home-card-desc">What local mums say</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-reviews.webp" alt="" class="home-card-photo" width="537" height="600" loading="lazy">
-        </a>
-        <a href="contact" class="home-card">
-          <span class="home-card-text">
-            <span class="home-card-title">Contact</span>
-            <span class="home-card-desc">WhatsApp, email &amp; venues</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-contact.webp" alt="" class="home-card-photo" width="548" height="600" loading="lazy">
-        </a>
+<section class="section section-white">
+  <div class="container split">
+    <div class="split-media"><img class="arch" src="/images/lara-wings.webp" srcset="/images/lara-wings-480.webp 480w, /images/lara-wings.webp 900w" sizes="(max-width: 860px) 90vw, 480px" alt="Lara standing in front of a painted pair of angel wings" width="900" height="1200" loading="lazy"></div>
+    <div>
+      <span class="eyebrow">Meet Lara</span>
+      <h2>Mum, coach and your biggest supporter</h2>
+      <p>Hi, I'm Lara! I'm mum to Luna, wife to Dan, and I've been helping people on their health journeys since I trained as a fitness instructor at 18. I specialised in pre and postnatal fitness after having Luna in 2020. Pregnancy and an emergency Caesarean recovery showed me first-hand what women truly feel and need.</p>
+      <p>I'm always on hand with a supportive word, a listening ear, a shoulder to cry on or a woo at your achievements. Whatever you need, I'm your girl!</p>
+      <ul class="checklist">
+        <li>Over 10 years coaching personal training clients 1-to-1</li>
+        <li>Qualified pre and postnatal fitness specialist</li>
+        <li>Baby massage instructor and trained doula (Every Birth Matters)</li>
+      </ul>
+      <a class="btn btn-outline" href="/aboutme">More about Lara <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-navy">
+  <div class="container split reverse">
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>Soft but fierce, just like motherhood</h2>
+      <p class="lead"><strong>Eir</strong> (pronounced "air") is the Norse goddess of healing and mercy. <strong>Wild</strong> is the freedom to be unapologetically yourself. Together they make a single, empowering sanctuary for the whole womanhood journey.</p>
+      <a class="btn btn-gold" href="/ourstory">Read our story <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="split-media" style="color:#fff;max-width:420px;justify-self:center;opacity:.9"><svg class="story-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 490" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round">
+  <path d="M15 15A189 189 0 1 1 15 385A190 190 0 0 0 15 15Z"/>
+  <path d="M845 15A189 189 0 1 0 845 385A190 190 0 0 1 845 15Z"/>
+  <circle cx="430" cy="200" r="185"/>
+  <path d="M175 40H685L430 475Z"/>
+  <path d="M290 95H570L430 365Z"/>
+</svg>
+</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Where to find us</span>
+      <h2>Our venues</h2>
+    </div>
+    <div class="grid grid-3 snap-row">
+      <div class="card venue">
+        <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+        <h3>Mountsorrel Memorial Centre</h3>
+        <address>105 Leicester Road, Mountsorrel LE12 7DB</address>
+        <p>Free parking directly outside or nearby at Soar Valley Leisure Centre.</p>
+        <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=Mountsorrel+Memorial+Centre+LE12+7DB" target="_blank" rel="noopener noreferrer">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="home-card-full">
-        <a href="faq" class="home-card home-card-wide">
-          <span class="home-card-text">
-            <span class="home-card-title">FAQ &amp; Files</span>
-            <span class="home-card-desc">Your questions answered</span>
-            <svg class="home-card-heart" viewBox="0 0 40 36" aria-hidden="true"><path d="M20 33C12 26 3 19 3 11.5 3 6.5 7 3 11.5 3c3.6 0 6.6 2.2 8.5 5.6C21.9 5.2 24.9 3 28.5 3 33 3 37 6.5 37 11.5 37 19 28 26 20 33z"/></svg>
-          </span>
-          <img src="images/card-faq.webp" alt="" class="home-card-photo" width="556" height="600" loading="lazy">
+      <div class="card venue">
+        <span class="icon-badge teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+        <h3>The Rothley Centre</h3>
+        <address>12 Mountsorrel Lane, Rothley LE7 7PR</address>
+        <p>Free parking outside, pram storage and baby-changing facilities.</p>
+        <a class="more" href="https://www.google.com/maps/search/?api=1&amp;query=The+Rothley+Centre+LE7+7PR" target="_blank" rel="noopener noreferrer">Get directions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="card venue">
+        <span class="icon-badge gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg></span>
+        <h3>Online on Zoom</h3>
+        <address>Join live from your living room</address>
+        <p>30-minute HIIT workouts, where one booking covers everyone on your screen.</p>
+        <a class="more" href="/leicester/fitnessclasses/hiit">Online HIIT <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Good to know</span>
+      <h2>Common questions</h2>
+    </div>
+    <div style="max-width:780px;margin:0 auto">
+      <details class="faq-item"><summary>Can I bring my baby to the classes?</summary><div class="faq-answer"><p>Yes! That is the heart of Eir &amp; Wild. Pre-crawlers can relax on a mat or cosy blanket right next to you. If your little one is on the move, they can relax in a pushchair or carrier while you enjoy your workout.</p></div></details>
+      <details class="faq-item"><summary>When can I start exercising again after birth?</summary><div class="faq-answer"><p>A minimum of 6 weeks after a vaginal birth, or 12 weeks after a caesarean, and always after clearance from your GP or healthcare professional at your 6–8 week postnatal check.</p></div></details>
+      <details class="faq-item"><summary>When can my baby start baby massage?</summary><div class="faq-answer"><p>Babies are welcome from 6–8 weeks old up until they start crawling. Each course runs for 4 weeks.</p></div></details>
+      <p style="text-align:center;margin-top:24px"><a class="btn btn-outline" href="/faq">All FAQs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <span class="eyebrow">Let's chat</span>
+      <h2>Not sure which class is right for you?</h2>
+      <p>Send Lara a message. She'll happily talk you through the options and help you find the right fit for where you are right now.</p>
+      <div class="btn-row">
+        <a class="btn btn-whatsapp" href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20not%20sure%20which%20class%20is%20right%20for%20me.%20Can%20you%20help%3F" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 9.8 9.8c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h0c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4z"/></svg> WhatsApp Lara</a>
+        <a class="btn btn-light" href="mailto:hello@eirandwild.co.uk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email Lara</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/" aria-label="Eir &amp; Wild Wellness, home">
+          <svg class="brand-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 490" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round">
+  <path d="M15 15A189 189 0 1 1 15 385A190 190 0 0 0 15 15Z"/>
+  <path d="M845 15A189 189 0 1 0 845 385A190 190 0 0 1 845 15Z"/>
+  <circle cx="430" cy="200" r="185"/>
+  <path d="M175 40H685L430 475Z"/>
+  <path d="M290 95H570L430 365Z"/>
+</svg>
+
+          <span class="brand-text"><span class="brand-name">Eir &amp; Wild</span><span class="brand-sub">WELLNESS</span></span>
         </a>
+        <p>Awaken your power. Nurture your journey. Pre and postnatal fitness, womanhood classes, baby massage and doula support in Mountsorrel &amp; Rothley, Leicestershire.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/EirandWildWellness" target="_blank" rel="noopener noreferrer" aria-label="Eir &amp; Wild on Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5V6.8c0-.8.2-1.3 1.4-1.3H17V2.2C16.7 2.1 15.6 2 14.4 2 11.8 2 10 3.6 10 6.5v2H7.2v3.7H10V22h4v-9.8h3l.4-3.7z"/></svg></a>
+          <a href="https://www.instagram.com/eirandwildwellness/" target="_blank" rel="noopener noreferrer" aria-label="Eir &amp; Wild on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.tiktok.com/@eirandwildwellness" target="_blank" rel="noopener noreferrer" aria-label="Eir &amp; Wild on TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 2h-3.4v13.6a2.9 2.9 0 1 1-2-2.8V9.3a6.3 6.3 0 1 0 5.4 6.3V8.7a7.9 7.9 0 0 0 4.6 1.5V6.8a4.6 4.6 0 0 1-4.6-4.8z"/></svg></a>
+        </div>
       </div>
-    </section>
-
-    <!-- Social Media Links & Footer -->
-    <footer class="home-social-wrapper">
-      <div class="home-social-icons" role="navigation" aria-label="Social media links">
-        <a href="https://www.facebook.com/EirandWildWellness" target="_blank" rel="noopener noreferrer" aria-label="Visit Eir & Wild on Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/eirandwildwellness/" target="_blank" rel="noopener noreferrer" aria-label="Visit Eir & Wild on Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@eirandwildwellness" target="_blank" rel="noopener noreferrer" aria-label="Visit Eir & Wild on TikTok"><i class="fab fa-tiktok"></i></a>
+      <div>
+        <h2>Classes</h2>
+        <ul>
+          <li><a href="/timetable">Timetable</a></li>
+          <li><a href="/leicester/fitnessclasses/motherhoodclasses">Motherhood Classes</a></li>
+          <li><a href="/leicester/fitnessclasses/womanhoodclasses">Womanhood Classes</a></li>
+          <li><a href="/leicester/fitnessclasses/hiit">Online HIIT</a></li>
+          <li><a href="/leicester/babymassage/babymassage">Baby Massage</a></li>
+          <li><a href="/leicester/personaltraining/personaltraining">Personal Training</a></li>
+          <li><a href="/leicester/doula/doula">Postnatal Doula</a></li>
+        </ul>
       </div>
-      <p class="home-footer-tagline">
-        Awaken your power. Nurture your journey. &bull; Mountsorrel &amp; Rothley, Leicestershire
-      </p>
-      <p class="home-footer-links">
-        <a href="timetable">Timetable</a> &bull; <a href="privacy">Privacy Policy</a>
-      </p>
-    </footer>
-  </main>
+      <div>
+        <h2>Eir &amp; Wild</h2>
+        <ul>
+          <li><a href="/aboutme">About Lara</a></li>
+          <li><a href="/ourstory">Our Story</a></li>
+          <li><a href="/reviews">Reviews</a></li>
+          <li><a href="/faq">FAQs</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Get in touch</h2>
+        <ul>
+          <li><a href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27d%20like%20to%20ask%20about%20Eir%20%26%20Wild" target="_blank" rel="noopener noreferrer">WhatsApp Lara</a></li>
+          <li><a href="mailto:hello@eirandwild.co.uk">hello@eirandwild.co.uk</a></li>
+          <li><a href="tel:+447885899947">07885 899947</a></li>
+          <li>Mountsorrel Memorial Centre, LE12 7DB</li>
+          <li>The Rothley Centre, LE7 7PR</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year">2026</span> Eir &amp; Wild Wellness. Mountsorrel &amp; Rothley, Leicestershire.</span>
+      <a href="/privacy">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
 
-  <!-- Floating WhatsApp Quick-Chat Button -->
-  <a href="https://wa.me/447885899947?text=Hi%20Lara,%20I'm%20visiting%20your%20website%20and%20had%20a%20question!" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-    <span>Chat with Lara</span>
-  </a>
+<a class="floating-whatsapp" href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20visiting%20your%20website%20and%20had%20a%20question%21" target="_blank" rel="noopener noreferrer" aria-label="Chat with Lara on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 9.8 9.8c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h0c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4z"/></svg><span>Chat with Lara</span>
+</a>
 
-  <!-- Vercel Speed Insights -->
+<div class="sheet" id="menu-sheet" popover>
+  <div class="sheet-handle" aria-hidden="true"></div>
+  <div class="sheet-head">
+    <span class="sheet-title script">Explore Eir &amp; Wild</span>
+    <button class="sheet-close" type="button" popovertarget="menu-sheet" popovertargetaction="hide" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <a class="sheet-cta" href="/timetable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span><strong>This week's classes</strong><small>See the timetable and book</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <p class="sheet-label">Classes &amp; services</p>
+  <nav class="sheet-tiles" aria-label="Classes and services">
+        <a class="sheet-tile" href="/leicester/fitnessclasses/motherhoodclasses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 0 0 5 0"/><path d="M12 3c-1.5 1.5-1.5 3 0 4"/></svg><span>Motherhood</span></a>
+        <a class="sheet-tile" href="/leicester/fitnessclasses/womanhoodclasses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>Womanhood</span></a>
+        <a class="sheet-tile" href="/leicester/fitnessclasses/hiit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg><span>Online HIIT</span></a>
+        <a class="sheet-tile" href="/leicester/babymassage/babymassage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg><span>Baby Massage</span></a>
+        <a class="sheet-tile" href="/leicester/personaltraining/personaltraining"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><span>Personal Training</span></a>
+        <a class="sheet-tile" href="/leicester/doula/doula"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Postnatal Doula</span></a>
+  </nav>
+  <p class="sheet-label">Eir &amp; Wild</p>
+  <nav class="sheet-more" aria-label="More pages">
+        <a href="/aboutme">About Lara</a>
+        <a href="/ourstory">Our Story</a>
+        <a href="/reviews">Reviews</a>
+        <a href="/faq">FAQs</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+  </nav>
+  <div class="sheet-contact">
+    <a class="btn btn-whatsapp" href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20visiting%20your%20website%20and%20had%20a%20question%21" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 9.8 9.8c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h0c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4z"/></svg> WhatsApp</a>
+    <a class="btn btn-light" href="mailto:hello@eirandwild.co.uk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email</a>
+  </div>
+</div>
+
+<nav class="tabbar" aria-label="Quick links">
+  <a href="/" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="/timetable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Timetable</span></a>
+  <a href="/#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg><span>Classes</span></a>
+  <a href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20visiting%20your%20website%20and%20had%20a%20question%21" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.7 7.1L3 21l1.9-6.3A8 8 0 1 1 21 12z"/></svg><span>Chat</span></a>
+  <button type="button" popovertarget="menu-sheet" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button>
+</nav>
+
+  <script src="/js/site.js"></script>
+  <script src="/js/class-config.js"></script>
+  <script src="/js/live-classes.js"></script>
   <script>
     window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/speed-insights/script.js"></script>
-
-  <!-- Vercel Analytics -->
   <script defer src="/_vercel/insights/script.js"></script>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>

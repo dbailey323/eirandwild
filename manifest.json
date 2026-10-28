@@ -1,43 +1,60 @@
 {
-  "name": "Eir & Wild - Motherhood Fitness & Wellness",
+  "name": "Eir & Wild Wellness",
   "short_name": "Eir & Wild",
-  "description": "Fitness and wellness services for mothers in Leicester",
+  "description": "Pre and postnatal fitness, womanhood classes, baby massage and doula support in Mountsorrel & Rothley, Leicestershire",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#8b7355",
+  "background_color": "#f7faf9",
+  "theme_color": "#000562",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "images/Light full(16).png",
-      "sizes": "16x16",
-      "type": "image/png"
+      "src": "/images/brand/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     },
     {
-      "src": "images/Light full(32).png",
-      "sizes": "32x32",
-      "type": "image/png"
-    },
-    {
-      "src": "images/Light full(180).png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "images/Light full(180).png",
+      "src": "/images/brand/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "images/Light full(180).png",
+      "src": "/images/brand/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/brand/icon-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ],
-  "categories": ["health", "fitness", "lifestyle"],
-  "screenshots": [],
+  "categories": [
+    "health",
+    "fitness",
+    "lifestyle"
+  ],
   "related_applications": [],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "scope": "/",
+  "id": "/",
+  "shortcuts": [
+    {
+      "name": "Timetable",
+      "short_name": "Timetable",
+      "url": "/timetable",
+      "icons": [
+        {
+          "src": "/images/brand/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Chat with Lara",
+      "short_name": "Chat",
+      "url": "https://wa.me/447885899947"
+    }
+  ]
 }

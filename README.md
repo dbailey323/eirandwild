@@ -1,200 +1,107 @@
 # Eir & Wild Website
 
-> Pre- and postnatal fitness, baby massage, and doula services in Leicestershire
+> Pre and postnatal fitness, womanhood classes, baby massage and doula support in Mountsorrel & Rothley, Leicestershire
 
 [![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)](https://www.eirandwild.co.uk)
 [![Clean URLs](https://img.shields.io/badge/URLs-Clean-blue)](https://www.eirandwild.co.uk)
-[![Bootstrap 5.3.3](https://img.shields.io/badge/Bootstrap-5.3.3-purple)](https://getbootstrap.com)
-[![WebP](https://img.shields.io/badge/Images-WebP%20Optimized-green)](https://www.eirandwild.co.uk)
+[![No framework](https://img.shields.io/badge/Static-HTML%20%2B%20CSS-purple)](https://www.eirandwild.co.uk)
 
 ## About
 
-**Eir & Wild** offers specialized fitness, wellness, baby massage, and doula services tailored for women and mothers in Leicestershire (Mountsorrel, Rothley, and surrounding areas):
-- **Motherhood Fitness Classes**: *The Strong Mummy Movement*, *Strong Women Squad*, *Strong Mums, Bums & Tums*, and *Mummy Me Time*.
-- **Womanhood Fitness Classes**: *Dance & Tone*, *Strong & Stretched*, and *Monday Double* bundle.
-- **Online HIIT Classes**: Live 30-minute cardio and strength workouts streamed on Zoom.
-- **Baby Massage & Mummy Relaxation**: 4-week bonding, colic relief, and relaxation courses.
-- **Personal Training**: 1-to-1 tailored pre/postnatal and female strength coaching (45-min & 60-min memberships).
-- **Postnatal Doula Services**: Compassionate fourth-trimester care, newborn support, and birth debriefing.
+**Eir & Wild Wellness** is run by Lara Bailey in Mountsorrel and Rothley, Leicestershire:
+- **Motherhood classes**: *The Strong Mummy Movement*, *Strong Women Squad* and *Strong Mums, Bums & Tums*.
+- **Womanhood classes**: *Dance & Tone*, *Strong & Stretched* and the *Monday Double* bundle.
+- **Online HIIT**: live 30-minute cardio and strength workouts on Zoom.
+- **Baby Massage & Mummy Relaxation**: 4-week courses.
+- **Personal Training**: 45- and 60-minute 1:1 memberships.
+- **Postnatal Doula**: fourth-trimester care at home.
 
 Production URL: [www.eirandwild.co.uk](https://www.eirandwild.co.uk)
 
 ---
 
-## Project Structure
+## Adding or changing classes
+
+Class dates, times, venues and spaces left all come live from Bookwhen, so most changes need nothing on the website:
+
+| Change in Bookwhen | Website |
+|---|---|
+| New dates, new term, new course (even with a new reference) | Appears automatically, as long as the class keeps its name |
+| Time, venue or capacity change, cancellation | Updates automatically (within about a minute) |
+| A brand-new type of class | Appears on the timetable automatically. To give it its own card on a class page, add it to `js/class-config.js` and add a card with `data-class="<key>"` |
+| Renaming a class | Make sure the new title still contains the words in its `match` list in `js/class-config.js` |
+
+`js/class-config.js` is the one place that lists the classes, which page each belongs to and which Bookwhen page books it.
+
+---
+
+## Project structure
 
 ```
 eirandwild/
-├── index.html                   # Homepage (Linktree-style responsive card grid)
-├── aboutme.html                 # About Lara Bailey (Career, specialism, ethos)
-├── ourstory.html                # Eir & Wild story & goddess philosophy
-├── contact.html                 # Contact channels, WhatsApp, email & venues
-├── faq.html                     # Categorized FAQ knowledge base (with Schema.org)
-├── reviews.html                 # Google Reviews widget & testimonials
-├── timetable.html               # Weekly class schedule built from /api/classes
+├── index.html                   # Homepage
+├── timetable.html               # Weekly schedule, live from Bookwhen
+├── aboutme.html                 # About Lara
+├── ourstory.html                # The story and meaning behind Eir & Wild
+├── reviews.html                 # Google reviews (Elfsight widget)
+├── faq.html                     # FAQs (with FAQPage structured data)
+├── contact.html                 # WhatsApp, email, phone and venues
 ├── privacy.html                 # Privacy policy
-├── 404.html                     # Custom branded 404 error page
-├── manifest.json                # PWA manifest
-├── robots.txt                   # Web crawler directives
-├── sitemap.xml                  # SEO XML sitemap with clean URLs
-├── vercel.json                  # Vercel configuration (cleanUrls: true)
-├── package.json                 # Node metadata and dependencies
+├── 404.html                     # Page not found
+├── leicester/
+│   ├── fitnessclasses/
+│   │   ├── motherhoodclasses.html
+│   │   ├── womanhoodclasses.html
+│   │   └── hiit.html
+│   ├── babymassage/babymassage.html
+│   ├── personaltraining/personaltraining.html
+│   └── doula/doula.html
 │
-├── api/                         # Vercel Serverless Functions
-│   └── classes.js               # Fetches and filters real-time Bookwhen API events
-│
-├── leicester/                   # Service & Location-specific pages
-│   ├── fitnessclasses/          # Fitness class pages
-│   │   ├── motherhoodclasses.html # Pre/postnatal classes & schedule
-│   │   ├── womanhoodclasses.html  # Women's dance, strength & stretch classes
-│   │   └── hiit.html              # Online HIIT classes via Zoom
-│   ├── babymassage/             # Baby massage course details & booking
-│   │   └── babymassage.html
-│   ├── personaltraining/        # 1:1 PT memberships, benefits & pricing
-│   │   └── personaltraining.html
-│   └── doula/                   # Postnatal doula support & hourly pricing
-│       └── doula.html
-│
-├── css/                         # Modular scoped stylesheets
-│   ├── global.css               # Site-wide base rules
-│   ├── home.css                 # Homepage responsive grid layout
-│   ├── classes.css              # Shared class card and button styling
-│   ├── motherhood.css           # Motherhood classes scoped styling
-│   ├── womanhood.css            # Womanhood classes scoped styling
-│   ├── hiit.css                 # Online HIIT classes scoped styling
-│   ├── babymassage.css          # Baby massage & mummy relaxation styling
-│   ├── pt.css                   # Personal training memberships & pricing styling
-│   ├── doula.css                # Doula services & care checklist styling
-│   ├── about.css                # About & Story page styles
-│   ├── contact.css              # Contact page 2-column portal styles
-│   ├── faq.css                  # FAQ categorized layout & cards
-│   ├── nav.css                  # Responsive dynamic navbar styles
-│   └── coming-soon.css          # Maintenance/placeholder styles
-│
-├── js/                          # Client-side JavaScript
-│   ├── nav.js                   # Dynamic multi-level navbar injector
-│   ├── classes.js               # Fetches /api/classes & renders Bookwhen booking buttons
-│   └── timetable.js             # Builds the weekly schedule from /api/classes
-│
-├── images/                      # Optimized image assets (.webp preferred)
-└── fonts/                       # Custom typography ('Moon Time' TTF)
+├── api/classes.js               # Vercel function: fetches events from the Bookwhen API
+├── css/site.css                 # The one stylesheet for every page
+├── js/
+│   ├── site.js                  # Mobile menu and dropdowns
+│   ├── class-config.js          # The list of classes (matched to Bookwhen by name)
+│   └── live-classes.js          # Class page dates, homepage "coming up" list and timetable
+├── images/                      # WebP photos; images/brand/ holds the logo mark, favicon and app icons
+├── fonts/moon-time-regular.ttf  # Moon Time script font
+├── manifest.json, robots.txt, sitemap.xml, vercel.json
 ```
 
----
-
-## Technologies Used
-
-- **HTML5**: Semantic, accessible markup across all 13 pages (`<main>`, `<article>`, `<header>`, `<address>`).
-- **CSS3**: Scoped stylesheets utilizing CSS Grid, Flexbox, custom `@font-face` (*Moon Time*), and Google Fonts (*Montserrat*).
-- **Bootstrap 5.3.3**: Modern UI grid framework (CDN, pure JavaScript, zero jQuery).
-- **Font Awesome 6.5.1**: Scalable vector icons for actions, contact methods, and checkmarks.
-- **WebP Optimization**: All photography and thumbnails compressed and sized with explicit `width`, `height`, `fetchpriority="high"`, and `loading="lazy"`.
-- **Bookwhen API**: Vercel Serverless Function (`/api/classes.js`) fetching real-time schedule dates with client-side rendering and static fallback CTAs.
-- **Analytics & Speed**: Vercel Speed Insights and Vercel Web Analytics (both cookieless).
-- **SEO & PWA**: Clean URLs, Open Graph, Twitter Cards, Schema.org (`LocalBusiness`, `FAQPage`), and `manifest.json`.
+Every page shares the same header, footer and stylesheet. Links use root paths (`/css/site.css`, `/leicester/...`), so preview the site from the repository root.
 
 ---
 
-## Local Development
+## Design
 
-### Prerequisites
-- **Node.js**: v18+ recommended
-- **npm**: Package manager
-
-### Setup Instructions
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/dbailey323/eirandwild.git
-   cd eirandwild
-   ```
-
-2. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-3. **Run a local static server**:
-   ```bash
-   # Using npx serve
-   npx serve .
-
-   # Or using Python 3
-   python -m http.server 8000
-   ```
-   Open `http://localhost:8000` (or the port indicated) in your browser.
-
-4. **Testing with Serverless Functions (`/api/classes`)**:
-   To test the live Bookwhen schedule integration locally, use the Vercel CLI with your API key:
-   ```bash
-   # Create a .env.local file:
-   # BOOKWHEN_API_KEY=your_key_here
-
-   npx vercel dev
-   ```
-
-5. **Build Verification**:
-   ```bash
-   npm run build
-   ```
+- **Brand colours**: navy `#000562`, gold `#FFD700`, teal `#7AE1D5`, bronze `#8B7355` (defined as CSS variables at the top of `css/site.css`).
+- **Type**: *Moon Time* script for small headings, *Montserrat* (Google Fonts) for everything else.
+- **Logo**: the triple-moon mark is an SVG (`images/brand/mark.svg`), so it stays sharp at any size.
+- **Mobile first and app-like**: a bottom tab bar and slide-up menu (Popover API) on phones, page transitions (View Transitions API), prefetching (speculation rules), scroll-driven animations and swipeable card rows. Each is a progressive enhancement: older browsers get the same content without the effects, and animations switch off for people who prefer reduced motion.
+- No CSS or JavaScript framework, and no icon font: icons are inline SVG. The only third-party requests are Google Fonts, the reviews widget and Vercel's cookieless analytics.
 
 ---
 
-## Deployment & Hosting
+## Local development
 
-The site is continuously deployed on [Vercel](https://vercel.com) from the `main` branch.
+```bash
+# Static preview (live class data won't load without the API)
+python3 -m http.server 8000
 
-- **Production Domain**: [https://www.eirandwild.co.uk](https://www.eirandwild.co.uk)
-- **Vercel Preview URL**: [https://eirandwild.vercel.app](https://eirandwild.vercel.app)
-- **Configuration (`vercel.json`)**: Configured with `"cleanUrls": true` for clean routing without `.html` extensions.
+# With the Bookwhen API: add BOOKWHEN_API_KEY to .env.local, then
+npx vercel dev
+```
 
----
+## Deployment
 
-## Key Features & Architectural Highlights
-
-### 1. 100% Semantic HTML (No Text Trapped in Images)
-Every single page that previously used static infographic banners (`personaltraining.html`, `doula.html`, `babymassage.html`, `motherhoodclasses.html`, `womanhoodclasses.html`, `hiit.html`) has been rebuilt with semantic HTML text, responsive cards, and clean typography. All offerings, benefits, and pricing are **100% crawlable by Google**.
-
-### 2. Layout Stability & Performance (Zero Layout Shift)
-- All `<img>` tags specify exact native `width` and `height` attributes matching their aspect ratio to eliminate Cumulative Layout Shift (CLS).
-- Above-the-fold hero images use `fetchpriority="high"`, while below-the-fold cards and thumbnails use `loading="lazy"`.
-- Migrated legacy PNGs and JPEGs to modern `.webp` format.
-
-### 3. Dynamic Bookwhen Booking with Resilient Fallbacks
-- Class cards feature containers named `#classDates{classId}`.
-- Each container includes an accessible fallback link (`.fallback-booking-link`) pointing to the Bookwhen schedule (`https://bookwhen.com/eirandwild-motherhood` or `https://bookwhen.com/eirandwild-womanhood`).
-- When live events load via `js/classes.js`, fallback links are automatically replaced with specific date buttons. If the API is offline or dates have passed, users still have an accessible way to book.
-
-### 4. Responsiveness for Mobile & Desktop
-- **Mobile First**: Clean, large touch-friendly thumbnails and centered vertical card stacks.
-- **Desktop Enhanced**: Side-by-side card layouts with fixed thumbnail columns (`min-width: 270px`), generous details columns with `flex-wrap: nowrap`, and responsive grids on `index.html`.
-- **Global Navbar**: Responsive link padding and hover transitions ensuring all 11 navigation items fit smoothly across 13" laptops through 4K displays.
+Deployed on [Vercel](https://vercel.com) from the `main` branch, with `"cleanUrls": true` so pages work without `.html`.
 
 ---
 
-## Recent Improvements (February – October 2026)
+## Contact & social
 
-- ✅ **Complete Semantic HTML Rebuild**: Converted all static image banners across 6 class/service pages into accessible, crawlable HTML text.
-- ✅ **WebP Asset Migration**: Converted all images (`Baby massage info`, `Doula services`, `PT`, `Dance & Tone`, `Monday double`, `HIIT`, `homepageheader`) to WebP using Sharp.
-- ✅ **Clean URLs Sitewide**: Standardized canonical links and Open Graph tags without `.html` across all 12 pages.
-- ✅ **Full Sitemap Coverage**: Updated `sitemap.xml` with clean URLs, current timestamps, and the missing online HIIT class page.
-- ✅ **Desktop Responsiveness Polish**: Eliminated card text squashing, constrained desktop containers, and upgraded homepage into a responsive 2-column grid.
-- ✅ **Interactive Action CTAs**: Added high-converting direct WhatsApp enquiry and pre-filled email buttons across all pages.
-- ✅ **Brand UI Elevation**: Upgraded `aboutme.html`, `ourstory.html`, `contact.html`, and `faq.html` with Moon Time gold headings, navy cards, and structured layouts.
-- ✅ **Custom 404 Page**: Added branded `404.html` with navigation and analytics.
-- ✅ **Bootstrap 5.3.3 & Font Awesome 6.5.1**: Modernized UI dependencies with pure JavaScript and zero jQuery.
-
----
-
-## Contact & Social Media
-
-- **Website**: [www.eirandwild.co.uk](https://www.eirandwild.co.uk)
 - **Email**: [hello@eirandwild.co.uk](mailto:hello@eirandwild.co.uk)
 - **WhatsApp**: [+44 7885 899947](https://wa.me/447885899947)
 - **Facebook**: [@EirandWildWellness](https://www.facebook.com/EirandWildWellness)
 - **Instagram**: [@eirandwildwellness](https://www.instagram.com/eirandwildwellness/)
 - **TikTok**: [@eirandwildwellness](https://www.tiktok.com/@eirandwildwellness)
-
----
-
-*Built with ❤️ for mothers and women in Leicestershire.*
