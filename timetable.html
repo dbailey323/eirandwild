@@ -3,10 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Class Timetable | Fitness &amp; Baby Massage Classes Leicester | Eir &amp; Wild</title>
   <meta name="description" content="Eir &amp; Wild weekly class timetable: pre and postnatal fitness, womanhood, online HIIT and baby massage classes in Mountsorrel &amp; Rothley, near Leicester.">
   <meta name="theme-color" content="#000562">
+  <meta name="color-scheme" content="light">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Eir &amp; Wild">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="canonical" href="https://www.eirandwild.co.uk/timetable">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Eir &amp; Wild Wellness">
@@ -21,8 +25,8 @@
   <meta name="twitter:image" content="https://www.eirandwild.co.uk/images/header.webp">
 
   <link rel="icon" href="/images/brand/favicon.svg" type="image/svg+xml">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/Light%20full(32).png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/Light%20full(180).png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/brand/icon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/brand/icon-180.png">
   <link rel="manifest" href="/manifest.json">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,11 +34,14 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap">
   <link rel="preload" href="/fonts/moon-time-regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="/css/site.css">
+  <script type="speculationrules">
+  {"prefetch": [{"where": {"and": [{"href_matches": "/*"}, {"not": {"href_matches": "/api/*"}}]}, "eagerness": "moderate"}]}
+  </script>
 </head>
 
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
+<header class="site-header" id="site-header">
   <div class="container header-inner">
     <a class="brand" href="/" aria-label="Eir &amp; Wild Wellness, home">
       <svg class="brand-mark" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 490" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round">
@@ -47,7 +54,6 @@
 
       <span class="brand-text"><span class="brand-name">Eir &amp; Wild</span><span class="brand-sub">WELLNESS</span></span>
     </a>
-    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <nav class="site-nav" id="site-nav" aria-label="Main">
       <ul>
         <li><a href="/timetable" aria-current="page">Timetable</a></li>
@@ -75,6 +81,7 @@
         <li><a class="nav-cta" href="/timetable">Book a class</a></li>
       </ul>
     </nav>
+    <a class="header-book" href="/timetable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Book</span></a>
   </div>
 </header>
 
@@ -116,7 +123,7 @@
       <span class="eyebrow">Where to find us</span>
       <h2>Our venues</h2>
     </div>
-    <div class="grid grid-3">
+    <div class="grid grid-3 snap-row">
       <div class="card venue">
         <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
         <h3>Mountsorrel Memorial Centre</h3>
@@ -223,6 +230,45 @@
 <a class="floating-whatsapp" href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20visiting%20your%20website%20and%20had%20a%20question%21" target="_blank" rel="noopener noreferrer" aria-label="Chat with Lara on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 9.8 9.8c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h0c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4z"/></svg><span>Chat with Lara</span>
 </a>
+
+<div class="sheet" id="menu-sheet" popover>
+  <div class="sheet-handle" aria-hidden="true"></div>
+  <div class="sheet-head">
+    <span class="sheet-title script">Explore Eir &amp; Wild</span>
+    <button class="sheet-close" type="button" popovertarget="menu-sheet" popovertargetaction="hide" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <a class="sheet-cta" href="/timetable"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span><strong>This week's classes</strong><small>See the timetable and book</small></span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  <p class="sheet-label">Classes &amp; services</p>
+  <nav class="sheet-tiles" aria-label="Classes and services">
+        <a class="sheet-tile" href="/leicester/fitnessclasses/motherhoodclasses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M9.5 15a3.5 3.5 0 0 0 5 0"/><path d="M12 3c-1.5 1.5-1.5 3 0 4"/></svg><span>Motherhood</span></a>
+        <a class="sheet-tile" href="/leicester/fitnessclasses/womanhoodclasses"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg><span>Womanhood</span></a>
+        <a class="sheet-tile" href="/leicester/fitnessclasses/hiit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="11" rx="2"/><path d="M2 19h20"/></svg><span>Online HIIT</span></a>
+        <a class="sheet-tile" href="/leicester/babymassage/babymassage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z"/></svg><span>Baby Massage</span></a>
+        <a class="sheet-tile" href="/leicester/personaltraining/personaltraining"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg><span>Personal Training</span></a>
+        <a class="sheet-tile" href="/leicester/doula/doula"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Postnatal Doula</span></a>
+  </nav>
+  <p class="sheet-label">Eir &amp; Wild</p>
+  <nav class="sheet-more" aria-label="More pages">
+        <a href="/aboutme">About Lara</a>
+        <a href="/ourstory">Our Story</a>
+        <a href="/reviews">Reviews</a>
+        <a href="/faq">FAQs</a>
+        <a href="/contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+  </nav>
+  <div class="sheet-contact">
+    <a class="btn btn-whatsapp" href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20visiting%20your%20website%20and%20had%20a%20question%21" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 21.8h0a9.9 9.9 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 0 1 12 2.2a9.8 9.8 0 0 1 9.8 9.8c0 5.4-4.4 9.8-9.8 9.8zM20.5 3.5A11.8 11.8 0 0 0 12 0C5.5 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.7a11.9 11.9 0 0 0 5.7 1.5h0c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.4z"/></svg> WhatsApp</a>
+    <a class="btn btn-light" href="mailto:hello@eirandwild.co.uk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> Email</a>
+  </div>
+</div>
+
+<nav class="tabbar" aria-label="Quick links">
+  <a href="/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg><span>Home</span></a>
+  <a href="/timetable" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Timetable</span></a>
+  <a href="/#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg><span>Classes</span></a>
+  <a href="https://wa.me/447885899947?text=Hi%20Lara%2C%20I%27m%20visiting%20your%20website%20and%20had%20a%20question%21" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.7 7.1L3 21l1.9-6.3A8 8 0 1 1 21 12z"/></svg><span>Chat</span></a>
+  <button type="button" popovertarget="menu-sheet" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span></button>
+</nav>
 
   <script src="/js/site.js"></script>
   <script src="/js/class-config.js"></script>

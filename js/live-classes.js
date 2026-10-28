@@ -254,6 +254,65 @@
         });
 
         if (!total) document.getElementById('weekEmpty').hidden = false;
+        buildDayTabs(container);
+    }
+
+    // On phones the week becomes calendar-style day chips, starting from today.
+    // CSS only applies the tabbed layout on small screens; computers keep the grid.
+    function buildDayTabs(container) {
+        const days = Array.from(container.querySelectorAll('.week-day'));
+        if (days.length < 2) return;
+
+        const today = new Date();
+        const todayIndex = DAYS.indexOf(weekday(today));
+        const entries = days.map((section) => {
+            const name = section.querySelector('h2').textContent;
+            const offset = (DAYS.indexOf(name) - todayIndex + 7) % 7;
+            return { section, name, offset, date: new Date(today.getTime() + offset * DAY_MS) };
+        }).sort((a, b) => a.offset - b.offset);
+
+        const tabs = el('div', 'day-tabs');
+        tabs.setAttribute('role', 'tablist');
+        tabs.setAttribute('aria-label', 'Choose a day');
+
+        const select = (entry, focus, fromUser) => {
+            entries.forEach((e) => {
+                const on = e === entry;
+                e.button.setAttribute('aria-selected', on ? 'true' : 'false');
+                e.button.tabIndex = on ? 0 : -1;
+                e.section.classList.toggle('active', on);
+            });
+            if (focus) entry.button.focus();
+            // Keep the chosen chip in view, without moving the page on first load
+            if (fromUser) tabs.scrollTo({ left: entry.button.offsetLeft - tabs.clientWidth / 2 + entry.button.offsetWidth / 2, behavior: 'smooth' });
+        };
+
+        entries.forEach((entry, i) => {
+            entry.section.id = `day-${entry.name.toLowerCase()}`;
+            entry.section.setAttribute('role', 'tabpanel');
+            entry.section.setAttribute('aria-label', entry.name);
+            const button = el('button', 'day-tab');
+            button.type = 'button';
+            button.id = `tab-${entry.name.toLowerCase()}`;
+            button.setAttribute('role', 'tab');
+            button.setAttribute('aria-controls', entry.section.id);
+            button.setAttribute('aria-label', `${entry.offset === 0 ? 'Today, ' : ''}${entry.name} ${dayMonth(entry.date)}`);
+            button.appendChild(document.createTextNode(entry.offset === 0 ? 'Today' : entry.name.slice(0, 3)));
+            button.appendChild(el('strong', '', dayNum(entry.date)));
+            button.addEventListener('click', () => select(entry, false, true));
+            button.addEventListener('keydown', (event) => {
+                const step = { ArrowRight: 1, ArrowLeft: -1 }[event.key];
+                if (!step) return;
+                event.preventDefault();
+                select(entries[(i + step + entries.length) % entries.length], true, true);
+            });
+            entry.button = button;
+            tabs.appendChild(button);
+        });
+
+        container.classList.add('tabbed');
+        container.parentNode.insertBefore(tabs, container);
+        select(entries[0], false);
     }
 
     function showError() {

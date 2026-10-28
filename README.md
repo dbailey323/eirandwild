@@ -63,7 +63,7 @@ eirandwild/
 │   ├── site.js                  # Mobile menu and dropdowns
 │   ├── class-config.js          # The list of classes (matched to Bookwhen by name)
 │   └── live-classes.js          # Class page dates, homepage "coming up" list and timetable
-├── images/                      # WebP photos; images/brand/ holds the logo mark and favicon (SVG)
+├── images/                      # WebP photos; images/brand/ holds the logo mark, favicon and app icons
 ├── fonts/moon-time-regular.ttf  # Moon Time script font
 ├── manifest.json, robots.txt, sitemap.xml, vercel.json
 ```
@@ -77,6 +77,7 @@ Every page shares the same header, footer and stylesheet. Links use root paths (
 - **Brand colours**: navy `#000562`, gold `#FFD700`, teal `#7AE1D5`, bronze `#8B7355` (defined as CSS variables at the top of `css/site.css`).
 - **Type**: *Moon Time* script for small headings, *Montserrat* (Google Fonts) for everything else.
 - **Logo**: the triple-moon mark is an SVG (`images/brand/mark.svg`), so it stays sharp at any size.
+- **Mobile first and app-like**: a bottom tab bar and slide-up menu (Popover API) on phones, page transitions (View Transitions API), prefetching (speculation rules), scroll-driven animations and swipeable card rows. Each is a progressive enhancement: older browsers get the same content without the effects, and animations switch off for people who prefer reduced motion.
 - No CSS or JavaScript framework, and no icon font: icons are inline SVG. The only third-party requests are Google Fonts, the reviews widget and Vercel's cookieless analytics.
 
 ---

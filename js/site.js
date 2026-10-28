@@ -1,25 +1,13 @@
 // js/site.js
-// Mobile menu and footer year.
+// Header that tightens on scroll, desktop dropdowns, the phone menu sheet
+// fallback for browsers without the Popover API, and the footer year.
 
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('site-nav');
-
-    if (toggle && nav) {
-        toggle.addEventListener('click', () => {
-            const open = nav.classList.toggle('open');
-            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-            toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && nav.classList.contains('open')) {
-                nav.classList.remove('open');
-                toggle.setAttribute('aria-expanded', 'false');
-                toggle.setAttribute('aria-label', 'Open menu');
-                toggle.focus();
-            }
-        });
+    const header = document.getElementById('site-header');
+    if (header) {
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
     }
 
     // Desktop dropdowns also open on click/tap, for touch screens and keyboards
@@ -39,6 +27,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Menu sheet: the Popover API handles opening, closing, Escape and the backdrop.
+    // Older browsers get the same behaviour with a class toggle.
+    const sheet = document.getElementById('menu-sheet');
+    if (sheet && typeof sheet.showPopover !== 'function') {
+        const toggle = (open) => {
+            sheet.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        };
+        document.querySelectorAll('[popovertarget="menu-sheet"]').forEach((button) => {
+            button.addEventListener('click', () => {
+                toggle(button.getAttribute('popovertargetaction') === 'hide' ? false : !sheet.classList.contains('open'));
+            });
+        });
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') toggle(false);
+        });
+    }
 
     const year = document.getElementById('year');
     if (year) year.textContent = new Date().getFullYear();
