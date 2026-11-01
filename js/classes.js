@@ -3,8 +3,32 @@
 // Show how many spaces are left once a session gets down to this many
 const LOW_SPACES = 3;
 
-function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId, spacesLeft = null) {
-    const classDatesContainer = document.getElementById(`classDates${className}`);
+// Bookwhen sessions are matched to a class card by their title, so a new course or
+// term appears on the right card even when Bookwhen gives it a new reference.
+//   card:  the reference in the card's id on the class page (id="classDates<card>")
+//   words: words that must ALL appear in the Bookwhen title (not case-sensitive)
+// The first match wins, so more specific classes go first. Sessions whose title
+// matches nothing here fall back to their own Bookwhen reference.
+const CLASS_CARDS = [
+    { card: 's8zbt', words: ['double'] },           // Monday Double
+    { card: 's1pcc', words: ['dance'] },            // Dance & Tone
+    { card: 'szawo', words: ['stretched'] },        // Strong & Stretched
+    { card: 'smgsv', words: ['strong mummy'] },     // The Strong Mummy Movement
+    { card: 'shphg', words: ['bums'] },             // Strong Mums, Bums & Tums
+    { card: 'sz1aw', words: ['strong women'] },     // Strong Women Squad
+    { card: 's2fwm', words: ['hiit', 'cardio'] },   // HIIT Cardio
+    { card: 'snu8o', words: ['hiit', 'strength'] }, // HIIT Strength
+    { card: 's6a88', words: ['massage'] }           // Baby Massage & Mummy Relaxation
+];
+
+function cardFor(classInfo) {
+    const title = (classInfo.title || '').toLowerCase();
+    const match = CLASS_CARDS.find((c) => c.words.every((word) => title.includes(word)));
+    return match ? match.card : classInfo.className;
+}
+
+function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId, spacesLeft = null, card = className) {
+    const classDatesContainer = document.getElementById(`classDates${card}`);
     
     if (!classDatesContainer) {  
         return; // Exit if the container element doesn't exist
@@ -112,7 +136,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     classInfo.color, 
                     classInfo.bookingPlatformUrl,
                     classInfo.eventId,
-                    classInfo.spacesLeft ?? null
+                    classInfo.spacesLeft ?? null,
+                    cardFor(classInfo)
                 );
             });
         })
