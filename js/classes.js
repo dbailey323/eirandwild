@@ -27,7 +27,7 @@ function cardFor(classInfo) {
     return match ? match.card : classInfo.className;
 }
 
-function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId, spacesLeft = null, card = className, bookingUrl = null) {
+function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId, spacesLeft = null, card = className) {
     const classDatesContainer = document.getElementById(`classDates${card}`);
     
     if (!classDatesContainer) {  
@@ -64,10 +64,9 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
 
             const formattedDate = currentDate.toLocaleDateString("en-GB", { month: "short", day: "numeric" });
             const linkDate = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}`;
-            // Lara's own booking system gives a direct link to each class; for Bookwhen, prefer
-            // the exact event ID so the link is unaffected by server timezone
+            // Prefer the exact Bookwhen event ID so the link is unaffected by server timezone
             const focusId = eventId || `ev-${className}-${linkDate}${timeSuffix}`;
-            const link = bookingUrl || `${bookingPlatformUrl}#focus=${focusId}`;
+            const link = `${bookingPlatformUrl}#focus=${focusId}`;
             
             // Create link element
             const linkElement = document.createElement('a');
@@ -81,7 +80,7 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
             // Spaces note shown in small text under the date button
             let note = null;
             if (spacesLeft === 0) {
-                // Both booking systems offer a waiting list on full sessions, so the link stays
+                // Bookwhen offers a waiting list on full sessions, so the link stays
                 linkElement.style.backgroundColor = '#8a8fa8';
                 linkElement.style.color = '#ffffff';
                 linkElement.setAttribute('aria-label', `${formattedDate}: fully booked, join the waiting list`);
@@ -138,8 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     classInfo.bookingPlatformUrl,
                     classInfo.eventId,
                     classInfo.spacesLeft ?? null,
-                    cardFor(classInfo),
-                    classInfo.bookingUrl || null
+                    cardFor(classInfo)
                 );
             });
         })
