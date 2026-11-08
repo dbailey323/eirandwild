@@ -33,6 +33,13 @@ function isUpcomingClass(classInfo) {
         && Number.isFinite(start.getTime()) && start.getTime() > Date.now();
 }
 
+function venueLabel(address) {
+    if (/mountsorrel memorial centre/i.test(address)) return 'Mountsorrel Memorial Centre';
+    if (/rothley centre/i.test(address)) return 'The Rothley Centre';
+    const firstLine = address.split(/[\n,]/)[0].trim();
+    return firstLine.length <= 60 ? firstLine : 'Class venue';
+}
+
 function displayClassSchedules(classes) {
     const upcoming = classes.filter(isUpcomingClass)
         .sort((a, b) => new Date(a.startAt) - new Date(b.startAt));
@@ -51,18 +58,29 @@ function displayClassSchedules(classes) {
 
         const start = new Date(next.startAt);
         const weekday = start.toLocaleDateString('en-GB', {
-            timeZone: 'Europe/London', weekday: 'long'
+            timeZone: 'Europe/London', weekday: 'short'
         });
         const date = start.toLocaleDateString('en-GB', {
             timeZone: 'Europe/London', day: 'numeric', month: 'short'
         });
         const time = start.toLocaleTimeString('en-GB', {
-            timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', hour12: false
-        });
-        heading.textContent = `Next: ${weekday}, ${date} at ${time} (UK time)`;
+            timeZone: 'Europe/London', hour: 'numeric', minute: '2-digit', hour12: true
+        }).replace(/\s/g, '').toLowerCase();
+        heading.textContent = `Next class: ${weekday} ${date} · ${time}`;
         if (venueHeading) {
-            venueHeading.textContent = next.venue || (next.category === 'Online HIIT' ? 'Live on Zoom' : '');
+            const address = (next.venue || '').trim();
+            venueHeading.textContent = next.category === 'Online HIIT' ? 'Live on Zoom' : (address ? venueLabel(address) : '');
             venueHeading.hidden = !venueHeading.textContent;
+            if (address && next.category !== 'Online HIIT') {
+                const mapLink = document.createElement('a');
+                mapLink.className = 'booking-map';
+                mapLink.textContent = 'View map';
+                mapLink.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+                mapLink.target = '_blank';
+                mapLink.rel = 'noopener noreferrer';
+                mapLink.setAttribute('aria-label', `View map for ${venueLabel(address)}`);
+                venueHeading.appendChild(mapLink);
+            }
         }
     });
 }
@@ -130,7 +148,7 @@ function displayClassDates(classInfo) {
     slot.style.flexDirection = 'column';
     slot.style.alignItems = 'center';
     slot.style.verticalAlign = 'top';
-    slot.style.marginRight = '10px';
+    slot.style.marginRight = '0';
     linkElement.style.marginRight = '0';
     slot.appendChild(linkElement);
 

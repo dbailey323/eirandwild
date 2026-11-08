@@ -37,6 +37,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
+    <link rel="stylesheet" href="../../css/booking.css">
+
     <title>Baby Massage Classes Leicester | Rothley & Mountsorrel | Eir & Wild</title>
 </head>
 
@@ -117,29 +119,19 @@
         </section>
 
         <!-- Live Class Schedule & Booking Card -->
-        <article class="bm-booking-card">
-            <div class="row align-items-center">
-                <div class="col-auto">
-                    <img src="../../images/baby_massage.webp" alt="Baby massage and mummy relaxation class in Rothley" width="1080" height="1350" loading="lazy">
-                </div>
-                <div class="col p-3 p-md-4">
+        <article class="bm-booking-card booking-card">
+                <div class="booking-card-header">
+                    <img class="booking-card-photo" src="../../images/card-babymassage.webp" alt="A baby receiving a gentle back massage" width="506" height="600" loading="lazy">
                     <h2>Baby Massage & Mummy Relaxation</h2>
-                    <h3 data-class-schedule="s6a88">See Bookwhen for current dates and times</h3>
-                        <h4 data-class-venue="s6a88" hidden></h4>
-
-                    <div class="mb-3">
-                        <p class="mb-1"><strong>Upcoming 4-Week Terms:</strong></p>
-                        <p class="text-muted small mb-2">Click the start date below to reserve your place on the full 4-week course via Bookwhen:</p>
-                        <div id="classDatess6a88" data-first-only="true">
-                            <a href="https://bookwhen.com/eirandwild-motherhood" target="_blank" rel="noopener noreferrer" class="fallback-booking-link">Book Class (Nov/Dec)</a>
-                        </div>
-                    </div>
-                    <p class="text-muted small mb-0">
-                        <i class="fas fa-info-circle me-1"></i> Spaces are strictly limited due to small class sizes. Pre-booking is required.
-                    </p>
                 </div>
-            </div>
-        </article>
+                <p class="booking-next" data-class-schedule="s6a88">See Bookwhen for current dates and times</p>
+                <p class="booking-venue" data-class-venue="s6a88" hidden></p>
+                <p class="booking-note">Book the start date to join the full 4-week course.</p>
+                <p class="booking-prompt">Choose a course start date:</p>
+                <div id="classDatess6a88" data-first-only="true">
+                            <a href="https://bookwhen.com/eirandwild-motherhood" target="_blank" rel="noopener noreferrer" class="fallback-booking-link">View course dates</a>
+                        </div>
+            </article>
 
         <!-- Call To Action Card -->
         <article class="bm-cta-card">

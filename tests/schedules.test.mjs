@@ -22,7 +22,9 @@ function clock(now) {
 
 function schedule(events, { now = '2026-11-08T12:00:00Z', card = 's6a88', ok = true } = {}) {
     const heading = { dataset: { classSchedule: card }, textContent: 'See Bookwhen for current dates and times' };
-    const venue = { textContent: '', hidden: true };
+    const venue = { textContent: '', hidden: true, children: [],
+        appendChild(child) { this.children.push(child); }
+    };
     let ready;
     const errors = [];
     const context = {
@@ -31,7 +33,8 @@ function schedule(events, { now = '2026-11-08T12:00:00Z', card = 's6a88', ok = t
             addEventListener(name, callback) { ready = callback; },
             querySelectorAll() { return [heading]; },
             querySelector() { return venue; },
-            getElementById() { return null; }
+            getElementById() { return null; },
+            createElement() { return { setAttribute(key, value) { this[key] = value; } }; }
         },
         fetch: async () => ({ ok, status: ok ? 200 : 503, json: async () => events }),
         console: { error(...args) { errors.push(args); } }
@@ -57,22 +60,22 @@ test('schedule heading selects the earliest upcoming event and its actual venue'
         session('2026-11-01T12:00:00Z'),
         session('2026-11-10T18:30:00Z', { venue: 'New venue' })
     ]);
-    assert.equal(result.heading.textContent, 'Next: Tuesday, 10 Nov at 18:30 (UK time)');
+    assert.equal(result.heading.textContent, 'Next class: Tue 10 Nov · 6:30pm');
     assert.equal(result.venue.textContent, 'New venue');
     assert.equal(result.venue.hidden, false);
 });
 
 test('schedule heading uses UK summer time, regardless of visitor timezone', async () => {
     const result = await schedule([session('2026-07-09T23:30:00Z')], { now: '2026-07-01T12:00:00Z' });
-    assert.equal(result.heading.textContent, 'Next: Friday, 10 Jul at 00:30 (UK time)');
+    assert.equal(result.heading.textContent, 'Next class: Fri 10 Jul · 12:30am');
 });
 
 test('schedule heading follows both UK clock changes', async () => {
     for (const [startAt, label] of [
-        ['2026-03-29T00:30:00Z', 'Next: Sunday, 29 Mar at 00:30 (UK time)'],
-        ['2026-03-29T01:30:00Z', 'Next: Sunday, 29 Mar at 02:30 (UK time)'],
-        ['2026-10-25T00:30:00Z', 'Next: Sunday, 25 Oct at 01:30 (UK time)'],
-        ['2026-10-25T01:30:00Z', 'Next: Sunday, 25 Oct at 01:30 (UK time)']
+        ['2026-03-29T00:30:00Z', 'Next class: Sun 29 Mar · 12:30am'],
+        ['2026-03-29T01:30:00Z', 'Next class: Sun 29 Mar · 2:30am'],
+        ['2026-10-25T00:30:00Z', 'Next class: Sun 25 Oct · 1:30am'],
+        ['2026-10-25T01:30:00Z', 'Next class: Sun 25 Oct · 1:30am']
     ]) {
         const result = await schedule([session(startAt)], { now: '2026-01-01T00:00:00Z' });
         assert.equal(result.heading.textContent, label);
@@ -173,4 +176,29 @@ test('API carries the Bookwhen location ID and address into the event response',
     await context.subject.handler({}, response);
     assert.equal(payload[0].venueId, 'rothley');
     assert.equal(payload[0].venue, 'Rothley Centre');
+});
+
+test('long Bookwhen addresses become short venue names with full-address map links', async () => {
+    const address = 'MOUNTSORREL MEMORIAL CENTRE, ARTS AND COMMUNITY VENUE MEMORIAL CENTRE 105 LEICESTER ROAD MOUNTSORREL LOUGHBOROUGH LE12 7DB';
+    const result = await schedule([session('2026-11-10T12:00:00Z', { venue: address })]);
+    assert.equal(result.venue.textContent, 'Mountsorrel Memorial Centre');
+    assert.equal(result.venue.children[0].textContent, 'View map');
+    assert.equal(result.venue.children[0].href,
+        'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address));
+    assert.equal(result.venue.children[0].rel, 'noopener noreferrer');
+});
+
+test('unrecognised long addresses stay behind a map link', async () => {
+    const address = 'A venue with an unusually long address that should not fill the entire mobile card';
+    const result = await schedule([session('2026-11-10T12:00:00Z', { venue: address })]);
+    assert.equal(result.venue.textContent, 'Class venue');
+    assert.equal(result.venue.children[0].href.endsWith(encodeURIComponent(address)), true);
+});
+
+test('online classes keep a simple Zoom label even when a location is supplied', async () => {
+    const result = await schedule([session('2026-11-10T12:00:00Z', {
+        title: 'HIIT Cardio', category: 'Online HIIT', venue: 'Online meeting details'
+    })], { card: 's2fwm' });
+    assert.equal(result.venue.textContent, 'Live on Zoom');
+    assert.equal(result.venue.children.length, 0);
 });
