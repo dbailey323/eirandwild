@@ -37,7 +37,7 @@ function isAlternateWeeks(dates) {
     return dates.slice(1).every((date, i) => Math.round((date - dates[i]) / DAY_MS) === 14);
 }
 
-// Collapse dated sessions only when class, category, venue, day and time agree.
+// Collapse dated sessions into one entry per class, day and start time
 function buildWeek(classes) {
     const now = new Date();
     const regularCutoff = new Date(now.getTime() + REGULAR_WEEKS * 7 * DAY_MS);
@@ -45,14 +45,11 @@ function buildWeek(classes) {
     const slots = new Map();
 
     classes
-        .filter((c) => c.startAt && new Date(c.startAt) > now && new Date(c.startAt) <= cutoff)
+        .filter((c) => c.startAt && new Date(c.startAt) >= now && new Date(c.startAt) <= cutoff)
         .sort((a, b) => new Date(a.startAt) - new Date(b.startAt))
         .forEach((c) => {
             const start = new Date(c.startAt);
-            const key = JSON.stringify([
-                c.title, c.category, weekdayName(start), sortTime(start),
-                c.venueId || null, c.venue || ''
-            ]);
+            const key = `${weekdayName(start)}|${sortTime(start)}|${c.title}`;
             if (!slots.has(key)) slots.set(key, { ...c, dates: [] });
             slots.get(key).dates.push(start);
         });

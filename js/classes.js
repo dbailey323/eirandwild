@@ -27,52 +27,12 @@ function cardFor(classInfo) {
     return match ? match.card : classInfo.className;
 }
 
-function isUpcomingClass(classInfo) {
-    const start = new Date(classInfo.startAt);
-    return Boolean(classInfo.startAt && classInfo.eventId)
-        && Number.isFinite(start.getTime()) && start.getTime() > Date.now();
-}
-
-function displayClassSchedules(classes) {
-    const upcoming = classes.filter(isUpcomingClass)
-        .sort((a, b) => new Date(a.startAt) - new Date(b.startAt));
-    document.querySelectorAll('[data-class-schedule]').forEach(heading => {
-        const card = heading.dataset.classSchedule;
-        const next = upcoming.find(classInfo => cardFor(classInfo) === card);
-        const venueHeading = document.querySelector(`[data-class-venue="${card}"]`);
-        if (!next) {
-            heading.textContent = 'Check Bookwhen for upcoming dates and times';
-            if (venueHeading) {
-                venueHeading.textContent = '';
-                venueHeading.hidden = true;
-            }
-            return;
-        }
-
-        const start = new Date(next.startAt);
-        const weekday = start.toLocaleDateString('en-GB', {
-            timeZone: 'Europe/London', weekday: 'long'
-        });
-        const date = start.toLocaleDateString('en-GB', {
-            timeZone: 'Europe/London', day: 'numeric', month: 'short'
-        });
-        const time = start.toLocaleTimeString('en-GB', {
-            timeZone: 'Europe/London', hour: '2-digit', minute: '2-digit', hour12: false
-        });
-        heading.textContent = `Next: ${weekday}, ${date} at ${time} (UK time)`;
-        if (venueHeading) {
-            venueHeading.textContent = next.venue || (next.category === 'Online HIIT' ? 'Live on Zoom' : '');
-            venueHeading.hidden = !venueHeading.textContent;
-        }
-    });
-}
-
 function displayClassDates(classInfo) {
     const { startAt, color, bookingPlatformUrl, eventId, spacesLeft = null } = classInfo;
     const card = cardFor(classInfo);
     // Compare actual instants; a calendar date alone keeps finished sessions bookable.
     const start = new Date(startAt);
-    if (!isUpcomingClass(classInfo)) {
+    if (!startAt || !Number.isFinite(start.getTime()) || start.getTime() <= Date.now() || !eventId) {
         return;
     }
     const classDatesContainer = document.getElementById(`classDates${card}`);
@@ -156,7 +116,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(data => {
-            displayClassSchedules(data);
             // Course cards show the earliest valid upcoming event, regardless of API order.
             data.sort((a, b) => new Date(a.startAt) - new Date(b.startAt))
                 .forEach(displayClassDates);
