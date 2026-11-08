@@ -74,10 +74,10 @@ function displayClassDates(classInfo) {
     let note = null;
     if (spacesLeft === 0) {
         // Bookwhen offers a waiting list on full sessions, so the link stays
-        linkElement.style.backgroundColor = '#8a8fa8';
+        linkElement.style.backgroundColor = '#c8102e';
         linkElement.style.color = '#ffffff';
         linkElement.setAttribute('aria-label', `${formattedDate}: fully booked, join the waiting list`);
-        note = { text: 'Fully booked', color: '#666666' };
+        note = { text: 'Fully booked', color: '#c8102e' };
     } else if (spacesLeft !== null && spacesLeft <= LOW_SPACES) {
         const spaces = `${spacesLeft} ${spacesLeft === 1 ? 'space' : 'spaces'} left`;
         linkElement.setAttribute('aria-label', `${formattedDate}: ${spaces}`);
