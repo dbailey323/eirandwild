@@ -39,6 +39,7 @@ async function render(events, {
     runInNewContext(source, {
         Date: Clock,
         document: {
+            querySelectorAll() { return []; },
             getElementById(id) { return id === 'classDatess6a88' ? container : null; },
             addEventListener(name, callback) { ready = callback; },
             createElement(tag) {
