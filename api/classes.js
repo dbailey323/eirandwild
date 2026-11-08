@@ -80,6 +80,7 @@ export default async function handler(req, res) {
                 endAt: e.attributes.end_at || null,
                 category,
                 venue: location?.address_text || "",
+                venueId: locationId || null,
                 spacesLeft,
                 color: "#000562",
                 bookingPlatformUrl: bookingUrl
