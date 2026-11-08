@@ -27,7 +27,14 @@ function cardFor(classInfo) {
     return match ? match.card : classInfo.className;
 }
 
-function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWeeks = [], color, bookingPlatformUrl, eventId, spacesLeft = null, card = className) {
+function displayClassDates(classInfo) {
+    const { startAt, color, bookingPlatformUrl, eventId, spacesLeft = null } = classInfo;
+    const card = cardFor(classInfo);
+    // Compare actual instants; a calendar date alone keeps finished sessions bookable.
+    const start = new Date(startAt);
+    if (!startAt || !Number.isFinite(start.getTime()) || start.getTime() <= Date.now() || !eventId) {
+        return;
+    }
     const classDatesContainer = document.getElementById(`classDates${card}`);
     
     if (!classDatesContainer) {  
@@ -40,106 +47,78 @@ function displayClassDates(className, startDate, numWeeks, timeSuffix, skippedWe
         return;
     }
     
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    
-    // Create a 'tomorrow' date for comparison
-    const tomorrow = new Date(today);
-    tomorrow.setDate(today.getDate() + 1);
-    
-    const start = new Date(startDate);
-    start.setHours(0, 0, 0, 0);
-    
-    for (let i = 0; i < numWeeks; i++) {
-        const currentDate = new Date(start);
-        currentDate.setDate(start.getDate() + (i * 7));
-        
-        // Check if the week should be skipped or if the date has passed (including today)
-        if (!skippedWeeks.includes(i + 1) && currentDate >= today) {
-            // Remove fallback booking link if present before inserting dynamic dates
-            const fallbackLink = classDatesContainer.querySelector('.fallback-booking-link');
-            if (fallbackLink) {
-                fallbackLink.remove();
-            }
-
-            const formattedDate = currentDate.toLocaleDateString("en-GB", { month: "short", day: "numeric" });
-            const linkDate = `${currentDate.getFullYear()}${(currentDate.getMonth() + 1).toString().padStart(2, '0')}${currentDate.getDate().toString().padStart(2, '0')}`;
-            // Prefer the exact Bookwhen event ID so the link is unaffected by server timezone
-            const focusId = eventId || `ev-${className}-${linkDate}${timeSuffix}`;
-            const link = `${bookingPlatformUrl}#focus=${focusId}`;
-            
-            // Create link element
-            const linkElement = document.createElement('a');
-            linkElement.setAttribute('href', link);
-            linkElement.setAttribute('target', '_blank');
-            linkElement.setAttribute('rel', 'noopener noreferrer');
-            linkElement.innerHTML = `${formattedDate}`;  
-            linkElement.style.backgroundColor = color;
-            linkElement.style.color = '#FFD700';
-
-            // Spaces note shown in small text under the date button
-            let note = null;
-            if (spacesLeft === 0) {
-                // Bookwhen offers a waiting list on full sessions, so the link stays
-                linkElement.style.backgroundColor = '#8a8fa8';
-                linkElement.style.color = '#ffffff';
-                linkElement.setAttribute('aria-label', `${formattedDate}: fully booked, join the waiting list`);
-                note = { text: 'Fully booked', color: '#666666' };
-            } else if (spacesLeft !== null && spacesLeft <= LOW_SPACES) {
-                const spaces = `${spacesLeft} ${spacesLeft === 1 ? 'space' : 'spaces'} left`;
-                linkElement.setAttribute('aria-label', `${formattedDate}: ${spaces}`);
-                note = { text: spaces, color: '#c8102e' };
-            }
-
-            // Wrap the button and its note so the note sits directly beneath it
-            const slot = document.createElement('span');
-            slot.style.display = 'inline-flex';
-            slot.style.flexDirection = 'column';
-            slot.style.alignItems = 'center';
-            slot.style.verticalAlign = 'top';
-            slot.style.marginRight = '10px';
-            linkElement.style.marginRight = '0';
-            slot.appendChild(linkElement);
-
-            if (note) {
-                const noteElement = document.createElement('span');
-                noteElement.textContent = note.text;
-                noteElement.setAttribute('aria-hidden', 'true');
-                noteElement.style.color = note.color;
-                noteElement.style.fontSize = '12px';
-                noteElement.style.fontWeight = '700';
-                noteElement.style.marginTop = '4px';
-                slot.appendChild(noteElement);
-            }
-
-            classDatesContainer.appendChild(slot);
-
-            if (firstOnly) {
-                return;
-            }
-        }
+    // Remove fallback booking link if present before inserting dynamic dates
+    const fallbackLink = classDatesContainer.querySelector('.fallback-booking-link');
+    if (fallbackLink) {
+        fallbackLink.remove();
     }
+
+    const formattedDate = start.toLocaleDateString("en-GB", {
+        timeZone: "Europe/London",
+        month: "short",
+        day: "numeric"
+    });
+    // Keep Bookwhen's exact ID, including its own date and time reference.
+    const link = `${bookingPlatformUrl}#focus=${eventId}`;
+
+    // Create link element
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', link);
+    linkElement.setAttribute('target', '_blank');
+    linkElement.setAttribute('rel', 'noopener noreferrer');
+    linkElement.innerHTML = `${formattedDate}`;  
+    linkElement.style.backgroundColor = color;
+    linkElement.style.color = '#FFD700';
+
+    // Spaces note shown in small text under the date button
+    let note = null;
+    if (spacesLeft === 0) {
+        // Bookwhen offers a waiting list on full sessions, so the link stays
+        linkElement.style.backgroundColor = '#8a8fa8';
+        linkElement.style.color = '#ffffff';
+        linkElement.setAttribute('aria-label', `${formattedDate}: fully booked, join the waiting list`);
+        note = { text: 'Fully booked', color: '#666666' };
+    } else if (spacesLeft !== null && spacesLeft <= LOW_SPACES) {
+        const spaces = `${spacesLeft} ${spacesLeft === 1 ? 'space' : 'spaces'} left`;
+        linkElement.setAttribute('aria-label', `${formattedDate}: ${spaces}`);
+        note = { text: spaces, color: '#c8102e' };
+    }
+
+    // Wrap the button and its note so the note sits directly beneath it
+    const slot = document.createElement('span');
+    slot.style.display = 'inline-flex';
+    slot.style.flexDirection = 'column';
+    slot.style.alignItems = 'center';
+    slot.style.verticalAlign = 'top';
+    slot.style.marginRight = '10px';
+    linkElement.style.marginRight = '0';
+    slot.appendChild(linkElement);
+
+    if (note) {
+        const noteElement = document.createElement('span');
+        noteElement.textContent = note.text;
+        noteElement.setAttribute('aria-hidden', 'true');
+        noteElement.style.color = note.color;
+        noteElement.style.fontSize = '12px';
+        noteElement.style.fontWeight = '700';
+        noteElement.style.marginTop = '4px';
+        slot.appendChild(noteElement);
+    }
+
+    classDatesContainer.appendChild(slot);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
     // Fetch directly from the secure Vercel Serverless Function
-    fetch('/api/classes')
-        .then(response => response.json())
+    return fetch('/api/classes')
+        .then(response => {
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return response.json();
+        })
         .then(data => {
-            data.forEach(classInfo => {
-                displayClassDates(
-                    classInfo.className, 
-                    classInfo.startDate, 
-                    classInfo.numWeeks, 
-                    classInfo.timeSuffix, 
-                    classInfo.skippedWeeks, 
-                    classInfo.color, 
-                    classInfo.bookingPlatformUrl,
-                    classInfo.eventId,
-                    classInfo.spacesLeft ?? null,
-                    cardFor(classInfo)
-                );
-            });
+            // Course cards show the earliest valid upcoming event, regardless of API order.
+            data.sort((a, b) => new Date(a.startAt) - new Date(b.startAt))
+                .forEach(displayClassDates);
         })
         .catch(error => console.error('Error fetching class data:', error));
 });
