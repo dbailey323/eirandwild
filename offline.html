@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#8b7355">
+    <link rel="manifest" href="/manifest.json">
+    <title>You're Offline | Eir & Wild</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px 16px;
+            background: #000562;
+            color: #fff;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+        }
+        main { max-width: 420px; }
+        img { width: 120px; height: 120px; border-radius: 24px; margin-bottom: 24px; box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35); }
+        h1 { font-size: 1.6rem; margin-bottom: 12px; color: #FFD700; }
+        p { line-height: 1.6; margin-bottom: 24px; }
+        .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: 0;
+            border-radius: 25px;
+            font: inherit;
+            font-weight: 600;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            color: #000;
+        }
+        .retry { background: #7ae1d5; }
+        .whatsapp { background: #FFD700; }
+    </style>
+</head>
+
+<body>
+    <main>
+        <img src="/images/app-icon-192.png" alt="Eir & Wild" width="120" height="120">
+        <h1>You're offline</h1>
+        <p>We can't reach the internet right now. Pages you've already visited are still available. Check your connection and try again to see the latest classes and book.</p>
+        <div class="actions">
+            <button class="btn retry" type="button" onclick="location.reload()">Try again</button>
+            <a class="btn whatsapp" href="https://wa.me/447885899947">WhatsApp Lara</a>
+        </div>
+    </main>
+</body>
+
+</html>
