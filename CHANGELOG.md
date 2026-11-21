@@ -2,6 +2,17 @@
 
 All notable changes to the Eir & Wild website project.
 
+## November 2026
+
+### Added
+- **Installable app (PWA)**: the site can now be installed on phones like an app.
+  - `sw.js` service worker: pages and assets load faster on repeat visits and previously visited pages work offline. Live booking data (`/api/`) and analytics are never cached.
+  - `offline.html`: branded fallback page when there is no connection and the page hasn't been visited before.
+  - `js/pwa.js`: registers the service worker and shows a dismissible "Get the Eir & Wild app" banner (one-tap install on Android/Chrome; Share > Add to Home Screen instructions on iPhone Safari). Hidden for 30 days after dismissal and when already installed.
+  - App meta tags (`apple-mobile-web-app-*`, `mobile-web-app-capable`) on every page.
+- **manifest.json**: added `id`, `scope`, `lang`, separate `any`/`maskable` icons and home-screen shortcuts (Timetable, Motherhood Classes, Contact).
+- **vercel.json**: `sw.js` and `manifest.json` served with `no-cache` so updates reach installed apps promptly.
+
 ## October 2026
 
 ### Removed
