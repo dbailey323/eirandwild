@@ -5,6 +5,12 @@ All notable changes to the Eir & Wild website project.
 ## November 2026
 
 ### Added
+- **Fight Fierce page** (`leicester/fitnessclasses/fightfierce.html`, `css/fightfierce.css`): new Wednesday evening class at The Rothley Centre from January 2027, booked through the Womanhood Bookwhen page. Added to the nav, timetable (own "Fight Fierce" tag) and sitemap. Uses placeholder images until a class photo is ready.
+- **Block sub-titles on class cards**: dates are grouped by Bookwhen block (e.g. "Winter 2026", "New Year 2027"), and blocks after the first are marked "New block".
+- **Auto-removal of finished classes**: any element with `data-hide-after="<ISO time>"` is removed once that time passes. Strong Women Squad ends on 16 Dec 2026, so its cards and description go from 17 Dec.
+
+### Fixed
+- **Baby massage dates**: the card now shows the start date of every upcoming course, not just the first course (which hid new courses whenever the current one was fully booked).
 - **Installable app (PWA)**: the site can now be installed on phones like an app.
   - `sw.js` service worker: pages and assets load faster on repeat visits and previously visited pages work offline. Live booking data (`/api/`) and analytics are never cached.
   - `offline.html`: branded fallback page when there is no connection and the page hasn't been visited before.

@@ -47,7 +47,7 @@ export default async function handler(req, res) {
             const title = (e.attributes.title || "").toLowerCase();
 
             // Route to the correct Bookwhen schedule page based on class name
-            const isWomanhood = title.includes("dance") || title.includes("hiit") || title.includes("stretched") || title.includes("double");
+            const isWomanhood = title.includes("dance") || title.includes("hiit") || title.includes("stretched") || title.includes("double") || title.includes("fight");
             
             const bookingUrl = isWomanhood 
                 ? "https://bookwhen.com/eirandwild-womanhood" 
@@ -56,6 +56,7 @@ export default async function handler(req, res) {
             // Used by the timetable page to label and filter classes
             let category = isWomanhood ? "Womanhood" : "Motherhood";
             if (title.includes("hiit")) category = "Online HIIT";
+            if (title.includes("fight")) category = "Fight Fierce";
             if (title.includes("massage")) category = "Baby Massage";
 
             const locationId = e.relationships?.location?.data?.id;

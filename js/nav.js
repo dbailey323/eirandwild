@@ -35,6 +35,9 @@ const navBar = `
             <a class="nav-link" href="${prefix}leicester/fitnessclasses/hiit">Online HIIT</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="${prefix}leicester/fitnessclasses/fightfierce">Fight Fierce</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="${prefix}leicester/babymassage/babymassage">Baby Massage</a>
           </li>
           <li class="nav-item">
