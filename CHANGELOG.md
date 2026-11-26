@@ -5,7 +5,8 @@ All notable changes to the Eir & Wild website project.
 ## November 2026
 
 ### Added
-- **Fight Fierce page** (`leicester/fitnessclasses/fightfierce.html`, `css/fightfierce.css`): new Wednesday evening class at The Rothley Centre from January 2027, booked through the Womanhood Bookwhen page. Added to the nav, timetable (own "Fight Fierce" tag) and sitemap. Uses placeholder images until a class photo is ready.
+- **Fight Fierce page** (`leicester/fitnessclasses/fightfierce.html`, `css/fightfierce.css`): new Wednesday evening class at The Rothley Centre from January 2027, booked through the Womanhood Bookwhen page. Added to the nav, timetable (own "Fight Fierce" tag) and sitemap. Class tile, hero photo and description supplied by Lara (non-contact, no martial arts experience needed).
+- **Homepage Fight Fierce tile** next to Online HIIT; Personal Training moves to a full-width banner below the Fitness & Movement grid so the grid stays even.
 - **Block sub-titles on class cards**: dates are grouped by Bookwhen block (e.g. "Winter 2026", "New Year 2027"), and blocks after the first are marked "New block".
 - **Auto-removal of finished classes**: any element with `data-hide-after="<ISO time>"` is removed once that time passes. Strong Women Squad ends on 16 Dec 2026, so its cards and description go from 17 Dec.
 
