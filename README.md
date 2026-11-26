@@ -47,7 +47,8 @@ eirandwild/
 │   ├── fitnessclasses/          # Fitness class pages
 │   │   ├── motherhoodclasses.html # Pre/postnatal classes & schedule
 │   │   ├── womanhoodclasses.html  # Women's dance, strength & stretch classes
-│   │   └── hiit.html              # Online HIIT classes via Zoom
+│   │   ├── hiit.html              # Online HIIT classes via Zoom
+│   │   └── fightfierce.html       # Fight Fierce (Wednesday evenings, Rothley)
 │   ├── babymassage/             # Baby massage course details & booking
 │   │   └── babymassage.html
 │   ├── personaltraining/        # 1:1 PT memberships, benefits & pricing
@@ -164,6 +165,9 @@ Every single page that previously used static infographic banners (`personaltrai
 - Class cards feature containers named `#classDates{classId}`.
 - Each container includes an accessible fallback link (`.fallback-booking-link`) pointing to the Bookwhen schedule (`https://bookwhen.com/eirandwild-motherhood` or `https://bookwhen.com/eirandwild-womanhood`).
 - When live events load via `js/classes.js`, fallback links are automatically replaced with specific date buttons. If the API is offline or dates have passed, users still have an accessible way to book.
+- Sessions are matched to cards by words in their Bookwhen title (`CLASS_CARDS` in `js/classes.js`), so new blocks appear automatically. Dates are grouped under the block name from the title (the part after " - " that includes a year, e.g. "New Year 2027"); later blocks get a "New block" badge.
+- Cards with `data-first-only="true"` (baby massage) show only the first date of each course.
+- Add `data-hide-after="2026-12-17T00:00:00Z"` to any element to remove it automatically once a class has finished.
 
 ### 4. Responsiveness for Mobile & Desktop
 - **Mobile First**: Clean, large touch-friendly thumbnails and centered vertical card stacks.

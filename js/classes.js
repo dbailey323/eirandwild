@@ -16,6 +16,7 @@ const CLASS_CARDS = [
     { card: 'smgsv', words: ['strong mummy'] },     // The Strong Mummy Movement
     { card: 'shphg', words: ['bums'] },             // Strong Mums, Bums & Tums
     { card: 'sz1aw', words: ['strong women'] },     // Strong Women Squad
+    { card: 's20wr', words: ['fight', 'fierce'] },  // Fight Fierce
     { card: 's2fwm', words: ['hiit', 'cardio'] },   // HIIT Cardio
     { card: 'snu8o', words: ['hiit', 'strength'] }, // HIIT Strength
     { card: 's6a88', words: ['massage'] }           // Baby Massage & Mummy Relaxation
@@ -25,6 +26,58 @@ function cardFor(classInfo) {
     const title = (classInfo.title || '').toLowerCase();
     const match = CLASS_CARDS.find((c) => c.words.every((word) => title.includes(word)));
     return match ? match.card : classInfo.className;
+}
+
+// The block name from a Bookwhen title, e.g. "❄️💪The Strong Mummy Movement - Winter 2026 💪❄️"
+// gives "Winter 2026". Only names with a year count, so "HIIT - STRENGTH" isn't a block.
+function blockLabel(title) {
+    const parts = (title || '').split(/\s[-–]\s/);
+    if (parts.length < 2) return '';
+    const label = parts.slice(1).join(' - ')
+        .replace(/[^\p{L}\p{N}\s&/'-]/gu, '')
+        .replace(/\s+/g, ' ')
+        .trim();
+    return /\b20\d\d\b/.test(label) ? label : '';
+}
+
+// Each card's dates are grouped by block, so a new block gets its own sub-title
+const cardBlocks = new Map();
+
+function blockFor(container, label) {
+    if (!cardBlocks.has(container)) cardBlocks.set(container, new Map());
+    const blocks = cardBlocks.get(container);
+    if (blocks.has(label)) return blocks.get(label);
+
+    const wrap = document.createElement('div');
+    wrap.style.marginBottom = '10px';
+    if (label) {
+        const heading = document.createElement('p');
+        heading.className = 'class-block-title';
+        heading.style.fontSize = '14px';
+        heading.style.fontWeight = '700';
+        heading.style.color = '#000562';
+        heading.style.margin = '6px 0 6px';
+        heading.textContent = label;
+        // Any block after the first one shown is a newly added block
+        if ([...blocks.keys()].some(Boolean)) {
+            const badge = document.createElement('span');
+            badge.className = 'class-block-new';
+            badge.textContent = 'New block';
+            badge.style.display = 'inline-block';
+            badge.style.marginLeft = '8px';
+            badge.style.padding = '2px 8px';
+            badge.style.borderRadius = '10px';
+            badge.style.fontSize = '11px';
+            badge.style.backgroundColor = '#FFD700';
+            badge.style.color = '#000562';
+            heading.appendChild(badge);
+        }
+        wrap.appendChild(heading);
+    }
+    container.appendChild(wrap);
+    const block = { wrap, count: 0 };
+    blocks.set(label, block);
+    return block;
 }
 
 function displayClassDates(classInfo) {
@@ -41,11 +94,13 @@ function displayClassDates(classInfo) {
         return; // Exit if the container element doesn't exist
     }
 
-    // Courses (e.g. baby massage) only show the first upcoming date, since booking it books the whole course
+    // Courses (e.g. baby massage) only show the first date of each course, since booking it books the whole course
     const firstOnly = classDatesContainer.dataset.firstOnly === 'true';
-    if (firstOnly && classDatesContainer.querySelector('a:not(.fallback-booking-link)')) {
+    const block = blockFor(classDatesContainer, blockLabel(classInfo.title));
+    if (firstOnly && block.count > 0) {
         return;
     }
+    block.count++;
     
     // Remove fallback booking link if present before inserting dynamic dates
     const fallbackLink = classDatesContainer.querySelector('.fallback-booking-link');
@@ -105,10 +160,21 @@ function displayClassDates(classInfo) {
         slot.appendChild(noteElement);
     }
 
-    classDatesContainer.appendChild(slot);
+    block.wrap.appendChild(slot);
+}
+
+// Cards for classes that have finished (e.g. data-hide-after="2026-12-17T00:00:00Z")
+// are taken off the page once that time has passed
+function hideFinishedClasses() {
+    if (!document.querySelectorAll) return;
+    document.querySelectorAll('[data-hide-after]').forEach((element) => {
+        const hideAfter = Date.parse(element.dataset.hideAfter);
+        if (Number.isFinite(hideAfter) && Date.now() >= hideAfter) element.remove();
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+    hideFinishedClasses();
     // Fetch directly from the secure Vercel Serverless Function
     return fetch('/api/classes')
         .then(response => {

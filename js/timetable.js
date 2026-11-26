@@ -15,6 +15,7 @@ const CATEGORIES = {
     'Motherhood': { page: 'leicester/fitnessclasses/motherhoodclasses', tag: 'tt-tag-motherhood' },
     'Womanhood': { page: 'leicester/fitnessclasses/womanhoodclasses', tag: 'tt-tag-womanhood' },
     'Online HIIT': { page: 'leicester/fitnessclasses/hiit', tag: 'tt-tag-hiit' },
+    'Fight Fierce': { page: 'leicester/fitnessclasses/fightfierce', tag: 'tt-tag-fightfierce' },
     'Baby Massage': { page: 'leicester/babymassage/babymassage', tag: 'tt-tag-babymassage' }
 };
 
