@@ -64,8 +64,7 @@ body {
 }
 
 .ff-hero-image-wrapper {
-  /* Portrait class tile, kept narrow so it does not fill the screen */
-  max-width: 360px;
+  max-width: 680px;
   margin: 0 auto;
   border-radius: 12px;
   overflow: hidden;
