@@ -194,6 +194,17 @@ body {
   margin-top: 18px;
 }
 
+/* Full-width card above a grid (Timetable) */
+.home-card-full.home-card-full-top {
+  margin: 0 0 18px;
+}
+
+@media (min-width: 768px) {
+  .home-card-full.home-card-full-top {
+    margin: 0 0 22px;
+  }
+}
+
 /* On wider screens the full-width card becomes a banner the same height as
    the cards above it, with text sized to match */
 @media (min-width: 768px) {
